@@ -12,28 +12,7 @@ function HeroBannerAr() {
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-    {
-      video: 'https://bnoon-website.b-cdn.net/videos/banner/ar/banner1.mp4',
-      title: 'حلمكم ما هو بعيد ',
 
-      desc: 'استفيدوا من عرض يوم التأسيس الخاص <br>بالحقن المجهري في بنون ',
-      titleColor: '#004E78',
-      descColor: '#004E78',
-      extra: '',
-      buttonLink: 'ar/founding-day-campaign-ivf',
-      buttonText: 'استكشفوا المزيد',
-      objectPosition: '0% 20%', // ✅ LEFT shift
-    },
-    {
-      video: 'https://bnoon-website.b-cdn.net/videos/banner/ar/banner2.mp4',
-      title: 'عرض يوم التأسيس ',
-      desc: ' خدمات وإجراءات أمراض الذكورة والعقم لدى الرجال  ',
-      titleColor: '#004E78',
-      descColor: '#004E78',
-      buttonLink: 'ar/founding-day-campaign-andrology',
-      buttonText: 'استكشفوا المزيد ',
-      objectPosition: '0% 20%', // ✅ LEFT shift
-    },
     {
       video: 'https://bnoon-website.b-cdn.net/videos/banner/ar/banner3.mp4',
       title: '<span class="font-program">برنامج</span> وعد بنون',
@@ -181,7 +160,6 @@ function HeroBannerAr() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: slide.objectPosition || '50% center',
               zIndex: -1,
               opacity: isActive ? 1 : 0,
               transition: 'opacity 1s ease-in-out',
