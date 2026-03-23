@@ -1,3 +1,10 @@
+## [1.3.253](https://github.com/bnoon-ksa/landing-page/compare/v1.3.252...v1.3.253) (2026-03-23)
+
+### Bug Fixes
+
+* foundingday campaignivf directoryen ([#357](https://github.com/bnoon-ksa/landing-page/issues/357)) ([8f2bc69](https://github.com/bnoon-ksa/landing-page/commit/8f2bc69ad8d1a6897c9448ac105303cdf52e5e2e))
+* foundingdaycampaign andrology directoryen ([#358](https://github.com/bnoon-ksa/landing-page/issues/358)) ([7b0bcae](https://github.com/bnoon-ksa/landing-page/commit/7b0bcae3b17f46a561882d9460c20356e062eddc))
+
 ## [1.3.252](https://github.com/bnoon-ksa/landing-page/compare/v1.3.251...v1.3.252) (2026-03-19)
 
 ### Bug Fixes
