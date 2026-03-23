@@ -12,30 +12,7 @@ function HeroBanner() {
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-    {
-      video: 'https://bnoon-website.b-cdn.net/videos/banner/en/banner1.mp4',
-      title: "BRINGING YOUR DREAM CLOSER",
-      desc: 'Benefit from our Founding Day Special IVF Offer ',
-      titleColor: '#004E78',
-      descColor: '#004E78',
-      extra: '',
-      buttonLink: 'en/founding-day-campaign-ivf',
-      buttonText: 'Explore Our Offer ',
-      descClass: 'special-desc',
-      objectPosition: '100% 20%',
-    },
-    {
-      video: 'https://bnoon-website.b-cdn.net/videos/banner/en/banner2.mp4',
-      title: "SAUDI FOUNDING DAY OFFER",
-      desc: "Andrology & Men's Infertility Treatments",
-      titleColor: '#004E78',
-      descColor: '#004E78',
-      extra: '',
-      buttonLink: 'en/founding-day-campaign-andrology',
-      buttonText: 'Explore Our Offer',
-      descClass: 'special-desc',
-      objectPosition: '100% 20%',
-    },
+
     {
       video: 'https://bnoon-website.b-cdn.net/videos/banner/en/banner3.mp4',
       title: "<span class='rowdies-font'>WA'AD BNOON</span> <span class='oregano-font'>PROGRAM</span>",
@@ -181,7 +158,6 @@ function HeroBanner() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: slide.objectPosition || '50% center',
               zIndex: -1,
               opacity: isActive ? 1 : 0,
               transition: 'opacity 1s ease-in-out',
