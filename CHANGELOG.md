@@ -1,3 +1,9 @@
+## [1.3.254](https://github.com/bnoon-ksa/landing-page/compare/v1.3.253...v1.3.254) (2026-03-23)
+
+### Bug Fixes
+
+* remove banner ([#359](https://github.com/bnoon-ksa/landing-page/issues/359)) ([cfa29b4](https://github.com/bnoon-ksa/landing-page/commit/cfa29b4e89123140311a8b7fb6bbbc64ddb565d4))
+
 ## [1.3.253](https://github.com/bnoon-ksa/landing-page/compare/v1.3.252...v1.3.253) (2026-03-23)
 
 ### Bug Fixes
