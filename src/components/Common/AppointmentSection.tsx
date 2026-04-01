@@ -31,6 +31,22 @@ const AppointmentSection = () => {
     howHeard: '',
     recaptcha: '',
   });
+  const interestRef = useRef<HTMLDivElement>(null);
+const branchRef = useRef<HTMLDivElement>(null);
+const visitTypeRef = useRef<HTMLDivElement>(null);
+const doctorRef = useRef<HTMLDivElement>(null);
+const nameRef = useRef<HTMLDivElement>(null);
+const isForYouRef = useRef<HTMLDivElement>(null);
+const nationalityRef = useRef<HTMLDivElement>(null);
+const countryRef = useRef<HTMLDivElement>(null);
+const cityRef = useRef<HTMLDivElement>(null);
+const genderRef = useRef<HTMLDivElement>(null);
+const mobileRef = useRef<HTMLDivElement>(null);
+const emailRef = useRef<HTMLDivElement>(null);
+const dateRef = useRef<HTMLDivElement>(null);
+const timeRef = useRef<HTMLDivElement>(null);
+const howHeardRef = useRef<HTMLDivElement>(null);
+  const recaptchaRef = useRef<HTMLDivElement>(null);
   const [isInterestOpen, setIsInterestOpen] = useState(false);
   const [isDoctorOpen, setIsDoctorOpen] = useState(false);
   const [isNationalityOpen, setIsNationalityOpen] = useState(false);
@@ -467,102 +483,128 @@ const AppointmentSection = () => {
     return submitted && !formData[field];
   };
 
-  // ✅ Form Submit
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setSubmitted(true);
 
-    // Check empty fields (excluding cityIfInSA if not Saudi Arabia)
-    const requiredFields = Object.keys(formData).filter(
-      (key) => key !== 'cityIfInSA' || formData.countryOfResidence === 'Saudi Arabia',
-    );
+  // Required fields check (exclude cityIfInSA if not Saudi Arabia)
+  const requiredFields = Object.keys(formData).filter(
+    (key) => key !== 'cityIfInSA' || formData.countryOfResidence === 'Saudi Arabia'
+  );
 
-    const hasEmpty = requiredFields.some((key) => !(formData as Record<string, string>)[key]);
-    if (hasEmpty) {
-      setMessage('❌ Please fill all required fields.');
+  const firstEmptyField = requiredFields.find(
+    (key) => !(formData as Record<string, string>)[key]
+  );
 
-      setTimeout(() => {
-        messageRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-      }, 100);
+  if (firstEmptyField) {
+    setMessage('❌ Please fill all required fields.');
 
-      return;
-    }
+    const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
+      interest: interestRef,
+      branch: branchRef,
+      visitType: visitTypeRef,
+      doctor: doctorRef,
+      name: nameRef,
+      isForYou: isForYouRef,
+      nationality: nationalityRef,
+      countryOfResidence: countryRef,
+      cityIfInSA: cityRef,
+      gender: genderRef,
+      mobile: mobileRef,
+      email: emailRef,
+      preferredDate: dateRef,
+      preferredTime: timeRef,
+      howHeard: howHeardRef,
+      recaptcha: recaptchaRef,
+    };
 
-    try {
-      const response = await fetch('/api/send-appointment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+    refsMap[firstEmptyField]?.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
 
-      const data = await response.json();
-
-      if (response.ok) {
-         // ✅ Google Tag Manager Tracking (Fire only once)
-  if (typeof window !== "undefined") {
-
-    if (!sessionStorage.getItem("bnoon_booking_tracked")) {
-
-      window.dataLayer = window.dataLayer || [];
-
-      window.dataLayer.push({
-        event: "book_appointment"
-      });
-
-      sessionStorage.setItem("bnoon_booking_tracked", "true");
-    }
+    return; // stop submission
   }
 
-        setMessage(
-          <>
-            <strong>Thank you for submitting your appointment request.</strong>
-            <br />
-            Our team will contact you within 48 hours to discuss your appointment request and
-            arrange the next steps.
-            <br />
-            <em>We look forward to connecting with you soon.</em>
-          </>,
-        );
-        setShowThankYou(true);
-        setTimeout(() => {
-          messageRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-          });
-        }, 100);
-        setFormData({
-          interest: '',
-          branch: '',
-          visitType: '',
-          doctor: '',
-          name: '',
-          isForYou: '',
-          nationality: '',
-          countryOfResidence: '',
-          cityIfInSA: '',
-          gender: '',
-          mobile: '',
-          email: '',
-          preferredDate: '',
-          preferredTime: '',
-          howHeard: '',
-          recaptcha: '',
-        });
-        setSubmitted(false);
-      } else {
-        setMessage('❌ ' + data.error);
-      }
-    } catch (error) {
-      setMessage('❌ Something went wrong.');
-    }
-  };
+  // Proceed with API call
+  try {
+    const response = await fetch('/api/send-appointment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
+    const data = await response.json();
+
+    if (response.ok) {
+      // ✅ Google Tag Manager Tracking (only once)
+      if (typeof window !== "undefined" && !sessionStorage.getItem("bnoon_booking_tracked")) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "book_appointment" });
+        sessionStorage.setItem("bnoon_booking_tracked", "true");
+      }
+
+      setMessage(
+        <>
+          <div className="section-title">
+            <div className="row justify-content-center align-items-center g-4">
+              <div className="col-lg-12 col-md-12">
+                <div className="left">
+                  <h2 ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
+                    Thank you for submitting your appointment request.
+                  </h2>
+                </div>
+              </div>
+              <div className="left">
+                <p>
+                  Our team will contact you within 48 hours to discuss your appointment request and arrange the next steps.
+                  <br/>
+                  We look forward to connecting with you soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+
+      setShowThankYou(true);
+      setTimeout(() => {
+        messageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+
+      // Reset form
+      setFormData({
+        interest: '',
+        branch: '',
+        visitType: '',
+        doctor: '',
+        name: '',
+        isForYou: '',
+        nationality: '',
+        countryOfResidence: '',
+        cityIfInSA: '',
+        gender: '',
+        mobile: '',
+        email: '',
+        preferredDate: '',
+        preferredTime: '',
+        howHeard: '',
+        recaptcha: '',
+      });
+      setSubmitted(false);
+    } else {
+      setMessage('❌ ' + data.error);
+    }
+  } catch (error) {
+    setMessage('❌ Something went wrong.');
+  }
+};
   return (
     <div className="fertility-area mt-5 text-center mb-5">
       <div className="container">
+           {/* ✅ Heading + Paragraph + Form Wrapper */}
+    {!showThankYou && (
+       <div className="appointment-wrapper">
         <div className="section-title">
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-12 col-md-12">
@@ -583,19 +625,22 @@ const AppointmentSection = () => {
         </div>
 
         {/* FORM START */}
-        {!showThankYou && (
           <form
             onSubmit={handleSubmit}
             className="appointment-form text-start mx-auto"
             style={{ maxWidth: '800px' }}
           >
             {/* Interest */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={interestRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 I am interested in{' '}
                 <span style={{ color: isFieldInvalid('interest') ? 'red' : 'black' }}>*</span>
               </label>
-
+{isFieldInvalid('interest') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -665,13 +710,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* Branch */}
-            {/* Branch */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={branchRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 Select Branch{' '}
                 <span style={{ color: isFieldInvalid('branch') ? 'red' : 'black' }}>*</span>
               </label>
-
+{isFieldInvalid('branch') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -732,12 +780,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* Type of Visit */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={visitTypeRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 Select Type of Visit{' '}
                 <span style={{ color: isFieldInvalid('visitType') ? 'red' : 'black' }}>*</span>
               </label>
-
+{isFieldInvalid('visitType') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -795,12 +847,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* Doctor */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={doctorRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 Select Doctor{' '}
                 <span style={{ color: isFieldInvalid('doctor') ? 'red' : 'black' }}>*</span>
               </label>
-
+{isFieldInvalid('doctor') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -901,10 +957,15 @@ const AppointmentSection = () => {
             </div>
 
             {/* Name */}
-            <div className="mb-3">
+            <div className="mb-3" ref={nameRef}>
               <label className="appointmentform-label">
                 Your Name <span style={{ color: isFieldInvalid('name') ? 'red' : 'black' }}>*</span>
               </label>
+                           {isFieldInvalid('name') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               <input
                 type="text"
                 className="form-control"
@@ -916,11 +977,17 @@ const AppointmentSection = () => {
             </div>
 
             {/* Appointment for you */}
-            <div className="mb-3">
+            <div className="mb-3" ref={isForYouRef}>
               <label className="appointmentform-label d-block">
                 Is this appointment for you?{' '}
                 <span style={{ color: isFieldInvalid('isForYou') ? 'red' : 'black' }}>*</span>
+                    {isFieldInvalid('isForYou') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
+                   
               <div className="form-check form-check-inline">
                 <input
                   className="form-check-input"
@@ -952,12 +1019,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* Nationality */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={nationalityRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 Nationality{' '}
                 <span style={{ color: isFieldInvalid('nationality') ? 'red' : 'black' }}>*</span>
               </label>
-
+{isFieldInvalid('nationality') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -1017,14 +1088,18 @@ const AppointmentSection = () => {
             </div>
 
             {/* Country */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={countryRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 Country of Residence{' '}
                 <span style={{ color: isFieldInvalid('countryOfResidence') ? 'red' : 'black' }}>
                   *
                 </span>
               </label>
-
+{isFieldInvalid('countryOfResidence') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -1085,11 +1160,16 @@ const AppointmentSection = () => {
 
             {/* City (Saudi Arabia only) */}
             {formData.countryOfResidence === 'Saudi Arabia' && (
-              <div className="mb-3">
+              <div className="mb-3" ref={cityRef}>
                 <label className="appointmentform-label">
                   If you live in Saudi Arabia, please state the city.{' '}
                   <span style={{ color: isFieldInvalid('cityIfInSA') ? 'red' : 'black' }}>*</span>
                 </label>
+                                {isFieldInvalid('cityIfInSA') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
                 <select
                   className="form-control"
                   name="cityIfInSA"
@@ -1126,10 +1206,16 @@ const AppointmentSection = () => {
             )}
 
             {/* Gender */}
-            <div className="mb-3">
+            <div className="mb-3" ref={genderRef}>
               <label className="appointmentform-label d-block">
                 Gender <span style={{ color: isFieldInvalid('gender') ? 'red' : 'black' }}>*</span>
+                  {isFieldInvalid('gender') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
+             
               <div className="form-check form-check-inline">
                 <input
                   className="form-check-input"
@@ -1161,11 +1247,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* Mobile */}
-            <div className="mb-3">
+            <div className="mb-3" ref={mobileRef}>
               <label className="appointmentform-label">
                 Mobile No
                 <span style={{ color: isFieldInvalid('mobile') ? 'red' : 'black' }}>*</span>
               </label>
+               {isFieldInvalid('mobile') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               <input
                 type="text"
                 className="form-control"
@@ -1176,11 +1267,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* Email */}
-            <div className="mb-3">
+            <div className="mb-3" ref={emailRef}>
               <label className="appointmentform-label">
                 Email Address
                 <span style={{ color: isFieldInvalid('email') ? 'red' : 'black' }}>*</span>
               </label>
+               {isFieldInvalid('email') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               <input
                 type="email"
                 className="form-control"
@@ -1191,26 +1287,47 @@ const AppointmentSection = () => {
             </div>
 
             {/* Date */}
-            <div className="mb-3">
+            <div className="mb-3" ref={dateRef}>
               <label className="appointmentform-label">
                 Select a preferred date for your appointment{' '}
                 <span style={{ color: isFieldInvalid('preferredDate') ? 'red' : 'black' }}>*</span>
               </label>
-              <input
-                type="date"
-                className="form-control"
-                name="preferredDate"
-                value={formData.preferredDate}
-                onChange={handleChange}
-              />
+                {isFieldInvalid('preferredDate') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
+             <input
+    type="date"
+    className={`form-control ${isFieldInvalid('preferredDate') ? 'is-invalid' : ''}`}
+    name="preferredDate"
+    value={formData.preferredDate}
+    onChange={(e) => {
+      const selectedDate = e.target.value;
+      const today = new Date().toISOString().split('T')[0]; // yyyy-mm-dd
+
+      if (selectedDate < today) {
+        alert('Past dates are not allowed!'); // ya message show karne ka aur bhi tarika ho sakta
+        setFormData((prev) => ({ ...prev, preferredDate: '' }));
+      } else {
+        handleChange(e);
+      }
+    }}
+    min={new Date().toISOString().split('T')[0]} // ye ensure karega ki past dates select hi na ho
+  />
             </div>
 
             {/* Time */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={timeRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 Select preferred time for your appointment{' '}
                 <span style={{ color: isFieldInvalid('preferredTime') ? 'red' : 'black' }}>*</span>
               </label>
+              {isFieldInvalid('preferredTime') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
 
               {/* Button */}
               <button
@@ -1316,12 +1433,16 @@ const AppointmentSection = () => {
             </div>
 
             {/* How heard */}
-            <div className="mb-3" style={{ position: 'relative' }}>
+            <div className="mb-3" ref={howHeardRef} style={{ position: 'relative' }}>
               <label className="appointmentform-label">
                 How did you hear about us?{' '}
                 <span style={{ color: isFieldInvalid('howHeard') ? 'red' : 'black' }}>*</span>
               </label>
-
+ {isFieldInvalid('howHeard') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               {/* Button */}
               <button
                 type="button"
@@ -1393,6 +1514,7 @@ const AppointmentSection = () => {
               </button>
             </div>
           </form>
+        </div>
         )}
         {/* FORM END */}
         {/* Mid-form message */}
