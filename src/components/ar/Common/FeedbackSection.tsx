@@ -15,16 +15,25 @@ const FeedbackSection = () => {
     story: '',
     feedbackType: [] as string[],
     feedbackDetails: '',
-
     recaptcha: null as string | null, // ⭐ FIXED
     consent: false,
   });
-
+const [isSuccess, setIsSuccess] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // inside FeedbackSection
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
+const fieldRefs: { [K in keyof typeof formData]?: React.RefObject<HTMLElement> } = {
+  branch: useRef<HTMLDivElement>(null),
+  name: useRef<HTMLInputElement>(null),
+  phone: useRef<HTMLInputElement>(null),
+  email: useRef<HTMLInputElement>(null),
+  rating: useRef<HTMLDivElement>(null),
+  feedbackType: useRef<HTMLDivElement>(null),
+  feedbackDetails: useRef<HTMLTextAreaElement>(null),
+  consent: useRef<HTMLInputElement>(null),
+};
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +49,10 @@ const FeedbackSection = () => {
     if (headerRef.current) observer.observe(headerRef.current);
     return () => observer.disconnect();
   }, []);
-
+const isFieldInvalid = (field: keyof typeof formData) => {
+  if (!submitted) return false;
+  return isFieldEmpty(field);
+};
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
@@ -48,27 +60,45 @@ const FeedbackSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const isFieldInvalid = (field: string) => submitted && !formData[field as keyof typeof formData];
+const isFieldEmpty = (field: keyof typeof formData) => {
+  const value = formData[field];
+  if (Array.isArray(value)) return value.length === 0;
+  if (typeof value === 'boolean') return !value;
+  return !value;
+};
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const firstInvalidField = Object.keys(fieldRefs).find(
+    (key) => isFieldEmpty(key as keyof typeof formData)
+  );
+const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
+  if (!ref?.current) return;
 
-    const hasEmpty =
-      !formData.branch ||
-      !formData.name ||
-      !formData.phone ||
-      !formData.email ||
-      !formData.rating ||
-      !formData.feedbackType.length ||
-      !formData.feedbackDetails ||
-      !formData.consent;
+  ref.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
 
-    if (hasEmpty) {
-      setStatusMessage(' .Please fill all required fields');
-      return;
-    }
-    // ✅ reCAPTCHA validation
+  // find actual input inside
+  const el = ref.current.querySelector(
+    'input, textarea, select, button'
+  ) as HTMLElement | null;
+
+  if (el) {
+    setTimeout(() => el.focus(), 300); // wait for scroll
+  }
+};
+  if (firstInvalidField) {
+    setSubmitted(true); // yahan set karo AFTER validation
+
+scrollToField(fieldRefs[firstInvalidField as keyof typeof formData]);
+    setStatusMessage('');
+    return;
+  }
+
+  setSubmitted(true);
+   // ✅ reCAPTCHA validation
     if (!formData.recaptcha) {
       setStatusMessage('❌ Please verify reCAPTCHA before submitting');
       return; // stop form submission
@@ -80,34 +110,37 @@ const FeedbackSection = () => {
         body: JSON.stringify(formData),
       });
 
-      if (res.ok) {
-        setStatusMessage('!Thank you for your valuable feedback');
-        setFormData({
-          branch: '',
-          name: '',
-          phone: '',
-          email: '',
-          rating: '',
-          story: '',
-          feedbackType: [],
-          feedbackDetails: '',
+   if (res.ok) {
+      setIsSuccess(true); // ✅ yahan hona chahiye
 
-          recaptcha: null as string | null, // ⭐ FIXED
-          consent: false,
-        });
-        setSubmitted(false);
-      } else {
-        setStatusMessage('❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى لاحقًا.');
-      }
-    } catch (error) {
-      setStatusMessage('❌ لم يتم الإرسال. تحقق من اتصالك بالإنترنت.');
+      setStatusMessage('!Thank you for your valuable feedback');
+
+      setFormData({
+        branch: '',
+        name: '',
+        phone: '',
+        email: '',
+        rating: '',
+        story: '',
+        feedbackType: [],
+        feedbackDetails: '',
+        recaptcha: null as string | null, // ⭐ FIXED
+        consent: false,
+      });
+
+      setSubmitted(false);
     }
-  };
+  } catch (error) {
+    setStatusMessage('❌ لم يتم الإرسال. تحقق من اتصالك بالإنترنت.');
+  }
+};
 
   return (
     <div className="fertility-area mt-5">
       <div className="container">
-        {/* Title + description here ... */}
+         {!isSuccess ? (
+        <>
+          {/* HEADER */}
         <div className="section-title">
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-12 col-md-12">
@@ -126,8 +159,8 @@ const FeedbackSection = () => {
                 <MailIcon
                   width={24}
                   height={24}
-                  className="me-2"
-                  style={{ color: 'rgb(0,78,120)' }}
+                  className=""
+                  style={{ color: 'rgb(0,78,120)', margin: '0px 0px 0px 8px', }}
                 />
                 <p className="mb-0"> يمكنكم تقييم تجربتكم عبر النموذج أدناه </p>
               </div>
@@ -135,8 +168,8 @@ const FeedbackSection = () => {
                 <LocationIcon
                   width={24}
                   height={24}
-                  className="me-2"
-                  style={{ color: 'rgb(0,78,120)' }}
+                  className=""
+                  style={{ color: 'rgb(0,78,120)', margin: '0px 0px 0px 8px', }}
                 />
                 <p> أو مراسلتنا على feedback@bnoon.sa </p>
               </div>
@@ -148,7 +181,9 @@ const FeedbackSection = () => {
             </div>
           </div>
         </div>
+         
         <div className="d-flex justify-content-center align-items-center mb-5 pbt-140">
+         
           <form
             onSubmit={handleSubmit}
             className="w-100 appointment-form"
@@ -158,8 +193,16 @@ const FeedbackSection = () => {
             {/* Branch */}
 
             <div className="custom-dropdown mb-4" style={{ position: 'relative' }}>
-              <label className="form-label">الفرع *</label>
+              <label className="form-label">الفرع 
+               <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('branch') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('branch') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
+              </label>
               <button
+              ref={fieldRefs.branch as React.RefObject<HTMLButtonElement>}
                 type="button"
                 className={`form-control ${isFieldInvalid('branch') ? 'is-invalid' : ''}`}
                 onClick={() => setIsOpen((prev) => !prev)}
@@ -215,8 +258,14 @@ const FeedbackSection = () => {
             </div>
 
             {/* Patient’s Name */}
-            <div className="mb-4">
-              <label className="form-label">اسم المريض/المريضة *</label>
+            <div className="mb-4" ref={fieldRefs.name}>
+              <label className="form-label">اسم المريض/المريضة 
+                  <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('name') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('name') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )} </label>
               <input
                 type="text"
                 className={`form-control ${isFieldInvalid('name') ? 'is-invalid' : ''}`}
@@ -228,8 +277,14 @@ const FeedbackSection = () => {
             </div>
 
             {/* Patient’s Phone */}
-            <div className="mb-4">
-              <label className="form-label">رقم الجوال *</label>
+            <div className="mb-4" ref={fieldRefs.phone}>
+              <label className="form-label">رقم الجوال  
+               <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('phone') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('phone') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )} </label>
               <input
                 type="text"
                 className={`form-control ${isFieldInvalid('phone') ? 'is-invalid' : ''}`}
@@ -241,8 +296,15 @@ const FeedbackSection = () => {
             </div>
 
             {/* Email */}
-            <div className="mb-4">
-              <label className="form-label">البريد الإلكتروني *</label>
+            <div className="mb-4" ref={fieldRefs.email}>
+              <label className="form-label">البريد الإلكتروني  
+                 <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('email') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('email') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
+  </label>
               <input
                 type="email"
                 className={`form-control ${isFieldInvalid('email') ? 'is-invalid' : ''}`}
@@ -254,8 +316,13 @@ const FeedbackSection = () => {
             </div>
 
             {/* Overall Rating */}
-            <div className="mb-4">
-              <label className="form-label">تقييم عام *</label>
+            <div className="mb-4" ref={fieldRefs.rating}>
+              <label className="form-label">تقييم عام   <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('rating') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('rating') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}</label>
               <br />
               <small className="form-text text-muted mb-2">
                 بناءً على تجربتكم، ما مدى احتمال أن توصي ب "بنون" لعائلتك أو أصدقائك ؟ من 1 إلى 10،
@@ -283,7 +350,7 @@ const FeedbackSection = () => {
             </div>
 
             {/* Share your story */}
-            <div className="mb-4">
+            <div className="mb-4" >
               <label className="form-label">شاركوا قصتكم معنا</label> <br />
               <small className="form-text text-muted mb-2">
                 إذا رغبتم في مشاركة تجربتكم، يمكنكم كتابتها هنا. خصوصيتكم محفوظة، ولن يتم نشر أي
@@ -300,8 +367,15 @@ const FeedbackSection = () => {
             </div>
 
             {/* Type of Feedback */}
-            <div className="mb-4">
-              <label className="form-label">نوع الملاحظة*</label>
+            <div className="mb-4" ref={fieldRefs.feedbackType}>
+              <label className="form-label">نوع الملاحظة 
+               <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('feedbackType') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('feedbackType') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
+              </label>
               <div className="d-flex gap-3 flex-wrap">
                 {['شكوى', 'ملاحظة عامة', 'اقتراح'].map((type) => (
                   <div key={type} className="form-check form-check-inline">
@@ -335,8 +409,14 @@ const FeedbackSection = () => {
             </div>
 
             {/* Feedback Details */}
-            <div className="mb-4">
-              <label className="form-label">تفاصيل الملاحظة *</label>
+            <div className="mb-4" ref={fieldRefs.feedbackDetails}>
+              <label className="form-label">تفاصيل الملاحظة  
+                <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('feedbackDetails') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('feedbackDetails') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+     يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}</label>
               <textarea
                 className={`form-control ${isFieldInvalid('feedbackDetails') ? 'is-invalid' : ''}`}
                 name="feedbackDetails"
@@ -347,7 +427,7 @@ const FeedbackSection = () => {
               ></textarea>
             </div>
             {/* Consent Checkbox */}
-            <div className="mb-4 form-check">
+            <div className="mb-4 form-check" ref={fieldRefs.consent}>
               <input
                 type="checkbox"
                 className={`form-check-input ${submitted && !formData.consent ? 'is-invalid' : ''}`}
@@ -363,7 +443,7 @@ const FeedbackSection = () => {
             </div>
 
             <div className="my-3">
-              <ReCAPTCHA
+                <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                 hl="ar"
                 onChange={(value: string | null) =>
@@ -381,9 +461,32 @@ const FeedbackSection = () => {
             </div>
             {statusMessage && <p className="mt-3 text-center">{statusMessage}</p>}
           </form>
+           </div>
+           </>
+          ) : (
+      <div className="section-title ">
+          <div className="row justify-content-center align-items-center text-center">
+  <div className="row justify-content-center align-items-center">
+    
+   <div className="col-lg-12 col-md-12">
+              <div ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
+                <h2>شكراً لمشاركتكم ملاحظاتكم معنا. </h2>
+              </div>
+            </div>
+
+      <p className="mt-3 align-items-center text-center mb-3">
+        نحن نُقدّر آرائكم واهتمامكم، حيث تُسهم بشكل مباشر في استمرار تطوير خدماتنا وتقديم أعلى مستويات الرعاية.
+        <br />
+        نثمّن ثقتكم، ونتطلع إلى مواصلة دعمكم ورعايتكم في كل خطوة من رحلتكم.
+      </p>
+    </div>
+     </div>
+  </div>
+
+)}
         </div>
       </div>
-    </div>
+   
   );
 };
 
