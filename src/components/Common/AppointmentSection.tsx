@@ -497,7 +497,7 @@ const howHeardRef = useRef<HTMLDivElement>(null);
   );
 
   if (firstEmptyField) {
-    setMessage('❌ Please fill all required fields.');
+    
 
     const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
       interest: interestRef,
