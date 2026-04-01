@@ -24,15 +24,15 @@ const [isSuccess, setIsSuccess] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // inside FeedbackSection
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
-const fieldRefs: { [K in keyof typeof formData]?: React.RefObject<HTMLElement> } = {
+const fieldRefs = {
   branch: useRef<HTMLDivElement>(null),
-  name: useRef<HTMLInputElement>(null),
-  phone: useRef<HTMLInputElement>(null),
-  email: useRef<HTMLInputElement>(null),
+  name: useRef<HTMLDivElement>(null),
+  phone: useRef<HTMLDivElement>(null),
+  email: useRef<HTMLDivElement>(null),
   rating: useRef<HTMLDivElement>(null),
   feedbackType: useRef<HTMLDivElement>(null),
-  feedbackDetails: useRef<HTMLTextAreaElement>(null),
-  consent: useRef<HTMLInputElement>(null),
+  feedbackDetails: useRef<HTMLDivElement>(null),
+  consent: useRef<HTMLDivElement>(null),
 };
 
   useEffect(() => {
@@ -89,14 +89,13 @@ const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
     setTimeout(() => el.focus(), 300); // wait for scroll
   }
 };
-  if (firstInvalidField) {
-    setSubmitted(true); // yahan set karo AFTER validation
+ if (firstInvalidField) {
+  setSubmitted(true);
 
-scrollToField(fieldRefs[firstInvalidField as keyof typeof formData]);
-    setStatusMessage('');
-    return;
-  }
+  scrollToField(fieldRefs[firstInvalidField as keyof typeof fieldRefs]);
 
+  return; // Rok do submission jab tak user field fill na kare
+}
   setSubmitted(true);
    // ✅ reCAPTCHA validation
     if (!formData.recaptcha) {
@@ -192,7 +191,7 @@ scrollToField(fieldRefs[firstInvalidField as keyof typeof formData]);
             {/* all your existing fields stay exactly same */}
             {/* Branch */}
 
-            <div className="custom-dropdown mb-4" style={{ position: 'relative' }}>
+            <div className="custom-dropdown mb-4" ref={fieldRefs.branch} style={{ position: 'relative' }}>
               <label className="form-label">الفرع 
                <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('branch') ? 'red' : 'black' }}>*</span>
                 {isFieldInvalid('branch') && (
@@ -202,7 +201,7 @@ scrollToField(fieldRefs[firstInvalidField as keyof typeof formData]);
   )}
               </label>
               <button
-              ref={fieldRefs.branch as React.RefObject<HTMLButtonElement>}
+              
                 type="button"
                 className={`form-control ${isFieldInvalid('branch') ? 'is-invalid' : ''}`}
                 onClick={() => setIsOpen((prev) => !prev)}
