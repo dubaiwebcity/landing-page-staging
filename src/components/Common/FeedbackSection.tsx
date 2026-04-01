@@ -17,7 +17,16 @@ const FeedbackSection = () => {
     recaptcha: '',
     consent: false,
   });
-
+const fieldRefs = {
+  branch: useRef<HTMLDivElement>(null),
+  name: useRef<HTMLInputElement>(null),
+  phone: useRef<HTMLInputElement>(null),
+  email: useRef<HTMLInputElement>(null),
+  rating: useRef<HTMLDivElement>(null),
+  feedbackType: useRef<HTMLDivElement>(null),
+  feedbackDetails: useRef<HTMLTextAreaElement>(null),
+  consent: useRef<HTMLInputElement>(null),
+};
   const [statusMessage, setStatusMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -47,56 +56,85 @@ const FeedbackSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const isFieldInvalid = (field: string) => submitted && !formData[field as keyof typeof formData];
+ const isFieldInvalid = (field: keyof typeof formData) => {
+  if (!submitted) return false;
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const value = formData[field];
 
-    if (
-      !formData.branch ||
-      !formData.name ||
-      !formData.phone ||
-      !formData.email ||
-      !formData.rating ||
-      formData.feedbackType.length === 0 ||
-      !formData.consent
-    ) {
-      setStatusMessage('❌ Please fill all required fields.');
-      return;
-    }
+  if (Array.isArray(value)) {
+    return value.length === 0; // 👈 array check
+  }
 
-    try {
-      const res = await fetch('/api/send-feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  if (typeof value === 'boolean') {
+    return !value; // 👈 consent checkbox
+  }
 
-      const data = await res.json();
-      if (data.success) {
-        setStatusMessage('✅ Thank you for your valuable feedback!');
-        setFormData({
-          branch: '',
-          name: '',
-          phone: '',
-          email: '',
-          rating: '',
-          story: '',
-          feedbackType: [],
-          feedbackDetails: '',
-          recaptcha: '',
-          consent: false,
-        });
-        setSubmitted(false);
-      } else {
-        setStatusMessage('❌ Failed to send feedback.');
+  return !value;
+};
+
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setSubmitted(true);
+
+  // Required fields in order
+  const requiredFields: (keyof typeof formData)[] = [
+    'branch',
+    'name',
+    'phone',
+    'email',
+    'rating',
+    'feedbackType',
+    'feedbackDetails',
+    'consent',
+  ];
+
+  // Find first invalid field
+  const firstInvalid = requiredFields.find((field) => isFieldInvalid(field));
+
+  if (firstInvalid) {
+    const ref = fieldRefs[firstInvalid];
+    if (ref?.current) {
+      // Scroll smoothly to first invalid field
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Focus input/textarea if possible
+      if ('focus' in ref.current) {
+        (ref.current as HTMLElement).focus();
       }
-    } catch (err) {
-      console.error('Submit error:', err);
-      setStatusMessage('❌ Failed to send feedback.');
     }
-  };
+    return; // Stop submission until all required fields are valid
+  }
+
+  // If all valid, send form
+  try {
+    const res = await fetch('/api/send-feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      setStatusMessage('✅ Thank you for your valuable feedback!');
+      setFormData({
+        branch: '',
+        name: '',
+        phone: '',
+        email: '',
+        rating: '',
+        story: '',
+        feedbackType: [],
+        feedbackDetails: '',
+         recaptcha: '',
+        consent: false,
+      });
+      setSubmitted(false);
+    } 
+  } catch (err) {
+    console.error('Submit error:', err);
+    setStatusMessage('❌ Failed to send feedback.');
+  }
+};
 
   return (
     <div className="fertility-area mt-5">
@@ -153,10 +191,15 @@ const FeedbackSection = () => {
             style={{ maxWidth: '750px' }}
           >
             {/* Branch */}
-            <div className="custom-dropdown mb-3" style={{ position: 'relative' }}>
+            <div className="custom-dropdown mb-3" ref={fieldRefs.branch} style={{ position: 'relative' }}>
               <label className="form-label">
                 Select Branch{' '}
                 <span style={{ color: isFieldInvalid('branch') ? 'red' : 'black' }}>*</span>
+                {isFieldInvalid('branch') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
 
               {/* Button */}
@@ -220,10 +263,15 @@ const FeedbackSection = () => {
             </div>
 
             {/* Patient’s Name */}
-            <div className="mb-3">
+            <div className="mb-3" ref={fieldRefs.name}>
               <label className="form-label">
                 Patient’s Name{' '}
                 <span style={{ color: isFieldInvalid('name') ? 'red' : 'black' }}>*</span>
+                 {isFieldInvalid('name') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
               <input
                 type="text"
@@ -236,10 +284,15 @@ const FeedbackSection = () => {
             </div>
 
             {/* Patient’s Phone */}
-            <div className="mb-3">
+            <div className="mb-3" ref={fieldRefs.phone}>
               <label className="form-label">
                 Patient’s Phone No.{' '}
                 <span style={{ color: isFieldInvalid('phone') ? 'red' : 'black' }}>*</span>
+                  {isFieldInvalid('phone') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
               <input
                 type="text"
@@ -252,10 +305,15 @@ const FeedbackSection = () => {
             </div>
 
             {/* Email */}
-            <div className="mb-3">
+            <div className="mb-3" ref={fieldRefs.email}>
               <label className="form-label">
                 Email Address{' '}
                 <span style={{ color: isFieldInvalid('email') ? 'red' : 'black' }}>*</span>
+                 {isFieldInvalid('email') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
               <input
                 type="email"
@@ -268,10 +326,15 @@ const FeedbackSection = () => {
             </div>
 
             {/* Rating */}
-            <div className="mb-3">
+            <div className="mb-3" ref={fieldRefs.rating}>
               <label className="form-label">
                 Overall Rating{' '}
                 <span style={{ color: isFieldInvalid('rating') ? 'red' : 'black' }}>*</span>
+                 {isFieldInvalid('rating') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
               <br />
               <small className="form-text text-muted">
@@ -300,7 +363,7 @@ const FeedbackSection = () => {
             </div>
 
             {/* Story */}
-            <div className="mb-3">
+            <div className="mb-3" >
               <label className="form-label">Share your Story</label>
               <br />
               <small className="form-text text-muted">
@@ -319,16 +382,16 @@ const FeedbackSection = () => {
             </div>
 
             {/* Type of Feedback */}
-            <div className="mb-3">
+            <div className="mb-3" ref={fieldRefs.feedbackType}>
               <label className="form-label">
                 Type of Feedback{' '}
-                <span
-                  style={{
-                    color: isFieldInvalid('feedbackType') ? 'red' : 'black',
-                  }}
-                >
-                  *
-                </span>
+               
+                <span style={{ color: isFieldInvalid('feedbackType') ? 'red' : 'black' }}>*</span>
+                 {isFieldInvalid('feedbackType') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
               <div className="d-flex gap-3 flex-wrap">
                 {['Service', 'Doctor', 'Facilities', 'Other'].map((type) => (
@@ -364,15 +427,11 @@ const FeedbackSection = () => {
                   </div>
                 ))}
               </div>
-              {isFieldInvalid('feedbackType') && (
-                <div className="invalid-feedback d-block">
-                  Please select at least one feedback type.
-                </div>
-              )}
+             
             </div>
 
             {/* Feedback Details */}
-            <div className="mb-3">
+            <div className="mb-3" >
               <label className="form-label">
                 Patient's Feedback Details{' '}
                 <span
@@ -382,8 +441,14 @@ const FeedbackSection = () => {
                 >
                   *
                 </span>
+                  {isFieldInvalid('feedbackDetails') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      please fill all required fileds
+    </span>
+  )}
               </label>
               <textarea
+              ref={fieldRefs.feedbackDetails} 
                 className={`form-control ${isFieldInvalid('feedbackDetails') ? 'is-invalid' : ''}`}
                 name="feedbackDetails"
                 rows={4}
@@ -396,6 +461,7 @@ const FeedbackSection = () => {
             {/* Consent */}
             <div className="mb-3 form-check">
               <input
+              ref={fieldRefs.consent}
                 type="checkbox"
                 className={`form-check-input ${submitted && !formData.consent ? 'is-invalid' : ''}`}
                 id="consent"
