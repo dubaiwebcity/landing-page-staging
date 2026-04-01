@@ -1692,7 +1692,7 @@ setTimeout(() => {
           )}
         </div>
         {/* FORM END */}
-         <div className="col-lg-12 col-md-12 pbt-140 mb-5 disclaimer-text align-items-center" style={{ maxWidth: '800px', width: '100%' }}>
+         <div className="col-lg-12 col-md-12 pbt-140 mb-5 disclaimer-text align-items-center">
         <div className="left align-items-center" >
           <p className="text-left align-items-center">
             *تنويه: سيتم تأكيد الموعد فقط بعد تواصل أحد أعضاء فريق مركز الاتصال معكم هاتفياً.
