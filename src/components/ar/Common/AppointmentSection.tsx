@@ -414,6 +414,23 @@ const AppointmentSection = () => {
     'هايتي',
     'اليمن',
   ];
+  const interestRef = useRef<HTMLDivElement>(null);
+const branchRef = useRef<HTMLDivElement>(null);
+const visitTypeRef = useRef<HTMLDivElement>(null);
+const doctorRef = useRef<HTMLDivElement>(null);
+const nameRef = useRef<HTMLDivElement>(null);
+const isForYouRef = useRef<HTMLDivElement>(null);
+const nationalityRef = useRef<HTMLDivElement>(null);
+const countryRef = useRef<HTMLDivElement>(null);
+const cityRef = useRef<HTMLDivElement>(null);
+const genderRef = useRef<HTMLDivElement>(null);
+const mobileRef = useRef<HTMLDivElement>(null);
+const emailRef = useRef<HTMLDivElement>(null);
+const dateRef = useRef<HTMLDivElement>(null);
+const timeRef = useRef<HTMLDivElement>(null);
+const howHeardRef = useRef<HTMLDivElement>(null);
+
+
   const [isBranchOpen, setIsBranchOpen] = useState(false);
   const [isHowHeardOpen, setIsHowHeardOpen] = useState(false);
   const [isNationalityOpen, setIsNationalityOpen] = useState(false);
@@ -458,20 +475,69 @@ const AppointmentSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const isFieldInvalid = (field: string) => submitted && !formData[field as keyof typeof formData];
+  
+const isFieldInvalid = (field: keyof typeof formData) => {
+  if (field === 'cityIfInSA' && formData.countryOfResidence !== 'المملكة العربية السعودية') return false;
 
+  const value = formData[field];
+
+  return submitted && (!value || value === '');
+};
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
 
     // check empty fields
-    const requiredFields = ['branch', 'name', 'mobile', 'email'];
-    const hasEmpty = requiredFields.some((field) => !formData[field as keyof typeof formData]);
+ const requiredFields = [
+  'interest',
+  'branch',
+  'visitType',
+  'doctor',
+  'name',
+  'isForYou',
+  'nationality',
+  'countryOfResidence',
+  ...(formData.countryOfResidence === 'المملكة العربية السعودية' ? ['cityIfInSA'] : []),
+  'gender',
+  'mobile',
+  'email',
+  'preferredDate',
+  'preferredTime',
+  'howHeard',
+  'recaptcha'
+];
 
-    if (hasEmpty) {
-      setMessage('❌ Please fill all required fields.');
-      return;
-    }
+const firstEmptyField = requiredFields.find(
+  (key) => !(formData as Record<string, string | null>)[key]
+);
+
+if (firstEmptyField) {
+  const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
+    interest: interestRef,
+    branch: branchRef,
+    visitType: visitTypeRef,
+    doctor: doctorRef,
+    name: nameRef,
+    isForYou: isForYouRef,
+    nationality: nationalityRef,
+    countryOfResidence: countryRef,
+    cityIfInSA: cityRef,
+    gender: genderRef,
+    mobile: mobileRef,
+    email: emailRef,
+    preferredDate: dateRef,
+    preferredTime: timeRef,
+    howHeard: howHeardRef,
+  };
+
+setTimeout(() => {
+  refsMap[firstEmptyField]?.current?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
+}, 100);
+  return;
+}
     // ✅ reCAPTCHA validation
     if (!formData.recaptcha) {
       setMessage('❌ Please verify reCAPTCHA before submitting');
@@ -500,11 +566,23 @@ const AppointmentSection = () => {
 }
         setMessage(
           <>
-            شكراً لكم على إرسال طلب حجز موعد في بنون.
-            <br />
-            سيقوم فريقنا بالتواصل معكم خلال 48 ساعة لحجز الموعد واستكمال الخطوات اللازمة.
-            <br />
-            نتطلّع إلى التواصل معكم قريباً.
+           <div className="section-title">
+          <div className="row justify-content-center align-items-center g-4">
+            <div className="col-lg-12 col-md-12">
+              <div className="left">
+                <h2 ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
+                 شكراً لكم على إرسال طلب حجز موعد في بنون.
+                </h2>
+              </div>
+            </div>
+            <div className="left ">
+              <p className="text-center ">
+            سيقوم فريقنا بالتواصل معكم خلال 48 ساعة لحجز الموعد واستكمال الخطوات اللازمة.<br/>
+نتطلّع إلى التواصل معكم قريباً.
+              </p>
+            </div>
+          </div>
+        </div>
           </>,
         );
         setShowThankYou(true); // 👈 FORM HIDE, MESSAGE SHOW
@@ -549,6 +627,7 @@ const AppointmentSection = () => {
   return (
     <div className="fertility-area mt-5 text-center">
       <div className="container">
+         {!showThankYou && (
         <div className="section-title">
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-12 col-md-12">
@@ -568,10 +647,10 @@ const AppointmentSection = () => {
             </div>
           </div>
         </div>
-
+)}
         {/* FORM START */}
 
-        <div className="d-flex justify-content-center align-items-center mb-5 pbt-140">
+        <div className="d-flex justify-content-center align-items-center mb-3 pbt-140">
           {!showThankYou && (
             <form
               onSubmit={handleSubmit}
@@ -581,18 +660,23 @@ const AppointmentSection = () => {
               {/* I am interested in */}
               <div className="g-3">
                 <div
-                  className="custom-dropdown mb-3"
+                  className="custom-dropdown mb-3 " ref={interestRef}
                   style={{ position: 'relative', padding: '0px' }}
                 >
                   <label className="form-label">
                     ما الخدمة التي تبحث عنها؟{' '}
-                    <span style={{ color: isFieldInvalid('interest') ? 'red' : 'black' }}>*</span>
+                    <span style={{ padding: '0px 8px 0px 0px', color: isFieldInvalid('interest') ? 'red' : 'black' }}>*</span>
+                    {isFieldInvalid('interest') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
 
                   {/* Button */}
                   <button
                     type="button"
-                    className={`form-control ${isFieldInvalid('interest') ? 'is-invalid' : ''}`}
+                    className={`form-control ${isFieldInvalid('interest') ? 'is-invalid border-danger' : ''}`}
                     onClick={() => setIsInterestOpen((prev) => !prev)}
                     style={{
                       display: 'flex',
@@ -660,12 +744,17 @@ const AppointmentSection = () => {
               {/* Select Branch */}
               <div className="g-3">
                 <div
-                  className="custom-dropdown mb-3"
+                  className="custom-dropdown mb-3" ref={branchRef}
                   style={{ position: 'relative', padding: '0px' }}
                 >
                   <label className="appointmentform-label">
                     الفرع{' '}
-                    <span style={{ color: isFieldInvalid('branch') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('branch') ? 'red' : 'black' }}>*</span>
+                      {isFieldInvalid('branch') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
 
                   {/* Button */}
@@ -733,14 +822,19 @@ const AppointmentSection = () => {
               {/* Select Visit Type */}
               <div className="g-3">
                 <div
-                  className="custom-dropdown mb-3"
+                  className="custom-dropdown mb-3" ref={visitTypeRef}
                   style={{ position: 'relative', padding: '0px' }}
                 >
                   <label className="appointmentform-label">
                     اختر نوع الزيارة (زيارة العيادة أو استشارة عن بُعد){' '}
-                    <span style={{ color: submitted && !formData.visitType ? 'red' : 'black' }}>
+                    <span style={{padding: '0px 8px 0px 0px', color: submitted && !formData.visitType ? 'red' : 'black' }}>
                       *
                     </span>
+                           {isFieldInvalid('visitType') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
 
                   {/* Button */}
@@ -802,10 +896,15 @@ const AppointmentSection = () => {
                 </div>
               </div>
               {/* Doctor */}
-              <div className="mb-3" style={{ position: 'relative' }}>
+              <div className="mb-3" ref={doctorRef}  style={{ position: 'relative' }}>
                 <label className="appointmentform-label">
                   اختر الطبيب{' '}
-                  <span style={{ color: isFieldInvalid('doctor') ? 'red' : 'black' }}>*</span>
+                  <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('doctor') ? 'red' : 'black' }}>*</span>
+                          {isFieldInvalid('doctor') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                 </label>
 
                 {/* Button */}
@@ -907,46 +1006,40 @@ const AppointmentSection = () => {
 
               {/* Your Name */}
               <div className=" g-3">
-                <div className="col-md-12 mb-3" style={{ position: 'relative', padding: '0px' }}>
+                <div className="col-md-12 mb-3" ref={nameRef} style={{ position: 'relative', padding: '0px' }}>
                   <label className="appointmentform-label">
                     الاسم الكامل
-                    <span style={{ color: isFieldInvalid('name') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('name') ? 'red' : 'black' }}>*</span>
+                    {isFieldInvalid('name') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     name="name"
-                    value={formData.name}
                     onChange={handleChange}
                     placeholder="الاسم الكامل"
-                    required
+                   
                   />
+               
                 </div>
               </div>
 
               {/* Is this appointment for you */}
               <div className="g-3">
-                <div className="col-md-12 mb-3">
+                <div className="col-md-12 mb-3" ref={isForYouRef}>
                   <label className="appointmentform-label d-block mb-2">
                     هل الموعد لك شخصيًا؟
-                    <span style={{ color: isFieldInvalid('isForYou') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('isForYou') ? 'red' : 'black' }}>*</span>
+                      {isFieldInvalid('isForYou') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
-
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="isForYou"
-                      id="isForYouYes"
-                      value="yes"
-                      checked={formData.isForYou === 'yes'}
-                      onChange={handleChange}
-                      required
-                    />
-                    <label className="form-check-label" htmlFor="isForYouYes">
-                      لا
-                    </label>
-                  </div>
 
                   <div className="form-check form-check-inline">
                     <input
@@ -962,17 +1055,39 @@ const AppointmentSection = () => {
                       نعم
                     </label>
                   </div>
+
+                    <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="isForYou"
+                      id="isForYouYes"
+                      value="yes"
+                      checked={formData.isForYou === 'yes'}
+                      onChange={handleChange}
+                      
+                    />
+                    <label className="form-check-label" htmlFor="isForYouYes">
+                      لا
+                    </label>
+                    
+                  </div>
                 </div>
               </div>
 
               {/* Nationality */}
               <div className="g-3">
-                <div className="col-md-12 mb-3" style={{ position: 'relative', padding: '0px' }}>
+                <div className="col-md-12 mb-3" ref={nationalityRef} style={{ position: 'relative', padding: '0px' }}>
                   <label className="appointmentform-label">
                     الجنسية
-                    <span style={{ color: isFieldInvalid('nationality') ? 'red' : 'black' }}>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('nationality') ? 'red' : 'black' }}>
                       *
                     </span>
+                     {isFieldInvalid('nationality') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
 
                   {/* Button for custom dropdown */}
@@ -1035,12 +1150,17 @@ const AppointmentSection = () => {
 
               {/* Country of Residence */}
               <div className="g-3">
-                <div className="col-md-12 mb-3" style={{ position: 'relative', padding: '0px' }}>
+                <div className="col-md-12 mb-3" ref={countryRef} style={{ position: 'relative', padding: '0px' }}>
                   <label className="appointmentform-label">
                     بلد الإقامة
-                    <span style={{ color: isFieldInvalid('countryOfResidence') ? 'red' : 'black' }}>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('countryOfResidence') ? 'red' : 'black' }}>
                       *
                     </span>
+                     {isFieldInvalid('countryOfResidence') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
 
                   {/* Button for custom dropdown */}
@@ -1105,12 +1225,17 @@ const AppointmentSection = () => {
               {/* City – show only if Saudi Arabia selected */}
               {formData.countryOfResidence === 'المملكة العربية السعودية' && (
                 <div className="g-3">
-                  <div className="col-md-12 mb-3" style={{ position: 'relative', padding: '0px' }}>
+                  <div className="col-md-12 mb-3" ref={cityRef} style={{ position: 'relative', padding: '0px' }}>
                     <label className="appointmentform-label">
                       إذا كنت تعيش في المملكة العربية السعودية، يرجى ذكر المدينة.{' '}
-                      <span style={{ color: isFieldInvalid('cityIfInSA') ? 'red' : 'black' }}>
+                      <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('cityIfInSA') ? 'red' : 'black' }}>
                         *
                       </span>
+                      {isFieldInvalid('cityIfInSA') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                     </label>
 
                     {/* Button for custom dropdown */}
@@ -1201,10 +1326,15 @@ const AppointmentSection = () => {
 
               {/* Gender */}
               <div className=" g-3">
-                <div className="col-md-12 mb-3">
+                <div className="col-md-12 mb-3" ref={genderRef}>
                   <label className="appointmentform-label">
                     الجنس
-                    <span style={{ color: isFieldInvalid('gender') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('gender') ? 'red' : 'black' }}>*</span>
+                      {isFieldInvalid('gender') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
                   <div className="d-flex gap-3 mt-2">
                     <div className="form-check">
@@ -1216,7 +1346,7 @@ const AppointmentSection = () => {
                         value="male"
                         checked={formData.gender === 'male'}
                         onChange={handleChange}
-                        required
+                        
                       />
                       <label className="form-check-label" htmlFor="genderMale">
                         أنثى
@@ -1243,10 +1373,15 @@ const AppointmentSection = () => {
 
               {/* Mobile */}
               <div className="g-3">
-                <div className="col-md-12 mb-3">
+                <div className="col-md-12 mb-3" ref={mobileRef}>
                   <label className="appointmentform-label">
                     رقم الجوال
-                    <span style={{ color: isFieldInvalid('mobile') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('mobile') ? 'red' : 'black' }}>*</span>
+                      {isFieldInvalid('mobile') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
                   <input
                     type="text"
@@ -1255,17 +1390,22 @@ const AppointmentSection = () => {
                     value={formData.mobile}
                     onChange={handleChange}
                     placeholder="رقم الجوال"
-                    required
+                   
                   />
                 </div>
               </div>
 
               {/* Email */}
               <div className="g-3">
-                <div className="col-md-12 mb-3">
+                <div className="col-md-12 mb-3" ref={emailRef}>
                   <label className="appointmentform-label">
                     البريد الإلكتروني
-                    <span style={{ color: isFieldInvalid('email') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('email') ? 'red' : 'black' }}>*</span>
+                    {isFieldInvalid('email') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
                   <input
                     type="email"
@@ -1274,43 +1414,53 @@ const AppointmentSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="البريد الإلكتروني"
-                    required
+                   
                   />
                 </div>
               </div>
 
               {/* Preferred Date */}
               <div className="g-3">
-                <div className="col-md-12 mb-3">
+                <div className="col-md-12 mb-3" ref={dateRef}>
                   <label className="appointmentform-label">
                     اختر التاريخ المفضل للموعد
-                    <span style={{ color: isFieldInvalid('preferredDate') ? 'red' : 'black' }}>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('preferredDate') ? 'red' : 'black' }}>
                       *
                     </span>
+                     {isFieldInvalid('preferredDate') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
                   <input
-                    type="date"
-                    className="form-control"
-                    name="preferredDate"
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    placeholder="اختر التاريخ المفضل للموعد"
-                    required
-                  />
+                   type="date"
+  className="form-control"
+  name="preferredDate"
+  value={formData.preferredDate}
+  onChange={handleChange}
+  min={new Date().toISOString().split("T")[0]}
+
+/>
                 </div>
               </div>
 
               {/* Preferred Time */}
               {/* Preferred Time */}
               <div
-                className="custom-dropdown mb-3"
+                className="custom-dropdown mb-3"  ref={timeRef}
                 style={{ position: 'relative', padding: '0px' }}
               >
                 <label className="appointmentform-label">
                   اختر الوقت المفضل{' '}
-                  <span style={{ color: submitted && !formData.preferredTime ? 'red' : 'black' }}>
+                  <span style={{padding: '0px 8px 0px 0px', color: submitted && !formData.preferredTime ? 'red' : 'black' }}>
                     *
                   </span>
+                   {isFieldInvalid('preferredTime') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                 </label>
 
                 {/* Button */}
@@ -1421,10 +1571,15 @@ const AppointmentSection = () => {
               {/* How did you hear about us */}
               {/* How did you hear about us */}
               <div className="g-3">
-                <div className="col-md-12" style={{ position: 'relative' }}>
+                <div className="col-md-12"  ref={howHeardRef} style={{ position: 'relative' }}>
                   <label className="appointmentform-label">
                     كيف سمعت عنا؟
-                    <span style={{ color: isFieldInvalid('howHeard') ? 'red' : 'black' }}>*</span>
+                    <span style={{padding: '0px 8px 0px 0px', color: isFieldInvalid('howHeard') ? 'red' : 'black' }}>*</span>
+                       {isFieldInvalid('howHeard') && (
+    <span style={{ color: 'red',  marginTop: '0px', fontSize: '10px' }}>
+      يرجى ملء جميع الحقول المطلوبة
+    </span>
+  )}
                   </label>
                 </div>
               </div>
@@ -1507,7 +1662,7 @@ const AppointmentSection = () => {
               </div>
 
               <div className="my-3">
-                <ReCAPTCHA
+               <ReCAPTCHA
                   sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                   hl="ar"
                   onChange={(value: string | null) =>
@@ -1537,7 +1692,16 @@ const AppointmentSection = () => {
           )}
         </div>
         {/* FORM END */}
+         <div className="col-lg-12 col-md-12 pbt-140 mb-5 disclaimer-text align-items-center" style={{ maxWidth: '800px', width: '100%' }}>
+        <div className="left align-items-center" >
+          <p className="text-left align-items-center">
+            *تنويه: سيتم تأكيد الموعد فقط بعد تواصل أحد أعضاء فريق مركز الاتصال معكم هاتفياً.
+           {' '}
+          </p>
+        </div>
       </div>
+      </div>
+      
     </div>
   );
 };
