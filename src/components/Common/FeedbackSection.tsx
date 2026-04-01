@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import { MailIcon, LocationIcon } from '@/components/icons';
+import ReCAPTCHA from 'react-google-recaptcha';
 const FeedbackSection = () => {
+  // Form data ka state
   const [formData, setFormData] = useState({
     branch: '',
     name: '',
@@ -14,26 +15,31 @@ const FeedbackSection = () => {
     story: '',
     feedbackType: [] as string[],
     feedbackDetails: '',
-    recaptcha: '',
+      recaptcha: '',
     consent: false,
   });
-const fieldRefs = {
-  branch: useRef<HTMLDivElement>(null),
-  name: useRef<HTMLInputElement>(null),
-  phone: useRef<HTMLInputElement>(null),
-  email: useRef<HTMLInputElement>(null),
-  rating: useRef<HTMLDivElement>(null),
-  feedbackType: useRef<HTMLDivElement>(null),
-  feedbackDetails: useRef<HTMLTextAreaElement>(null),
-  consent: useRef<HTMLInputElement>(null),
-};
-  const [statusMessage, setStatusMessage] = useState('');
+
+  // Field refs for scroll/focus
+  const fieldRefs: { [K in keyof typeof formData]?: React.RefObject<any> } = {
+    branch: useRef<HTMLDivElement>(null),
+    name: useRef<HTMLInputElement>(null),
+    phone: useRef<HTMLInputElement>(null),
+    email: useRef<HTMLInputElement>(null),
+    rating: useRef<HTMLDivElement>(null),
+    feedbackType: useRef<HTMLDivElement>(null),
+    feedbackDetails: useRef<HTMLTextAreaElement>(null),
+    consent: useRef<HTMLInputElement>(null),
+    recaptcha: useRef<HTMLDivElement>(null),
+  };
+
   const [submitted, setSubmitted] = useState(false);
+  const [submittedSuccessfully, setSubmittedSuccessfully] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
+  // Header animation
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -42,103 +48,99 @@ const fieldRefs = {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.3 }
     );
-
     if (headerRef.current) observer.observe(headerRef.current);
     return () => observer.disconnect();
   }, []);
 
+  // Form input change
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
- const isFieldInvalid = (field: keyof typeof formData) => {
-  if (!submitted) return false;
+  // Validation check
+  const isFieldInvalid = (field: keyof typeof formData) => {
+    if (!submitted) return false;
 
-  const value = formData[field];
+    const value = formData[field];
+    if (Array.isArray(value)) return value.length === 0; // checkbox array
+    if (typeof value === 'boolean') return !value; // consent checkbox
+    return !value;
+  };
 
-  if (Array.isArray(value)) {
-    return value.length === 0; // 👈 array check
-  }
+  // Form submit
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
 
-  if (typeof value === 'boolean') {
-    return !value; // 👈 consent checkbox
-  }
+    // Required fields
+    const requiredFields: (keyof typeof formData)[] = [
+      'branch',
+      'name',
+      'phone',
+      'email',
+      'rating',
+      'feedbackType',
+      'feedbackDetails',
+      'recaptcha',
+      'consent',
+    ];
 
-  return !value;
-};
-
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setSubmitted(true);
-
-  // Required fields in order
-  const requiredFields: (keyof typeof formData)[] = [
-    'branch',
-    'name',
-    'phone',
-    'email',
-    'rating',
-    'feedbackType',
-    'feedbackDetails',
-    'consent',
-  ];
-
-  // Find first invalid field
-  const firstInvalid = requiredFields.find((field) => isFieldInvalid(field));
-
-  if (firstInvalid) {
-    const ref = fieldRefs[firstInvalid];
-    if (ref?.current) {
-      // Scroll smoothly to first invalid field
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // Focus input/textarea if possible
-      if ('focus' in ref.current) {
-        (ref.current as HTMLElement).focus();
+    // First invalid field scroll & focus
+    const firstInvalid = requiredFields.find((field) => isFieldInvalid(field));
+    if (firstInvalid) {
+      const ref = fieldRefs[firstInvalid];
+      if (ref?.current) {
+        ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if ('focus' in ref.current) (ref.current as HTMLElement).focus();
       }
+      return; // stop submission
     }
-    return; // Stop submission until all required fields are valid
-  }
 
-  // If all valid, send form
-  try {
-    const res = await fetch('/api/send-feedback', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-    if (data.success) {
-      setStatusMessage('✅ Thank you for your valuable feedback!');
-      setFormData({
-        branch: '',
-        name: '',
-        phone: '',
-        email: '',
-        rating: '',
-        story: '',
-        feedbackType: [],
-        feedbackDetails: '',
-         recaptcha: '',
-        consent: false,
+    // Send data
+    try {
+      const res = await fetch('/api/send-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setSubmitted(false);
-    } 
-  } catch (err) {
-    console.error('Submit error:', err);
-    setStatusMessage('❌ Failed to send feedback.');
-  }
-};
+      const data = await res.json();
+
+      if (data.success) {
+        // ✅ Form hide, thank you message show
+        setSubmittedSuccessfully(true);
+        setStatusMessage('✅ Aapka feedback receive ho gaya! Shukriya!');
+        setFormData({
+          branch: '',
+          name: '',
+          phone: '',
+          email: '',
+          rating: '',
+          story: '',
+          feedbackType: [],
+          feedbackDetails: '',
+          recaptcha: '',
+          consent: false,
+        });
+        setSubmitted(false);
+
+        // Optional: 5 sec baad message hide karna
+       
+      } 
+    } catch (err) {
+      console.error('Submit error:', err);
+      setStatusMessage('');
+    }
+  };
 
   return (
     <div className="fertility-area mt-5">
       <div className="container">
+        {!submittedSuccessfully && (
         <div className="section-title">
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-12 col-md-12">
@@ -182,9 +184,10 @@ const fieldRefs = {
             </div>
           </div>
         </div>
-
+)}
         {/* FORM START */}
         <div className="d-flex justify-content-center align-items-center mb-5 pbt-140">
+          {!submittedSuccessfully && (
           <form
             onSubmit={handleSubmit}
             className="w-100 appointment-form"
@@ -479,7 +482,7 @@ const fieldRefs = {
                 permission to contact you to discuss your feedback.
               </label>
             </div>
-            <div className="my-3">
+           <div className="my-3" ref={fieldRefs.recaptcha}>
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                 onChange={(value: string | null) =>
@@ -494,6 +497,30 @@ const fieldRefs = {
             </div>
             {statusMessage && <p className="mt-3 text-center">{statusMessage}</p>}
           </form>
+          )}
+
+{statusMessage && submittedSuccessfully && (
+  <div className="d-flex justify-content-center align-items-center" style={{  textAlign: 'center' }}>
+  <div className="section-title">
+    <div className="row justify-content-center align-items-center g-4">
+      <div className="col-lg-12 col-md-12">
+        <div className="left">
+          <h2 ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
+            Thank you for taking the time to share your feedback with us.
+          </h2>
+        </div>
+      </div>
+      <div className="left">
+        <p>
+          We truly value your insights, as they help us continuously improve and provide the highest standard of care. 
+          <br/>
+          We appreciate your trust and look forward to supporting you throughout your journey. 
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+)}
         </div>
       </div>
     </div>
