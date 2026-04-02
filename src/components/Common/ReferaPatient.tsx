@@ -18,7 +18,6 @@ type ReferralFormData = {
 
   reasons: string[]; // mandatory (at least one)
   medicalReason: string; // optional
-
   recaptcha: string; // mandatory
 };
 
@@ -38,15 +37,46 @@ const AppointmentSection = () => {
 
     reasons: [],
     medicalReason: '',
-
-    recaptcha: '',
+recaptcha: '',
   });
-
+const [submitted, setSubmitted] = useState(false);
   const messageRef = useRef<HTMLDivElement | null>(null);
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+const fieldRefs = {
+  referTo: useRef<HTMLDivElement>(null),
+  physicianName: useRef<HTMLDivElement>(null),
+  physicianPhone: useRef<HTMLDivElement>(null),
+  patientName: useRef<HTMLDivElement>(null),
+  patientPhone: useRef<HTMLDivElement>(null),
+};
+const isEmpty = (field: keyof ReferralFormData) => {
+  const value = formData[field];
+  if (Array.isArray(value)) return value.length === 0;
+  return !value;
+};
 
+const isInvalid = (field: keyof ReferralFormData) => {
+  if (!submitted) return false;
+  return isEmpty(field);
+};
+const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
+  if (!ref?.current) return;
+
+  ref.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  });
+
+  const el =
+    ref.current.querySelector('input, textarea, select') ||
+    ref.current;
+
+  if (el) {
+    setTimeout(() => (el as HTMLElement).focus(), 300);
+  }
+};
   const REASONS = useMemo(
     () => [
       'Consultation',
@@ -123,7 +153,25 @@ const AppointmentSection = () => {
 
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
+
+  setSubmitted(true); 
+
+  const requiredFields: (keyof ReferralFormData)[] = [
+    'referTo',
+    'physicianName',
+    'physicianPhone',
+    'patientName',
+    'patientPhone',
+  ];
+
+  const firstInvalid = requiredFields.find((f) => isEmpty(f));
+
+if (firstInvalid) {
+  scrollToField(fieldRefs[firstInvalid as keyof typeof fieldRefs]);
+  return;
+}
+
     setMessage(null);
     setShowThankYou(false);
 
@@ -158,12 +206,20 @@ const AppointmentSection = () => {
 
       setMessage(
         <>
-          <strong>Thank you! Your referral has been received.</strong>
-          <br />
-          Our team will contact the patient shortly to support and facilitate the next steps in
-          their care.
-          <br />
-          <em>We look forward to connecting soon.</em>
+          <div className="section-title">
+          <div className="row justify-content-center align-items-center g-4">
+            <div className="col-lg-12 col-md-12">
+              <div className="left">
+               <h2>Thank you for referring your patient to us.</h2>
+              </div>
+            </div>
+
+            <div className="left">
+              <p >
+           We sincerely appreciate your trust and ongoing collaboration. <br />
+We will contact the patient within 24 – 48 hours and will keep you updated as appropriate.  </p></div>
+          </div>
+        </div>
         </>,
       );
       setShowThankYou(true);
@@ -199,8 +255,9 @@ const AppointmentSection = () => {
   };
 
   return (
-    <div className="fertility-area mt-3 text-center mb-5">
+    <div className="fertility-area mt-3 text-center mb-3">
       <div className="container">
+        {!showThankYou && (
         <div className="section-title">
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-12 col-md-12">
@@ -215,7 +272,7 @@ const AppointmentSection = () => {
 and a member of our healthcare team will contact the patient promptly to support and facilitate the next steps in their care.  </p></div>
           </div>
         </div>
-
+ )}
         {/* FORM START */}
         {!showThankYou && (
           <form
@@ -224,9 +281,15 @@ and a member of our healthcare team will contact the patient promptly to support
             style={{ maxWidth: '1000px' }}
           >
             {/* Refer to */}
-                <div className="card p-3 mb-3">
+                <div className="card p-3 mb-3" ref={fieldRefs.referTo}>
               <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 gap-md-5">
-                <h6 className="mb-0 form-label text-size">Refer to:</h6>
+                <h6 className="mb-0 form-label text-size">Refer to: 
+                 <span style={{padding: '0px 0px 0px 8px', color: isInvalid('referTo') ? 'red' : 'black' }}>*</span>
+                {isInvalid('referTo') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+    please fill all required fileds
+    </span>
+  )}</h6>
 
                 <div className="d-flex flex-column flex-md-row gap-2 gap-md-5">
                   {(['Bnoon – Jeddah', 'Bnoon – Riyadh', 'Bnoon – Al Ahsa'] as const).map(
@@ -255,26 +318,36 @@ and a member of our healthcare team will contact the patient promptly to support
 
             {/* Referring Physician Information */}
             <h5 className="mb-3 text-size title-size">Referring Physician Information</h5>
-            <div className="card p-3 mb-3">
-              <div className="mb-3">
-                <label className="form-label text-size">Physician Name *</label>
+            <div className="card p-3 mb-3" >
+              <div className="mb-3" ref={fieldRefs.physicianName}>
+                <label className="form-label text-size">Physician Name    <span style={{padding: '0px 0px 0px 8px', color: isInvalid('physicianName') ? 'red' : 'black' }}>*</span>
+                {isInvalid('physicianName') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+    please fill all required fileds
+    </span>
+  )}</label>
                 <input
                   className="form-control"
                   value={formData.physicianName}
                   onChange={(e) => setField('physicianName', e.target.value)}
                   type="text"
-                  required
+                  
                 />
               </div>
 
-              <div className="mb-3">
-                <label className="form-label text-size">Phone *</label>
+              <div className="mb-3" ref={fieldRefs.physicianPhone}>
+                <label className="form-label text-size">Phone <span style={{padding: '0px 0px 0px 8px', color: isInvalid('physicianPhone') ? 'red' : 'black' }}>*</span>
+                {isInvalid('physicianPhone') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+    please fill all required fileds
+    </span>
+  )}</label>
                 <input
                   className="form-control"
                   value={formData.physicianPhone}
                   onChange={(e) => setField('physicianPhone', e.target.value)}
                   type="tel"
-                  required
+                  
                 />
               </div>
 
@@ -318,26 +391,34 @@ and a member of our healthcare team will contact the patient promptly to support
 
             {/* Referred Patient Information */}
             <h5 className="mb-3 text-size title-size">Referred Patient Information</h5>
-            <div className="card p-3 mb-3">
-              <div className="mb-3">
-                <label className="form-label text-size">Patient Name *</label>
+            <div className="card p-3 mb-3" >
+              <div className="mb-3" ref={fieldRefs.patientName}>
+                <label className="form-label text-size">Patient Name <span style={{padding: '0px 0px 0px 8px', color: isInvalid('patientName') ? 'red' : 'black' }}>*</span>
+                {isInvalid('patientName') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+    please fill all required fileds
+    </span>
+  )}</label>
                 <input
                   className="form-control"
                   value={formData.patientName}
                   onChange={(e) => setField('patientName', e.target.value)}
                   type="text"
-                  required
                 />
               </div>
 
-              <div className="mb-3">
-                <label className="form-label text-size">Patient Phone *</label>
+              <div className="mb-3" ref={fieldRefs.patientPhone}>
+                <label className="form-label text-size">Patient Phone <span style={{padding: '0px 0px 0px 8px', color: isInvalid('patientPhone') ? 'red' : 'black' }}>*</span>
+                {isInvalid('patientPhone') && (
+    <span style={{ color: 'red', marginTop: '0px', fontSize: '10px' }}>
+    please fill all required fileds
+    </span>
+  )}</label>
                 <input
                   className="form-control"
                   value={formData.patientPhone}
                   onChange={(e) => setField('patientPhone', e.target.value)}
                   type="tel"
-                  required
                 />
               </div>
 
@@ -405,7 +486,7 @@ and a member of our healthcare team will contact the patient promptly to support
 
             {/* reCAPTCHA */}
             <div className="my-3">
-              <ReCAPTCHA
+                <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                 onChange={(value: string | null) => setField('recaptcha', value || '')}
               />
