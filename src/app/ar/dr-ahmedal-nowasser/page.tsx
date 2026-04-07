@@ -13,7 +13,6 @@ export default function DrAhmedNowasserPage() {
   return (
     <>
       <Navbar />
-      <OptimizedPageBanner imageName="clinics-banner-ar" />
       <DrAhmedNowasser />
     </>
   );
