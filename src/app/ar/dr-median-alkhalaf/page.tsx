@@ -13,7 +13,6 @@ export default function DrMedianAlkhalafPage() {
   return (
     <>
       <Navbar />
-      <OptimizedPageBanner imageName="clinics-banner-ar" />
       <DrMedianAlkhalaf />
     </>
   );
