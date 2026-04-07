@@ -1,3 +1,9 @@
+## [1.3.269](https://github.com/bnoon-ksa/landing-page/compare/v1.3.268...v1.3.269) (2026-04-07)
+
+### Bug Fixes
+
+* change css ([#378](https://github.com/bnoon-ksa/landing-page/issues/378)) ([9ac8e3d](https://github.com/bnoon-ksa/landing-page/commit/9ac8e3d1a3d58b8c4932371574f9bd694a6224b9))
+
 ## [1.3.268](https://github.com/bnoon-ksa/landing-page/compare/v1.3.267...v1.3.268) (2026-04-07)
 
 ### Bug Fixes
