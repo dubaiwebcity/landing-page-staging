@@ -13,7 +13,6 @@ export default function BnoonBassamPage() {
   return (
     <>
       <Navbar />
-      <OptimizedPageBanner imageName="clinics-banner-ar" />
       <DrBassam />
     </>
   );
