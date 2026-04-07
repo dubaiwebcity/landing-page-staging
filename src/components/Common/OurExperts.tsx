@@ -282,11 +282,6 @@ const OurExperts = () => {
                     font-size: 18px;
                     text-decoration: none !important;
                   }
-                  .physicians-btn {
-                    width: 105px !important;
-                    height: 40px !important;
-                    border-radius: 0px !important;
-                  }
                   .doctor-card .content .sub {
                     font-size: 16px;
                     display: block;
