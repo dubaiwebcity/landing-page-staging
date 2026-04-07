@@ -13,7 +13,6 @@ export default function BnoonAlahsaPage() {
   return (
     <>
       <Navbar />
-      <OptimizedPageBanner imageName="clinics-banner-ar" />
       <DrRaniaAlsherify />
     </>
   );
