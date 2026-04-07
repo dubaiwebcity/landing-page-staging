@@ -286,11 +286,7 @@ const OurExperts = () => {
                     color: #000 !important;
                     text-decoration: none !important;
                   }
-                  .physicians-btn {
-                    width: 92px !important;
-                    height: 37px !important;
-                    border-radius: 0px !important;
-                  }
+            
                   .doctor-location {
                     color: #fff;
                     font-size: 12px !important;
