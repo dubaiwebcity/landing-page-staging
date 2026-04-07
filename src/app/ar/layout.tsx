@@ -51,6 +51,10 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
           rel="stylesheet"
           href="https://bnoon-website.b-cdn.net/assets/css/arabic-responsive.css"
         />
+         <link
+    href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+    rel="stylesheet"
+  />
       </head>
      <body dir="rtl">
       <div className={`${cairo.variable} arabic`}>
