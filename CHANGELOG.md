@@ -1,3 +1,9 @@
+## [1.3.267](https://github.com/bnoon-ksa/landing-page/compare/v1.3.266...v1.3.267) (2026-04-07)
+
+### Bug Fixes
+
+* change banner ([#376](https://github.com/bnoon-ksa/landing-page/issues/376)) ([a09b294](https://github.com/bnoon-ksa/landing-page/commit/a09b294477d1f3975ddbe789175095832ce19ec3))
+
 ## [1.3.266](https://github.com/bnoon-ksa/landing-page/compare/v1.3.265...v1.3.266) (2026-04-07)
 
 ### Bug Fixes
