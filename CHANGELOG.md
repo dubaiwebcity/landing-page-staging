@@ -1,3 +1,9 @@
+## [1.3.272](https://github.com/bnoon-ksa/landing-page/compare/v1.3.271...v1.3.272) (2026-04-08)
+
+### Bug Fixes
+
+* gtm code ([#382](https://github.com/bnoon-ksa/landing-page/issues/382)) ([6d00954](https://github.com/bnoon-ksa/landing-page/commit/6d009544548d700d30a99d3407bd8b6180f61136))
+
 ## [1.3.271](https://github.com/bnoon-ksa/landing-page/compare/v1.3.270...v1.3.271) (2026-04-08)
 
 ### Bug Fixes
