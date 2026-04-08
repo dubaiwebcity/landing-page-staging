@@ -1,3 +1,13 @@
+## [1.3.271](https://github.com/bnoon-ksa/landing-page/compare/v1.3.270...v1.3.271) (2026-04-08)
+
+### Bug Fixes
+
+* add comma and install third-parties ([#380](https://github.com/bnoon-ksa/landing-page/issues/380)) ([f336db0](https://github.com/bnoon-ksa/landing-page/commit/f336db08c1bb4f4870de973be75f38e5ae070cea))
+* add dependencies ([66b581f](https://github.com/bnoon-ksa/landing-page/commit/66b581fb53aa3ba0d35bbc198290ab185c84a39f))
+* change text ([#379](https://github.com/bnoon-ksa/landing-page/issues/379)) ([eb8a985](https://github.com/bnoon-ksa/landing-page/commit/eb8a985100c88c07a7e7ec4ebc46c39f20efaed3))
+* gtm code ([#381](https://github.com/bnoon-ksa/landing-page/issues/381)) ([8d2e705](https://github.com/bnoon-ksa/landing-page/commit/8d2e705fc877b12aafa1b9e4f99ce192bf5fa798))
+* remove dependencies ([d078da1](https://github.com/bnoon-ksa/landing-page/commit/d078da1d3b636692c655575f97155519978cf2e4))
+
 ## [1.3.270](https://github.com/bnoon-ksa/landing-page/compare/v1.3.269...v1.3.270) (2026-04-07)
 
 ### Bug Fixes
