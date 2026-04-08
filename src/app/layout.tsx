@@ -1,32 +1,13 @@
+import { GoogleTagManager } from '@next/third-parties/google';
 import Script from "next/script";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl">
-
-      {/* ✅ Head Tracking Scripts */}
-      <head />
-
       <body>
 
-        {/* ✅ Google Tag Manager */}
-        <Script
-          strategy="afterInteractive"
-          id="gtm-script"
-          dangerouslySetInnerHTML={{
-            __html: `
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NVPZTJNP');
-            `,
-          }}
-        />
+        {/* ✅ Google Tag Manager (must be at top of body) */}
+        <GoogleTagManager gtmId="GTM-NVPZTJNP" />
 
         {/* ✅ Facebook Pixel */}
         <Script strategy="afterInteractive" id="facebook-pixel">
@@ -49,7 +30,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             fbq('track', 'PageView');
           `}
         </Script>
-  {/* ✅ TikTok Pixel */}
+
+        {/* ✅ TikTok Pixel */}
         <Script strategy="afterInteractive" id="tiktok-pixel">
           {`
             !function (w, d, t) {
@@ -64,25 +46,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               };
 
               ttq.load('D6ES013C77UAAN0097SG');
-               // ttq.page();  // temporarily disable
+              // ttq.page();  // enable later if needed
             }(window, document, 'ttq');
           `}
         </Script>
-  
-
-        {/* ✅ NoScript GTM */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NVPZTJNP"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
 
         {children}
       </body>
-
     </html>
   );
 }
