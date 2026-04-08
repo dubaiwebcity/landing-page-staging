@@ -66,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   d.getElementsByTagName("head")[0].appendChild(s);
                 };
                 ttq.load('D6ES013C77UAAN0097SG');
+                ttq.page();
               }(window, document, 'ttq');
             `,
           }}
