@@ -112,13 +112,13 @@ const Brochures = () => {
                         {/* FOOTER */}
                         <div className="card-footer">
                           <div>
-                            <span>FILE SIZE</span>
-                            <strong>{item.size}</strong>
+                            <span className="text-font-style" >FILE SIZE</span>
+                            <strong className="text-font-style">{item.size}</strong>
                           </div>
 
                           <div>
-                            <span>UPDATED</span>
-                            <strong>{item.updated}</strong>
+                            <span className="text-font-style">UPDATED</span>
+                            <strong className="text-font-style">{item.updated}</strong>
                           </div>
 
                           <a href={item.downloadpdf} target="_blank" className="download-icon">
