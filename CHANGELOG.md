@@ -1,3 +1,9 @@
+## [1.3.276](https://github.com/bnoon-ksa/landing-page/compare/v1.3.275...v1.3.276) (2026-04-09)
+
+### Bug Fixes
+
+* add classes ([#387](https://github.com/bnoon-ksa/landing-page/issues/387)) ([d61e821](https://github.com/bnoon-ksa/landing-page/commit/d61e821f9929df042636a583511fea26bfe22e5c))
+
 ## [1.3.275](https://github.com/bnoon-ksa/landing-page/compare/v1.3.274...v1.3.275) (2026-04-09)
 
 ### Bug Fixes
