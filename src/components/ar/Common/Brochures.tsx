@@ -85,7 +85,7 @@ const Brochures = () => {
               <h2 className="mb-1 fw-bold text-center">{section.section_ar}</h2>
 
               {/* English Heading */}
-              <h2 className="mb-4 fw-bold text-center">{section.section_en}</h2>
+              <h2 className="mb-4 fw-bold text-center text-font-style">{section.section_en}</h2>
             </div>
             <div className="row g-5 justify-content-center">
               {section.items.map((item, index) => (
@@ -108,7 +108,7 @@ const Brochures = () => {
                       <div className="card-content">
 
                         <h4>{item.title_ar}</h4>
-                        <h3>{item.title_en}</h3>
+                        <h3 className="text-font-style">{item.title_en}</h3>
                         {/* FOOTER */}
                         <div className="card-footer">
                           <div>
@@ -137,7 +137,7 @@ const Brochures = () => {
 
       {/* CSS inside same file */}
       <style jsx>{`
-    
+     
       `}</style>
     </div>
   );
