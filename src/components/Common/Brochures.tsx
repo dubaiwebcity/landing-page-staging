@@ -14,9 +14,9 @@ const brochures = [
         title_ar: "تعـليـمـات مـا قبل سحـب البـويـضـات ",
         size: "2.1 MB",
         updated: "Oct 2026",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/egg-retrieval-pre.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochures/pre-egg-retrieval1.jpg",
         pdf: "/en/egg-retrieval-pre-operative",
-        downloadpdf: "/en/egg-retrieval-pre-operative",
+        downloadpdf: "/pdf/pre-operative-instructions-egg-retrieval.pdf",
       },
       
       {
@@ -24,9 +24,9 @@ const brochures = [
         title_ar: "تـعـلـيـمات ما بعد سحـب البـويـضـات",
         size: "2.8 MB",
         updated: "Oct 2026",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/egg-retrieval-post.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval1.jpg",
         pdf: "/en/egg-retrieval-post-operative",
-        downloadpdf: "/en/egg-retrieval-post-operative",
+        downloadpdf: "/pdf/post-operative-instructions-egg-retrieval.pdf",
       },
     ],
   },
@@ -41,16 +41,16 @@ const brochures = [
         updated: "Jan 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochures/pre-embryo-transfer.jpg",
         pdf: "/en/embryo-transfer-pre-operative",
-        downloadpdf: "/en/embryo-transfer-pre-operative",
+        downloadpdf: "/pdf/pre-operative-instructions-enbryo-transfer.pdf",
       },
       {
         title_en: "POST-OPERATIVE INSTRUCTIONS: EMBRYO TRANSFER",
         title_ar: "تـعـلـيـمات ما بعد إرجـــاع األجـــنـــة",
          size: "4.5 MB",
         updated: "Jan 2026",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/embryo-transfer-post.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer1.jpg",
         pdf: "/en/embryo-transfer-post-operative",
-        downloadpdf: "/en/embryo-transfer-post-operative",
+        downloadpdf: "/pdf/post-operative-instructions-enbryo-transfer.pdf",
       },
      
     ],
@@ -66,11 +66,12 @@ const brochures = [
         updated: "Dec 2025",
         image: "https://bnoon-website.b-cdn.net/images/brochures/semen.jpg",
         pdf: "/en/semen-collection-instructions",
-        downloadpdf: "/en/semen-collection-instructions",
+        downloadpdf: "/pdf/semen-collection-instructions.pdf",
       },
     ],
   },
 ];
+
 
 const Brochures = () => {
   const cardAnimation = {
