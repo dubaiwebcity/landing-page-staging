@@ -121,8 +121,8 @@ const Brochures = () => {
                             <strong className="text-font-style">{item.updated}</strong>
                           </div>
 
-                          <a href={item.downloadpdf} target="_blank" className="download-icon">
-                            <img src="https://bnoon-website.b-cdn.net/images/icons/download-file-icon.svg" alt="download" />
+                           <a href={item.downloadpdf} target="_blank" className="download-icon">
+                           View more
                           </a>
                         </div>
                       </div>
