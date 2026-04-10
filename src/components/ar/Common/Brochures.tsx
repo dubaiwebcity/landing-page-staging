@@ -13,7 +13,7 @@ const brochures = [
          downloadpdf: "/pdf/pre-operative-instructions-egg-retrieval.pdf",
       },
       {
-        title_ar: "تـعـلـمات ما بعد سحـب البـويـضـات",
+        title_ar: "تعـليـمـات ما بعد سحـب البـويـضـات",
         image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval1.jpg",
        downloadpdf: "/pdf/post-operative-instructions-egg-retrieval.pdf",
       },
@@ -29,7 +29,7 @@ const brochures = [
        downloadpdf: "/pdf/pre-operative-instructions-enbryo-transfer.pdf",
       },
       {
-        title_ar: "تـعـلـمات ما بعد إرجـــاع األجـــنـــة",
+        title_ar: "تعـليـمـات ما بعد إرجـــاع األجـــنـــة",
         image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer1.jpg",
        downloadpdf: "/pdf/post-operative-instructions-enbryo-transfer.pdf",
       },
