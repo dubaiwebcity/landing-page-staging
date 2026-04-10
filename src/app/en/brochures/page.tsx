@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import Navbar from '@/components/Layout/Navbar';
 import Brochures from '@/components/Common/Brochures';
-
+import FoundingPageBanner from "@/components/Layout/FoundingPageBanner";
 export const metadata: Metadata = {
   title: 'About Us – Bnoon',
   description:
@@ -15,7 +15,42 @@ export default function AboutUsPage() {
       <Navbar />
 
       {/* PageBanner with static content */}
-      <OptimizedPageBanner imageName="aboutus-banner" />
+       <div style={{ position: "relative" }}>
+       <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/en/brochures-banner-en.jpg" />
+ {/* ✅ FIX: ensure overlay is above image */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      backgroundColor: "#004d6754",
+      zIndex: 5,
+      pointerEvents: "none",
+    }}
+  />
+
+  <div className="container">
+    <div
+      className="second-banner-content reveal-text text-banner"
+      style={{
+        position: "absolute",
+        top: "50%",
+        transform: "translateY(-50%)",
+        zIndex: 20,
+      }}
+    >
+      <h1 style={{ color: "#ffffff" }}>
+        <span className="rowdies-font text-size">
+         
+Patient Resources & Brochures
+        </span>
+      </h1>
+
+      <p style={{ color: "#fff" }} className="special-desc"></p>
+      <p style={{ color: "#fff" }} className="terms-text"></p>
+    </div>
+  </div>
+
+</div>
       <Brochures />
     </>
   );
