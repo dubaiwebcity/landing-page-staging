@@ -15,7 +15,7 @@ const brochures = [
         updated: "Oct 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochures/pre-egg-retrieval.jpg",
         pdf: "/ar/egg-retrieval-pre-operative",
-        downloadpdf: "/pdf/pre-operative-instructions-egg-retrieval.pdf",
+        downloadpdf: "/ar/egg-retrieval-pre-operative",
       },
       {
         title_en: "POST-OPERATIVE INSTRUCTIONS: EGG RETRIEVAL",
@@ -24,7 +24,7 @@ const brochures = [
         updated: "Oct 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval.jpg",
         pdf: "/ar/egg-retrieval-post-operative",
-        downloadpdf: "/pdf/post-operative-instructions-egg-retrieval.pdf",
+        downloadpdf: "/ar/egg-retrieval-post-operative",
       },
     ],
   },
@@ -39,7 +39,7 @@ const brochures = [
         updated: "Jan 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochures/pre-embryo-transfer.jpg",
         pdf: "/ar/embryo-transfer-pre-operative",
-        downloadpdf: "/pdf/pre-operative-instructions-enbryo-transfer.pdf",
+        downloadpdf: "/ar/embryo-transfer-pre-operative",
       },
       {
         title_en: "POST-OPERATIVE INSTRUCTIONS: EMBRYO TRANSFER",
@@ -48,7 +48,7 @@ const brochures = [
         updated: "Jan 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer.jpg",
         pdf: "/ar/embryo-transfer-post-operative",
-        downloadpdf: "/pdf/post-operative-instructions-enbryo-transfer.pdf",
+        downloadpdf: "/ar/embryo-transfer-post-operative",
       },
     ],
   },
@@ -63,7 +63,7 @@ const brochures = [
         updated: "Dec 2025",
         image: "https://bnoon-website.b-cdn.net/images/brochures/semen.jpg",
         pdf: "/ar/semen-collection-instructions",
-        downloadpdf: "/pdf/semen-collection-instructions.pdf",
+        downloadpdf: "/ar/semen-collection-instructions",
       },
     ],
   },
@@ -121,7 +121,7 @@ const Brochures = () => {
                             <strong className="text-font-style">{item.updated}</strong>
                           </div>
 
-                           <a href={item.downloadpdf} target="_blank" className="download-icon">
+                          <a href={item.downloadpdf}  className="download-icon">
                            View more
                           </a>
                         </div>
