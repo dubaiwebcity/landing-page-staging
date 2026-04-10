@@ -66,7 +66,7 @@ const brochures = [
         updated: "Dec 2025",
         image: "https://bnoon-website.b-cdn.net/images/brochures/semen.jpg",
         pdf: "/en/semen-collection-instructions",
-        downloadpdf: "/pdf/semen-collection-instructions.pdf",
+        downloadpdf: "/en/semen-collection-instructions",
       },
     ],
   },
