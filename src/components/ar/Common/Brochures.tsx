@@ -13,7 +13,7 @@ const brochures = [
         title_ar: "تعـليـمـات مـا قبل سحـب البـويـضـات ",
         size: "2.1 MB",
         updated: "Oct 2026",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/pre-egg-retrieval.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochures/pre-egg-retrieval1.jpg",
         pdf: "/ar/egg-retrieval-pre-operative",
         downloadpdf: "/ar/egg-retrieval-pre-operative",
       },
@@ -22,7 +22,7 @@ const brochures = [
         title_ar: "تـعـلـيـمات ما بعد سحـب البـويـضـات",
         size: "2.8 MB",
         updated: "Oct 2026",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval1.jpg",
         pdf: "/ar/egg-retrieval-post-operative",
         downloadpdf: "/ar/egg-retrieval-post-operative",
       },
@@ -46,7 +46,7 @@ const brochures = [
         title_ar: "تـعـلـيـمات ما بعد إرجـــاع األجـــنـــة",
         size: "4.5 MB",
         updated: "Jan 2026",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer1.jpg",
         pdf: "/ar/embryo-transfer-post-operative",
         downloadpdf: "/ar/embryo-transfer-post-operative",
       },
@@ -76,16 +76,15 @@ const Brochures = () => {
   };
 
   return (
-    <div className="brochures-area bg-color" dir="ltr">
+    <div className="brochures-area bg-color" dir="rtl">
       <div className="container mt-5 mb-5 ">
         {brochures.map((section, i) => (
           <div key={i} className="section-title mt-5 mb-5">
             <div key={i} className="left">
               {/* Arabic Heading */}
-              <h2 className="mb-1 fw-bold text-center">{section.section_ar}</h2>
+              <h2 className="mb-4 fw-bold text-center">{section.section_ar}</h2>
 
-              {/* English Heading */}
-              <h2 className="mb-4 fw-bold text-center text-font-style">{section.section_en}</h2>
+             
             </div>
             <div className="row g-5 justify-content-center">
               {section.items.map((item, index) => (
@@ -108,13 +107,13 @@ const Brochures = () => {
                       <div className="card-content">
 
                         <h4>{item.title_ar}</h4>
-                        <h3 className="text-font-style">{item.title_en}</h3>
+                       
                         {/* FOOTER */}
                         <div className="card-footer">
                        
 
                           <a href={item.downloadpdf}  className="download-icon">
-                           View more
+                           اقرأ المزيد
                           </a>
                         </div>
                       </div>
