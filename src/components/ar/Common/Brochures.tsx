@@ -10,12 +10,12 @@ const brochures = [
       {
         title_ar: "تعـليـمـات مـا قبل سحـب البـويـضـات ",
         image: "https://bnoon-website.b-cdn.net/images/brochures/pre-egg-retrieval1.jpg",
-        downloadpdf: "/ar/egg-retrieval-pre-operative",
+         downloadpdf: "/pdf/pre-operative-instructions-egg-retrieval.pdf",
       },
       {
         title_ar: "تـعـلـمات ما بعد سحـب البـويـضـات",
         image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval1.jpg",
-        downloadpdf: "/ar/egg-retrieval-post-operative",
+       downloadpdf: "/pdf/post-operative-instructions-egg-retrieval.pdf",
       },
     ],
   },
@@ -26,12 +26,12 @@ const brochures = [
       {
         title_ar: "تعـليـمـات مـا قبل إرجـــاع األجـــنـــة",
         image: "https://bnoon-website.b-cdn.net/images/brochures/pre-embryo-transfer.jpg",
-        downloadpdf: "/ar/embryo-transfer-pre-operative",
+       downloadpdf: "/pdf/pre-operative-instructions-enbryo-transfer.pdf",
       },
       {
         title_ar: "تـعـلـمات ما بعد إرجـــاع األجـــنـــة",
         image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer1.jpg",
-        downloadpdf: "/ar/embryo-transfer-post-operative",
+       downloadpdf: "/pdf/post-operative-instructions-enbryo-transfer.pdf",
       },
     ],
   },
@@ -42,12 +42,11 @@ const brochures = [
       {
         title_ar: "تعليمات جمع عينة السائل المنوي",
         image: "https://bnoon-website.b-cdn.net/images/brochures/semen.jpg",
-        downloadpdf: "/ar/semen-collection-instructions",
+         downloadpdf: "/pdf/semen-collection-instructions.pdf",
       },
     ],
   },
 ];
-
 const Brochures = () => {
   const [activeTab, setActiveTab] = useState("All");
 
