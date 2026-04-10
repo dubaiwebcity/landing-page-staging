@@ -93,7 +93,7 @@ const filteredItems =
    
   return (
    
-  <div className="fertility-area bg-color">
+  <div className="brochures-area bg-color">
     <div className="container mt-5 mb-5 ">
 
       {/* ✅ TABS (FIXED POSITION) */}
