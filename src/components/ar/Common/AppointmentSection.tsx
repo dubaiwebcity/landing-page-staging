@@ -559,7 +559,7 @@ const AppointmentSection = () => {
                         });
                         sessionStorage.setItem("bnoon_booking_tracked", "true");
                     }
-                }
+                } 
                 setMessage(
                     <>
                         <div className="section-title">
