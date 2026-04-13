@@ -1,3 +1,9 @@
+## [1.3.294](https://github.com/bnoon-ksa/landing-page/compare/v1.3.293...v1.3.294) (2026-04-13)
+
+### Bug Fixes
+
+* GTM changes and layout fix ([#413](https://github.com/bnoon-ksa/landing-page/issues/413)) ([7398aca](https://github.com/bnoon-ksa/landing-page/commit/7398aca45409badea5179cd2485f2287f1ebcb2a))
+
 ## [1.3.293](https://github.com/bnoon-ksa/landing-page/compare/v1.3.292...v1.3.293) (2026-04-10)
 
 ### Bug Fixes
