@@ -15,6 +15,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@next/third-parties": "16.2.3",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "compression": "^1.8.1",

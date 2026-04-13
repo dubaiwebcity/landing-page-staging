@@ -41,46 +41,21 @@ export const metadata: Metadata = {
 
 export default function ArabicLayout({ children }: { children: React.ReactNode }) {
   return (
-   <html lang="ar" dir="rtl">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://bnoon-website.b-cdn.net/assets/css/arabic.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://bnoon-website.b-cdn.net/assets/css/arabic-responsive.css"
-        />
-         <link
-    href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
-    rel="stylesheet"
-  />
-      </head>
-     <body dir="rtl">
-      <div className={`${cairo.variable} arabic`}>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-6CDMTCELGG"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="ga-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-6CDMTCELGG');
-            `,
-          }}
-        />
-        {children}
-        <Footer />
-        <GoTop />
+    <>
+      <link rel="stylesheet" href="https://bnoon-website.b-cdn.net/assets/css/arabic.css" />
+      <link
+        rel="stylesheet"
+        href="https://bnoon-website.b-cdn.net/assets/css/arabic-responsive.css"
+      />
+      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+
+      <main dir="rtl" lang="ar">
+        <div className={`${cairo.variable} arabic`}>
+          {children}
+          <Footer />
+          <GoTop />
         </div>
-        </body>
-         </html>
-    
+      </main>
+    </>
   );
 }
