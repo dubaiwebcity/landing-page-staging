@@ -9,12 +9,12 @@ const brochures = [
     items: [
       {
         title_ar: "تعـليـمـات مـا قبل سحـب البـويـضـات ",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/pre-egg-retrieval1.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochure/pre-egg-retrival.jpg",
          downloadpdf: "/pdf/pre-operative-instructions-egg-retrieval.pdf",
       },
       {
         title_ar: "تعـليـمـات ما بعد سحـب البـويـضـات",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/post-egg-retrieval1.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochure/post-egg-retrival.jpg",
        downloadpdf: "/pdf/post-operative-instructions-egg-retrieval.pdf",
       },
     ],
@@ -25,12 +25,12 @@ const brochures = [
     items: [
       {
         title_ar: "تعـليـمـات مـا قبل إرجـــاع األجـــنـــة",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/pre-embryo-transfer.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochure/pre-embryo-transfer.jpg",
        downloadpdf: "/pdf/pre-operative-instructions-enbryo-transfer.pdf",
       },
       {
         title_ar: "تعـليـمـات ما بعد إرجـــاع األجـــنـــة",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/post-embryo-transfer1.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochure/post-embryo-transfer.jpg",
        downloadpdf: "/pdf/post-operative-instructions-enbryo-transfer.pdf",
       },
     ],
@@ -41,7 +41,7 @@ const brochures = [
     items: [
       {
         title_ar: "تعليمات جمع عينة السائل المنوي",
-        image: "https://bnoon-website.b-cdn.net/images/brochures/semen.jpg",
+        image: "https://bnoon-website.b-cdn.net/images/brochure/semen-collection.jpg",
          downloadpdf: "/pdf/semen-collection-instructions.pdf",
       },
     ],
