@@ -15,14 +15,13 @@ export default function AboutUsPage() {
       <Navbar />
 <div style={{ position: "relative" }}>
 
-  <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/ar/brochures-banner-ar.jpg" />
+  <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/ar/brochure-banner-ar.jpg" />
 
   {/* ✅ FIX: ensure overlay is above image */}
   <div
     style={{
       position: "absolute",
       inset: 0,
-      backgroundColor: "#004d6754",
       zIndex: 5,
       pointerEvents: "none",
     }}
@@ -38,7 +37,7 @@ export default function AboutUsPage() {
         zIndex: 20,
       }}
     >
-      <h1 style={{ color: "#ffffff" }}>
+      <h1 style={{ color: "#0c4a5b" }}>
         <span className="rowdies-font text-size">
           الموارد والكتيبات للمرضى
         </span>
