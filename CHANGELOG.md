@@ -1,3 +1,9 @@
+## [1.3.298](https://github.com/bnoon-ksa/landing-page/compare/v1.3.297...v1.3.298) (2026-04-15)
+
+### Bug Fixes
+
+* add ar pdf ([#416](https://github.com/bnoon-ksa/landing-page/issues/416)) ([12f275c](https://github.com/bnoon-ksa/landing-page/commit/12f275c1b5055996a1dd571e236447da6d61389d))
+
 ## [1.3.297](https://github.com/bnoon-ksa/landing-page/compare/v1.3.296...v1.3.297) (2026-04-15)
 
 ### Bug Fixes
