@@ -1,3 +1,9 @@
+## [1.3.299](https://github.com/bnoon-ksa/landing-page/compare/v1.3.298...v1.3.299) (2026-04-15)
+
+### Bug Fixes
+
+* add en pdf url ([#418](https://github.com/bnoon-ksa/landing-page/issues/418)) ([89da983](https://github.com/bnoon-ksa/landing-page/commit/89da983f164a0894c88df28763d2af6b5fbb6663))
+
 ## [1.3.298](https://github.com/bnoon-ksa/landing-page/compare/v1.3.297...v1.3.298) (2026-04-15)
 
 ### Bug Fixes
