@@ -16,7 +16,7 @@ const brochures = [
         updated: "Oct 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochure/pre-egg-retrival.jpg",
         pdf: "/en/egg-retrieval-pre-operative",
-        downloadpdf: "/pdf/pre-operative-instructions-egg-retrieval.pdf",
+        downloadpdf: "/pdf/en/pre-operative-instructions-egg-retrieval.pdf",
       },
       
       {
@@ -26,7 +26,7 @@ const brochures = [
         updated: "Oct 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochure/post-egg-retrival.jpg",
         pdf: "/en/egg-retrieval-post-operative",
-        downloadpdf: "/pdf/post-operative-instructions-egg-retrieval.pdf",
+        downloadpdf: "/pdf/en/post-operative-instructions-egg-retrieval.pdf",
       },
     ],
   },
@@ -41,7 +41,7 @@ const brochures = [
         updated: "Jan 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochure/pre-embryo-transfer.jpg",
         pdf: "/en/embryo-transfer-pre-operative",
-        downloadpdf: "/pdf/pre-operative-instructions-enbryo-transfer.pdf",
+        downloadpdf: "/pdf/en/pre-operative-instructions-enbryo-transfer.pdf",
       },
       {
         title_en: "POST-OPERATIVE INSTRUCTIONS: EMBRYO TRANSFER",
@@ -50,7 +50,7 @@ const brochures = [
         updated: "Jan 2026",
         image: "https://bnoon-website.b-cdn.net/images/brochure/post-embryo-transfer.jpg",
         pdf: "/en/embryo-transfer-post-operative",
-        downloadpdf: "/pdf/post-operative-instructions-enbryo-transfer.pdf",
+        downloadpdf: "/pdf/en/post-operative-instructions-enbryo-transfer.pdf",
       },
      
     ],
@@ -66,7 +66,7 @@ const brochures = [
         updated: "Dec 2025",
         image: "https://bnoon-website.b-cdn.net/images/brochure/semen-collection.jpg",
         pdf: "/en/semen-collection-instructions",
-        downloadpdf: "/pdf/semen-collection-instructions.pdf",
+        downloadpdf: "/pdf/en/semen-collection-instructions.pdf",
       },
     ],
   },
