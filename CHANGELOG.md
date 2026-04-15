@@ -1,3 +1,9 @@
+## [1.3.300](https://github.com/bnoon-ksa/landing-page/compare/v1.3.299...v1.3.300) (2026-04-15)
+
+### Bug Fixes
+
+* add pdf files ([#419](https://github.com/bnoon-ksa/landing-page/issues/419)) ([d29dd19](https://github.com/bnoon-ksa/landing-page/commit/d29dd1957730d594a3bf8f735a850a091737a3bb))
+
 ## [1.3.299](https://github.com/bnoon-ksa/landing-page/compare/v1.3.298...v1.3.299) (2026-04-15)
 
 ### Bug Fixes
