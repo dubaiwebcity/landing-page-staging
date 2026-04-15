@@ -55,6 +55,7 @@ const brochures = [
      
     ],
   },
+  
   {
     section_en: "Semen Collection",
     section_ar: "جمع السائل المنوي",
@@ -70,6 +71,30 @@ const brochures = [
       },
     ],
   },
+  {
+  section_en: "Digital Instructions",
+  section_ar: "التعليمات الرقمية",
+  items: [
+    {
+      title_en: "PRE AND POST OPERATIVE INSTRUCTIONS - DIGITAL",
+      title_ar: "تعليمات ما قبل وما بعد العملية - رقمي",
+      size: "2.5 MB",
+      updated: "Oct 2026",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/post-egg-retrival.jpg",
+      pdf: "/en/pre-and-post-operative-instructions-digital",
+      downloadpdf: "/pdf/en/pre-and-post-operative-instructions-digital.pdf",
+    },
+    {
+      title_en: "PATIENT INSTRUCTIONS FOR SURGERY - DIGITAL",
+      title_ar: "تعليمات المريض للجراحة - رقمي",
+      size: "3.0 MB",
+      updated: "Oct 2026",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/post-embryo-transfer.jpg",
+      pdf: "/en/patient-instructions-for-surgery-digital",
+      downloadpdf: "/pdf/en/patient-instructions-for-surgery-digital.pdf",
+    },
+  ],
+}
 ];
 
 
@@ -99,7 +124,7 @@ const filteredItems =
 
       {/* ✅ TABS (FIXED POSITION) */}
       <div className="brochures-tabs">
-        {["All", "Egg Retrieval", "Embryo Transfer", "Semen Collection"].map((tab, i) => (
+        {["All", "Egg Retrieval", "Embryo Transfer", "Semen Collection", "Digital Instructions"].map((tab, i) => (
           <button
             key={i}
             className={activeTab === tab ? "brochures-tab active" : "brochures-tab"}
