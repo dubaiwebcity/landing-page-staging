@@ -1,3 +1,10 @@
+## [1.3.305](https://github.com/bnoon-ksa/landing-page/compare/v1.3.304...v1.3.305) (2026-04-15)
+
+### Bug Fixes
+
+* add image url ([#426](https://github.com/bnoon-ksa/landing-page/issues/426)) ([7035034](https://github.com/bnoon-ksa/landing-page/commit/7035034326ff9e1236c2a4f5b9ef56f217cf373a))
+* add images ([#425](https://github.com/bnoon-ksa/landing-page/issues/425)) ([c67bad2](https://github.com/bnoon-ksa/landing-page/commit/c67bad2a9daececdab32040efaadf1938684fddd))
+
 ## [1.3.304](https://github.com/bnoon-ksa/landing-page/compare/v1.3.303...v1.3.304) (2026-04-15)
 
 ### Bug Fixes
