@@ -46,6 +46,22 @@ const brochures = [
       },
     ],
   },
+   {
+  section_en: "Digital Instructions",
+  section_ar: "التعليمات الرقمية",
+  items: [
+    {
+      title_ar: "تعليمات ما قبل وما بعد - الجراحة النسائية",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/post-egg-retrival.jpg",
+      downloadpdf: "/pdf/ar/pre-and-post-operative-instructions-digital.pdf",
+    },
+    {
+      title_ar: "تعليمات المريض - العملية الجراحية",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/post-embryo-transfer.jpg",
+      downloadpdf: "/pdf/ar/patient-instructions-for-surgery-digital.pdf",
+    },
+  ],
+},
 ];
 const Brochures = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -76,6 +92,7 @@ const Brochures = () => {
   { en: "Egg Retrieval", ar: "سحب البويضات" },
   { en: "Embryo Transfer", ar: "نقل الأجنة" },
   { en: "Semen Collection", ar: "جمع السائل المنوي" },
+        { en: "Digital Instructions", ar: "التعليمات الرقمية" },
 ].map((tab, i) => (
   <button
     key={i}
