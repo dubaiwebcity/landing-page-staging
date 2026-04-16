@@ -21,7 +21,7 @@ const brochures = [
   },
   {
     section_en: "Embryo Transfer",
-    section_ar: "نقل الأجنة",
+    section_ar: "نقل األجنة",
     items: [
       {
         title_ar: "تعـليـمـات مـا قبل إرجـــاع األجـــنـــة",
@@ -60,7 +60,7 @@ const brochures = [
 },
    {
   section_en: "Gynecological Surgery",
-  section_ar: "الجراحة النسائية",
+  section_ar:" الجراحات النسائية",
   items: [
     {
       title_ar: "تعليمات ما قبل وما بعد - الجراحة النسائية",
@@ -98,10 +98,10 @@ const Brochures = () => {
         {[
   { en: "All", ar: "الكل" },
   { en: "Egg Retrieval", ar: "سحب البويضات" },
-  { en: "Embryo Transfer", ar: "نقل الأجنة" },
+  { en: "Embryo Transfer", ar: "نقل األجنة" },
   { en: "Semen Collection", ar: "جمع السائل المنوي" },
         { en: "Surgery Instructions", ar: "العملية الجراحية" },
-        { en: "Gynecological Surgery", ar: "الجراحة النسائية" },
+        { en: "Gynecological Surgery", ar: "الجراحات النسائية" },
 ].map((tab, i) => (
   <button
     key={i}
