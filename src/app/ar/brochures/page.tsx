@@ -15,7 +15,7 @@ export default function AboutUsPage() {
       <Navbar />
 <div style={{ position: "relative" }}>
 
-  <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/ar/brochure-banner-ar.jpg" />
+  <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/ar/brochure-banner.jpg" />
 
   {/* ✅ FIX: ensure overlay is above image */}
   <div
