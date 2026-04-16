@@ -1,3 +1,10 @@
+## [1.3.315](https://github.com/bnoon-ksa/landing-page/compare/v1.3.314...v1.3.315) (2026-04-16)
+
+### Bug Fixes
+
+* Update Brochures.tsx ([#444](https://github.com/bnoon-ksa/landing-page/issues/444)) ([de7ca21](https://github.com/bnoon-ksa/landing-page/commit/de7ca210163fc45b808f5c7e59f6736c7bcb2471))
+* Update Brochures.tsx ([#445](https://github.com/bnoon-ksa/landing-page/issues/445)) ([df90cdf](https://github.com/bnoon-ksa/landing-page/commit/df90cdf1ecf23afe049af71500e7b4a0d1e86e36))
+
 ## [1.3.314](https://github.com/bnoon-ksa/landing-page/compare/v1.3.313...v1.3.314) (2026-04-16)
 
 ### Bug Fixes
