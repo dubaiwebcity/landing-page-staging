@@ -1,3 +1,9 @@
+## [1.3.308](https://github.com/bnoon-ksa/landing-page/compare/v1.3.307...v1.3.308) (2026-04-16)
+
+### Bug Fixes
+
+* brochures tabs ([#430](https://github.com/bnoon-ksa/landing-page/issues/430)) ([3ec5af9](https://github.com/bnoon-ksa/landing-page/commit/3ec5af9cc9e36fbc4405c2de959865d058b55caa))
+
 ## [1.3.307](https://github.com/bnoon-ksa/landing-page/compare/v1.3.306...v1.3.307) (2026-04-16)
 
 ### Bug Fixes
