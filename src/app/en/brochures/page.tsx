@@ -16,7 +16,7 @@ export default function AboutUsPage() {
 
       {/* PageBanner with static content */}
        <div style={{ position: "relative" }}>
-       <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/en/brochure-banner-en.jpg" />
+       <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/en/brochure-banner.jpg" />
  {/* ✅ FIX: ensure overlay is above image */}
   <div
     style={{
