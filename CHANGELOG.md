@@ -1,3 +1,9 @@
+## [1.3.314](https://github.com/bnoon-ksa/landing-page/compare/v1.3.313...v1.3.314) (2026-04-16)
+
+### Bug Fixes
+
+* Create page.tsx ([#443](https://github.com/bnoon-ksa/landing-page/issues/443)) ([347a827](https://github.com/bnoon-ksa/landing-page/commit/347a827fa61cffd32ed4e1f330336e475c2a251c))
+
 ## [1.3.313](https://github.com/bnoon-ksa/landing-page/compare/v1.3.312...v1.3.313) (2026-04-16)
 
 ### Bug Fixes
