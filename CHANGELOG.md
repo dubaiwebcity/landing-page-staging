@@ -1,3 +1,10 @@
+## [1.3.313](https://github.com/bnoon-ksa/landing-page/compare/v1.3.312...v1.3.313) (2026-04-16)
+
+### Bug Fixes
+
+* Delete src/app/ar/brochures directory ([#437](https://github.com/bnoon-ksa/landing-page/issues/437)) ([6e7c19d](https://github.com/bnoon-ksa/landing-page/commit/6e7c19d07830ff800b2d153a900fa3b5d334b599))
+* Delete src/app/en/brochures directory ([#438](https://github.com/bnoon-ksa/landing-page/issues/438)) ([d9e96f1](https://github.com/bnoon-ksa/landing-page/commit/d9e96f12b79f5da0a41e158719393833dc04811b))
+
 ## [1.3.312](https://github.com/bnoon-ksa/landing-page/compare/v1.3.311...v1.3.312) (2026-04-16)
 
 ### Bug Fixes
