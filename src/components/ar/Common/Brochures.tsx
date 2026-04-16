@@ -47,19 +47,27 @@ const brochures = [
     ],
   },
    {
-  section_en: "Digital Instructions",
-  section_ar: "التعليمات الرقمية",
+  section_en: "Surgery Instructions",
+  section_ar: "العملية الجراحية",
+  items: [
+   
+    {
+      title_ar: "تعليمات المريض - العملية الجراحية",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/surgery.jpg",
+      downloadpdf: "/pdf/ar/patient-instructions-for-surgery-digital.pdf",
+    },
+  ],
+},
+   {
+  section_en: "Gynecological Surgery",
+  section_ar: "الجراحة النسائية",
   items: [
     {
       title_ar: "تعليمات ما قبل وما بعد - الجراحة النسائية",
       image: "https://bnoon-website.b-cdn.net/images/brochure/gynaecology.jpg",
       downloadpdf: "/pdf/ar/pre-and-post-operative-instructions-digital.pdf",
     },
-    {
-      title_ar: "تعليمات المريض - العملية الجراحية",
-      image: "https://bnoon-website.b-cdn.net/images/brochure/surgery.jpg",
-      downloadpdf: "/pdf/ar/patient-instructions-for-surgery-digital.pdf",
-    },
+   
   ],
 },
 ];
@@ -92,7 +100,8 @@ const Brochures = () => {
   { en: "Egg Retrieval", ar: "سحب البويضات" },
   { en: "Embryo Transfer", ar: "نقل الأجنة" },
   { en: "Semen Collection", ar: "جمع السائل المنوي" },
-        { en: "Digital Instructions", ar: "التعليمات الرقمية" },
+        { en: "Surgery Instructions", ar: "العملية الجراحية" },
+        { en: "Gynecological Surgery", ar: "الجراحة النسائية" },
 ].map((tab, i) => (
   <button
     key={i}
