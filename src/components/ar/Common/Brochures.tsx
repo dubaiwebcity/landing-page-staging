@@ -52,7 +52,7 @@ const brochures = [
   items: [
    
     {
-      title_ar: "تعليمات المريض - العملية الجراحية",
+      title_ar: "تعليمات المريض العملية الجراحية",
       image: "https://bnoon-website.b-cdn.net/images/brochure/surgery.jpg",
       downloadpdf: "/pdf/ar/patient-instructions-for-surgery-digital.pdf",
     },
@@ -63,7 +63,7 @@ const brochures = [
   section_ar:" الجراحات النسائية",
   items: [
     {
-      title_ar: "تعليمات ما قبل وما بعد - الجراحة النسائية",
+      title_ar: "تعليمات ما قبل وما بعد الجراحة النسائية",
       image: "https://bnoon-website.b-cdn.net/images/brochure/gynaecology.jpg",
       downloadpdf: "/pdf/ar/pre-and-post-operative-instructions-digital.pdf",
     },
