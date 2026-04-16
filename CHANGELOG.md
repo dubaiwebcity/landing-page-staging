@@ -1,3 +1,10 @@
+## [1.3.307](https://github.com/bnoon-ksa/landing-page/compare/v1.3.306...v1.3.307) (2026-04-16)
+
+### Bug Fixes
+
+* remove css ([#428](https://github.com/bnoon-ksa/landing-page/issues/428)) ([b58e67b](https://github.com/bnoon-ksa/landing-page/commit/b58e67b278a008d1201d0e7cbf4098f6404f7d7d))
+* remove css ([#429](https://github.com/bnoon-ksa/landing-page/issues/429)) ([34b345f](https://github.com/bnoon-ksa/landing-page/commit/34b345fb57191ae19665c619b5e94dc859b011b4))
+
 ## [1.3.306](https://github.com/bnoon-ksa/landing-page/compare/v1.3.305...v1.3.306) (2026-04-16)
 
 ### Bug Fixes
