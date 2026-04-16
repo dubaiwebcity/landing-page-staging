@@ -77,7 +77,7 @@ const brochures = [
   items: [
    
     {
-      title_en: "PATIENT INSTRUCTIONS FOR SURGERY - DIGITAL",
+      title_en: "PATIENT INSTRUCTIONS FOR SURGERY",
       title_ar: "تعليمات المريض للجراحة - رقمي",
       size: "3.0 MB",
       updated: "Oct 2026",
@@ -92,7 +92,7 @@ const brochures = [
   section_ar: "التعليمات الرقمية",
   items: [
     {
-      title_en: "PRE AND POST OPERATIVE INSTRUCTIONS - DIGITAL",
+      title_en: "PRE AND POST OPERATIVE INSTRUCTIONS",
       title_ar: "تعليمات ما قبل وما بعد العملية - رقمي",
       size: "2.5 MB",
       updated: "Oct 2026",
