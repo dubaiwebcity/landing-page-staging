@@ -21,15 +21,15 @@ const brochures = [
   },
   {
     section_en: "Embryo Transfer",
-    section_ar: "نقل األجنة",
+    section_ar: "نقل الأجنة",
     items: [
       {
-        title_ar: "تعـليـمـات مـا قبل إرجـــاع األجـــنـــة",
+        title_ar: "تعـليـمـات مـا قبل إرجـــاع الأجنة",
         image: "https://bnoon-website.b-cdn.net/images/brochure/pre-embryo-transfer.jpg",
        downloadpdf: "/pdf/ar/pre-operative-instructions-enbryo-transfer.pdf",
       },
       {
-        title_ar: "تعـليـمـات ما بعد إرجـــاع األجـــنـــة",
+        title_ar: "تعـليـمـات ما بعد إرجـــاع الأجنة",
         image: "https://bnoon-website.b-cdn.net/images/brochure/post-embryo-transfer.jpg",
        downloadpdf: "/pdf/ar/post-operative-instructions-enbryo-transfer.pdf",
       },
@@ -98,7 +98,7 @@ const Brochures = () => {
         {[
   { en: "All", ar: "الكل" },
   { en: "Egg Retrieval", ar: "سحب البويضات" },
-  { en: "Embryo Transfer", ar: "نقل األجنة" },
+  { en: "Embryo Transfer", ar: "نقل الأجنة" },
   { en: "Semen Collection", ar: "جمع السائل المنوي" },
         { en: "Surgery Instructions", ar: "العملية الجراحية" },
         { en: "Gynecological Surgery", ar: "الجراحات النسائية" },
