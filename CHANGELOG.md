@@ -1,3 +1,9 @@
+## [1.3.322](https://github.com/bnoon-ksa/landing-page/compare/v1.3.321...v1.3.322) (2026-04-17)
+
+### Bug Fixes
+
+* Update ReferaPatient.tsx ([#452](https://github.com/bnoon-ksa/landing-page/issues/452)) ([4f6e7f9](https://github.com/bnoon-ksa/landing-page/commit/4f6e7f9d5ba1fed9261a07e944a1236eacec2dca))
+
 ## [1.3.321](https://github.com/bnoon-ksa/landing-page/compare/v1.3.320...v1.3.321) (2026-04-17)
 
 ### Bug Fixes
