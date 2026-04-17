@@ -36,7 +36,7 @@ const FeedbackSection = () => {
   const [submittedSuccessfully, setSubmittedSuccessfully] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-
+const [isLoading, setIsLoading] = useState(false);
   // Header animation
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -73,69 +73,74 @@ const FeedbackSection = () => {
   };
 
   // Form submit
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // Required fields
-    const requiredFields: (keyof typeof formData)[] = [
-      'branch',
-      'name',
-      'phone',
-      'email',
-      'rating',
-      'feedbackType',
-      'feedbackDetails',
-      'recaptcha',
-      'consent',
-    ];
+  if (isLoading) return; // ✅ block multiple clicks
 
-    // First invalid field scroll & focus
-    const firstInvalid = requiredFields.find((field) => isFieldInvalid(field));
-    if (firstInvalid) {
-      const ref = fieldRefs[firstInvalid];
-      if (ref?.current) {
-        ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        if ('focus' in ref.current) (ref.current as HTMLElement).focus();
-      }
-      return; // stop submission
+  setSubmitted(true);
+
+  const requiredFields: (keyof typeof formData)[] = [
+    'branch',
+    'name',
+    'phone',
+    'email',
+    'rating',
+    'feedbackType',
+    'feedbackDetails',
+    'recaptcha',
+    'consent',
+  ];
+
+  const firstInvalid = requiredFields.find((field) => isFieldInvalid(field));
+
+  if (firstInvalid) {
+    const ref = fieldRefs[firstInvalid];
+    if (ref?.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if ('focus' in ref.current) (ref.current as HTMLElement).focus();
     }
+    return;
+  }
 
-    // Send data
-    try {
-      const res = await fetch('/api/send-feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+  // ✅ START loading here
+  setIsLoading(true);
+
+  try {
+    const res = await fetch('/api/send-feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setSubmittedSuccessfully(true);
+      setStatusMessage('✅ Aapka feedback receive ho gaya! Shukriya!');
+
+      setFormData({
+        branch: '',
+        name: '',
+        phone: '',
+        email: '',
+        rating: '',
+        story: '',
+        feedbackType: [],
+        feedbackDetails: '',
+        recaptcha: '',
+        consent: false,
       });
-      const data = await res.json();
 
-      if (data.success) {
-        // ✅ Form hide, thank you message show
-        setSubmittedSuccessfully(true);
-        setStatusMessage('✅ Aapka feedback receive ho gaya! Shukriya!');
-        setFormData({
-          branch: '',
-          name: '',
-          phone: '',
-          email: '',
-          rating: '',
-          story: '',
-          feedbackType: [],
-          feedbackDetails: '',
-          recaptcha: '',
-          consent: false,
-        });
-        setSubmitted(false);
-
-        // Optional: 5 sec baad message hide karna
-       
-      } 
-    } catch (err) {
-      console.error('Submit error:', err);
-      setStatusMessage('');
+      setSubmitted(false);
     }
-  };
+  } catch (err) {
+    console.error('Submit error:', err);
+    setStatusMessage('❌ Something went wrong');
+  } finally {
+    setIsLoading(false); // ✅ ALWAYS stop loading
+  }
+};
 
   return (
     <div className="fertility-area mt-5">
@@ -491,10 +496,14 @@ const FeedbackSection = () => {
               />
             </div>
             <div className="d-flex justify-content-center mt-3">
-              <button type="submit" className="btn btn-primary btn-large feedback-btn">
-                Submit
-              </button>
-            </div>
+  <button
+    type="submit"
+    disabled={isLoading}
+    className="btn btn-primary btn-large feedback-btn"
+  >
+    {isLoading ? 'Submitting...' : 'Submit'}
+  </button>
+</div>
             {statusMessage && <p className="mt-3 text-center">{statusMessage}</p>}
           </form>
           )}
@@ -505,7 +514,7 @@ const FeedbackSection = () => {
     <div className="row justify-content-center align-items-center g-4">
       <div className="col-lg-12 col-md-12">
         <div className="left">
-          <h2 ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
+          <h2 ref={headerRef} className={`left  ${headerVisible ? 'show' : ''}`}>
             Thank you for taking the time to share your feedback with us.
           </h2>
         </div>
