@@ -443,6 +443,7 @@ const AppointmentSection = () => {
     const [message, setMessage] = useState<React.ReactNode>(null);
 
     const [submitted, setSubmitted] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
     const [isDoctorOpen, setIsDoctorOpen] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false);
 
@@ -1671,14 +1672,16 @@ const AppointmentSection = () => {
                             </div>
 
                             {/* Submit */}
-                            <div className=" text-center">
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary btn-blog feedback-btn btn-large mt-3"
-                                >
-                                    إرسال
-                                </button>
-                            </div>
+                            <div className="text-center">
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-blog feedback-btn btn-large mt-3"
+                  disabled={submitting}
+                >
+                  {submitting ? "..." : "إرسال"}
+                </button>
+              </div>
+
                         </form>
                     )}
                     {showThankYou && message && (
