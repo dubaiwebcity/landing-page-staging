@@ -1,3 +1,9 @@
+## [1.3.320](https://github.com/bnoon-ksa/landing-page/compare/v1.3.319...v1.3.320) (2026-04-17)
+
+### Bug Fixes
+
+* Update FeedbackSection.tsx ([#450](https://github.com/bnoon-ksa/landing-page/issues/450)) ([b972eae](https://github.com/bnoon-ksa/landing-page/commit/b972eae2948db2384c5e89377f6af1f8f04c2a5c))
+
 ## [1.3.319](https://github.com/bnoon-ksa/landing-page/compare/v1.3.318...v1.3.319) (2026-04-17)
 
 ### Bug Fixes
