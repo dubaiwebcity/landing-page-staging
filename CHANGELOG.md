@@ -1,3 +1,9 @@
+## [1.3.319](https://github.com/bnoon-ksa/landing-page/compare/v1.3.318...v1.3.319) (2026-04-17)
+
+### Bug Fixes
+
+* Update AppointmentSection.tsx ([#449](https://github.com/bnoon-ksa/landing-page/issues/449)) ([7bf9479](https://github.com/bnoon-ksa/landing-page/commit/7bf94790f68cc5630fe6e45696711ce7a27e1614))
+
 ## [1.3.318](https://github.com/bnoon-ksa/landing-page/compare/v1.3.317...v1.3.318) (2026-04-17)
 
 ### Bug Fixes
