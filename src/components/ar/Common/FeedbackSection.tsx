@@ -21,6 +21,7 @@ const FeedbackSection = () => {
 const [isSuccess, setIsSuccess] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // inside FeedbackSection
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -69,49 +70,51 @@ const isFieldEmpty = (field: keyof typeof formData) => {
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
+  if (isLoading) return;
+
+  setIsLoading(true);
+  setSubmitted(true);
+
+  const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
+    if (!ref?.current) return;
+
+    ref.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+
+    const el = ref.current.querySelector(
+      'input, textarea, select, button'
+    ) as HTMLElement | null;
+
+    if (el) setTimeout(() => el.focus(), 300);
+  };
+
   const firstInvalidField = Object.keys(fieldRefs).find(
     (key) => isFieldEmpty(key as keyof typeof formData)
   );
-const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
-  if (!ref?.current) return;
 
-  ref.current.scrollIntoView({
-    behavior: 'smooth',
-    block: 'center',
-  });
-
-  // find actual input inside
-  const el = ref.current.querySelector(
-    'input, textarea, select, button'
-  ) as HTMLElement | null;
-
-  if (el) {
-    setTimeout(() => el.focus(), 300); // wait for scroll
+  if (firstInvalidField) {
+    scrollToField(fieldRefs[firstInvalidField as keyof typeof fieldRefs]);
+    setIsLoading(false);
+    return;
   }
-};
- if (firstInvalidField) {
-  setSubmitted(true);
 
-  scrollToField(fieldRefs[firstInvalidField as keyof typeof fieldRefs]);
+  if (!formData.recaptcha) {
+    setStatusMessage('❌ Please verify reCAPTCHA before submitting');
+    setIsLoading(false);
+    return;
+  }
 
-  return; // Rok do submission jab tak user field fill na kare
-}
-  setSubmitted(true);
-   // ✅ reCAPTCHA validation
-    if (!formData.recaptcha) {
-      setStatusMessage('❌ Please verify reCAPTCHA before submitting');
-      return; // stop form submission
-    }
-    try {
-      const res = await fetch('/api/send-feedback-ar', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const res = await fetch('/api/send-feedback-ar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
-   if (res.ok) {
-      setIsSuccess(true); // ✅ yahan hona chahiye
-
+    if (res.ok) {
+      setIsSuccess(true);
       setStatusMessage('!Thank you for your valuable feedback');
 
       setFormData({
@@ -123,7 +126,7 @@ const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
         story: '',
         feedbackType: [],
         feedbackDetails: '',
-        recaptcha: null as string | null, // ⭐ FIXED
+        recaptcha: null,
         consent: false,
       });
 
@@ -131,9 +134,10 @@ const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
     }
   } catch (error) {
     setStatusMessage('❌ لم يتم الإرسال. تحقق من اتصالك بالإنترنت.');
+  } finally {
+    setIsLoading(false);
   }
 };
-
   return (
     <div className="fertility-area mt-5">
       <div className="container">
@@ -454,9 +458,13 @@ const scrollToField = (ref?: React.RefObject<HTMLElement>) => {
               />
             </div>
             <div className="d-flex justify-content-center mt-3">
-              <button type="submit" className="btn btn-primary btn-blog btn-large feedback-btn">
-                إرسال
-              </button>
+            <button
+  type="submit"
+  className="btn btn-primary btn-blog btn-large feedback-btn"
+  disabled={isLoading}
+>
+  {isLoading ? 'إرسال...' : 'إرسال'}
+</button>
             </div>
             {statusMessage && <p className="mt-3 text-center">{statusMessage}</p>}
           </form>
