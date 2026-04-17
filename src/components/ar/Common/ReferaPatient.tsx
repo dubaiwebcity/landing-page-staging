@@ -522,7 +522,7 @@ recaptcha: null,
                   className="btn btn-primary btn-blog feedback-btn btn-large mt-3"
                   disabled={submitting}
                 >
-                  {submitting ? "..." : "إرسال"}
+                  {submitting ? 'إرسال...' : 'إرسال'}
                 </button>
               </div>
 
