@@ -1690,7 +1690,7 @@ const AppointmentSection = () => {
         {isLoading ? (
             <>
                 <span className="spinner-border spinner-border-sm me-2"></span>
-                جارٍ الإرسال...
+                 إرسال...
             </>
         ) : (
             'إرسال'
