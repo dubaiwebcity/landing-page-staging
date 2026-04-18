@@ -65,5 +65,5 @@ window._IndentAnalytics = new IndentAnalytics();
 `;
 
 export const IndentMeAnalytics = () => {
-    return <Script dangerouslySetInnerHTML={{ __html: indentScript }} />;
+    return <Script id="indentme-analytics" dangerouslySetInnerHTML={{ __html: indentScript }} />;
 }
