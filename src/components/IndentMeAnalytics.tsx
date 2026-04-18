@@ -61,7 +61,7 @@ function IndentAnalytics() {
     };
     this.events();
 }
-window._IndentAnalytics = new IndentAnalytics();
+window._IndentAnalytics = new IndentAnalytics(); 
 `;
 
 export const IndentMeAnalytics = () => {
