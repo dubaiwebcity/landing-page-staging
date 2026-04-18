@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/bnoon-ksa/landing-page/compare/v1.3.322...v1.4.0) (2026-04-18)
+
+### Features
+
+* Indentme integration ([#455](https://github.com/bnoon-ksa/landing-page/issues/455)) ([1cefe83](https://github.com/bnoon-ksa/landing-page/commit/1cefe830589b3886907ca2730833439bb716035d))
+
 ## [1.3.322](https://github.com/bnoon-ksa/landing-page/compare/v1.3.321...v1.3.322) (2026-04-17)
 
 ### Bug Fixes
