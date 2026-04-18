@@ -5,6 +5,30 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Placeholder } from 'react-bootstrap';
 import OptimizedImage from '@/components/ui/OptimizedImage';
+import { submitIndentMeForm } from '@/components/IndentMeForm';
+
+const INDENTME_CONFIG = {
+    domain: 'indentme.io',
+    id: '2',
+    locale: 'ar',
+    key: '35owz1mbolesc00g84ss0ww8g4s4wc8',
+    fields: [
+        { from: 'interest', to: 'field_27' },
+        { from: 'branch', to: 'field_28' },
+        { from: 'visitType', to: 'field_29' },
+        { from: 'doctor', to: 'field_30' },
+        { from: 'name', to: 'field_31' },
+        { from: 'isForYou', to: 'field_32' },
+        { from: 'nationality', to: 'field_33' },
+        { from: 'countryOfResidence', to: 'field_34' },
+        { from: 'cityIfInSA', to: 'field_35' },
+        { from: 'gender', to: 'field_36' },
+        { from: 'email', to: 'field_37' },
+        { from: 'preferredTime', to: 'field_38' },
+        { from: 'howHeard', to: 'field_39' },
+        { from: 'mobile', to: 'field_40' },
+    ],
+};
 const AppointmentSection = () => {
     useEffect(() => {
         sessionStorage.removeItem("bnoon_booking_tracked");
@@ -15,7 +39,7 @@ const AppointmentSection = () => {
         visitType: '',
         doctor: '',
         name: '',
-        isForYou: '', 
+        isForYou: '',
         nationality: '',
         countryOfResidence: '',
         cityIfInSA: '',
@@ -26,7 +50,7 @@ const AppointmentSection = () => {
         preferredTime: '',
         howHeard: '',
         story: '',
-        recaptcha: null as string | null, 
+        recaptcha: null as string | null,
     });
     const nationalities = [
         'سعودي',
@@ -445,7 +469,7 @@ const AppointmentSection = () => {
     const [submitted, setSubmitted] = useState(false);
     const [isDoctorOpen, setIsDoctorOpen] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false);
-   const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
     const [headerVisible, setHeaderVisible] = useState(false);
     const [isTimeOpen, setIsTimeOpen] = useState(false);
@@ -483,95 +507,99 @@ const AppointmentSection = () => {
 
         return submitted && (!value || value === '');
     };
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-    if (isLoading) return; // block double click
+        if (isLoading) return; // block double click
 
-    setSubmitted(true);
+        setSubmitted(true);
 
-    // ✅ check empty fields FIRST
-    const requiredFields = [
-        'interest',
-        'branch',
-        'visitType',
-        'doctor',
-        'name',
-        'isForYou',
-        'nationality',
-        'countryOfResidence',
-        ...(formData.countryOfResidence === 'المملكة العربية السعودية' ? ['cityIfInSA'] : []),
-        'gender',
-        'mobile',
-        'email',
-        'preferredDate',
-        'preferredTime',
-        'howHeard',
-        'recaptcha'
-    ];
+        // ✅ check empty fields FIRST
+        const requiredFields = [
+            'interest',
+            'branch',
+            'visitType',
+            'doctor',
+            'name',
+            'isForYou',
+            'nationality',
+            'countryOfResidence',
+            ...(formData.countryOfResidence === 'المملكة العربية السعودية' ? ['cityIfInSA'] : []),
+            'gender',
+            'mobile',
+            'email',
+            'preferredDate',
+            'preferredTime',
+            'howHeard',
+            'recaptcha'
+        ];
 
-    const firstEmptyField = requiredFields.find(
-        (key) => !(formData as Record<string, string | null>)[key]
-    );
+        const firstEmptyField = requiredFields.find(
+            (key) => !(formData as Record<string, string | null>)[key]
+        );
 
-    if (firstEmptyField) {
-        const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
-            interest: interestRef,
-            branch: branchRef,
-            visitType: visitTypeRef,
-            doctor: doctorRef,
-            name: nameRef,
-            isForYou: isForYouRef,
-            nationality: nationalityRef,
-            countryOfResidence: countryRef,
-            cityIfInSA: cityRef,
-            gender: genderRef,
-            mobile: mobileRef,
-            email: emailRef,
-            preferredDate: dateRef,
-            preferredTime: timeRef,
-            howHeard: howHeardRef,
-        };
+        if (firstEmptyField) {
+            const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
+                interest: interestRef,
+                branch: branchRef,
+                visitType: visitTypeRef,
+                doctor: doctorRef,
+                name: nameRef,
+                isForYou: isForYouRef,
+                nationality: nationalityRef,
+                countryOfResidence: countryRef,
+                cityIfInSA: cityRef,
+                gender: genderRef,
+                mobile: mobileRef,
+                email: emailRef,
+                preferredDate: dateRef,
+                preferredTime: timeRef,
+                howHeard: howHeardRef,
+            };
 
-        setTimeout(() => {
-            refsMap[firstEmptyField]?.current?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
+            setTimeout(() => {
+                refsMap[firstEmptyField]?.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                });
+            }, 100);
+
+            return;
+        }
+
+        if (!formData.recaptcha) {
+            setMessage('❌ Please verify reCAPTCHA before submitting');
+            return;
+        }
+
+        setIsLoading(true);
+
+        try {
+            submitIndentMeForm(
+                formData as Record<string, string>,
+                INDENTME_CONFIG,
+            ).catch((err) => {                console.error('Error submitting to IndentMe:', err);
             });
-        }, 100);
 
-        return;
-    }
+            const response = await fetch('/api/send-appointment-ar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-    // ✅ recaptcha check
-    if (!formData.recaptcha) {
-        setMessage('❌ Please verify reCAPTCHA before submitting');
-        return;
-    }
+            
 
-    // ✅ start loading AFTER validation
-    setIsLoading(true);
-
-    try {
-        const response = await fetch('/api/send-appointment-ar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
-
-        if (response.ok) {
-            // analytics
-            if (typeof window !== "undefined") {
-                window.dataLayer = window.dataLayer || [];
-                if (!sessionStorage.getItem("bnoon_booking_tracked")) {
-                    window.dataLayer.push({ event: "book_appointment" });
-                    sessionStorage.setItem("bnoon_booking_tracked", "true");
+            if (response.ok) {
+                if (typeof window !== "undefined") {
+                    window.dataLayer = window.dataLayer || [];
+                    if (!sessionStorage.getItem("bnoon_booking_tracked")) {
+                        window.dataLayer.push({ event: "book_appointment" });
+                        sessionStorage.setItem("bnoon_booking_tracked", "true");
+                    }
                 }
-            }
 
-            // success message
-            setMessage(
-                <>
+                setMessage(
+                    <>
                         <div className="section-title">
                             <div className="row justify-content-center align-items-center g-4">
                                 <div className="col-lg-12 col-md-12">
@@ -590,45 +618,45 @@ const AppointmentSection = () => {
                             </div>
                         </div>
                     </>,
-            );
+                );
 
-            setShowThankYou(true);
+                setShowThankYou(true);
 
-            // reset form
-            setFormData({
-                interest: '',
-                branch: '',
-                visitType: '',
-                doctor: '',
-                name: '',
-                isForYou: '',
-                nationality: '',
-                countryOfResidence: '',
-                cityIfInSA: '',
-                gender: '',
-                mobile: '',
-                email: '',
-                preferredDate: '',
-                preferredTime: '',
-                howHeard: '',
-                story: '',
-                recaptcha: null,
-            });
+                // reset form
+                setFormData({
+                    interest: '',
+                    branch: '',
+                    visitType: '',
+                    doctor: '',
+                    name: '',
+                    isForYou: '',
+                    nationality: '',
+                    countryOfResidence: '',
+                    cityIfInSA: '',
+                    gender: '',
+                    mobile: '',
+                    email: '',
+                    preferredDate: '',
+                    preferredTime: '',
+                    howHeard: '',
+                    story: '',
+                    recaptcha: null,
+                });
 
-            setSubmitted(false);
+                setSubmitted(false);
 
-        } else {
-            const errorData = await response.json();
-            setMessage('❌ Failed to send. ' + (errorData.error || ''));
+            } else {
+                const errorData = await response.json();
+                setMessage('❌ Failed to send. ' + (errorData.error || ''));
+            }
+
+        } catch (error) {
+            console.error(error);
+            setMessage('❌ Something went wrong.');
+        } finally {
+            setIsLoading(false); // ALWAYS stop loading
         }
-
-    } catch (error) {
-        console.error(error);
-        setMessage('❌ Something went wrong.');
-    } finally {
-        setIsLoading(false); // ALWAYS stop loading
-    }
-};
+    };
 
     return (
         <div className="fertility-area mt-5 text-center">
@@ -1681,22 +1709,22 @@ const AppointmentSection = () => {
                             </div>
 
                             {/* Submit */}
-                           <div className="text-center">
-    <button
-        type="submit"
-        className="btn btn-primary btn-blog feedback-btn btn-large mt-3"
-        disabled={isLoading}
-    >
-        {isLoading ? (
-            <>
-                <span className="spinner-border spinner-border-sm me-2"></span>
-                 إرسال...
-            </>
-        ) : (
-            'إرسال'
-        )}
-    </button>
-</div>
+                            <div className="text-center">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-blog feedback-btn btn-large mt-3"
+                                    disabled={isLoading}
+                                >
+                                    {isLoading ? (
+                                        <>
+                                            <span className="spinner-border spinner-border-sm me-2"></span>
+                                            إرسال...
+                                        </>
+                                    ) : (
+                                        'إرسال'
+                                    )}
+                                </button>
+                            </div>
                         </form>
                     )}
                     {showThankYou && message && (

@@ -4,6 +4,30 @@ import React, { useState, useEffect, useRef } from 'react';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { CgEnter } from 'react-icons/cg';
+import { submitIndentMeForm } from '@/components/IndentMeForm';
+
+const INDENTME_CONFIG = {
+    domain: 'indentme.io',
+    id: '2',
+    locale: 'en',
+    key: '35owz1mbolesc00g84ss0ww8g4s4wc8',
+    fields: [
+        { from: 'interest',           to: 'field_41' },
+        { from: 'branch',             to: 'field_42' },
+        { from: 'visitType',          to: 'field_43' },
+        { from: 'doctor',             to: 'field_44' },
+        { from: 'name',               to: 'field_45' },
+        { from: 'isForYou',           to: 'field_46' },
+        { from: 'nationality',        to: 'field_47' },
+        { from: 'countryOfResidence', to: 'field_48' },
+        { from: 'cityIfInSA',         to: 'field_49' },
+        { from: 'gender',             to: 'field_50' },
+        { from: 'email',              to: 'field_51' },
+        { from: 'preferredTime',      to: 'field_52' },
+        { from: 'howHeard',           to: 'field_53' },
+        { from: 'mobile',             to: 'field_54' },
+    ],
+};
 
 const AppointmentSection = () => {
     useEffect(() => {
@@ -55,7 +79,7 @@ const AppointmentSection = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [message, setMessage] = useState<React.ReactNode>(null);
-const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
     const [headerVisible, setHeaderVisible] = useState(false);
@@ -479,119 +503,126 @@ const [isLoading, setIsLoading] = useState(false);
         return submitted && !formData[field];
     };
 
- const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-    if (isLoading) return; // ✅ prevent multiple clicks
+        if (isLoading) return; // ✅ prevent multiple clicks
 
-    setSubmitted(true);
+        setSubmitted(true);
 
-    const requiredFields = Object.keys(formData).filter(
-        (key) => key !== 'cityIfInSA' || formData.countryOfResidence === 'Saudi Arabia'
-    );
+        const requiredFields = Object.keys(formData).filter(
+            (key) => key !== 'cityIfInSA' || formData.countryOfResidence === 'Saudi Arabia'
+        );
 
-    const firstEmptyField = requiredFields.find(
-        (key) => !(formData as Record<string, string>)[key]
-    );
+        const firstEmptyField = requiredFields.find(
+            (key) => !(formData as Record<string, string>)[key]
+        );
 
-    if (firstEmptyField) {
-        const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
-            interest: interestRef,
-            branch: branchRef,
-            visitType: visitTypeRef,
-            doctor: doctorRef,
-            name: nameRef,
-            isForYou: isForYouRef,
-            nationality: nationalityRef,
-            countryOfResidence: countryRef,
-            cityIfInSA: cityRef,
-            gender: genderRef,
-            mobile: mobileRef,
-            email: emailRef,
-            preferredDate: dateRef,
-            preferredTime: timeRef,
-            howHeard: howHeardRef,
-            recaptcha: recaptchaRef,
-        };
+        if (firstEmptyField) {
+            const refsMap: Record<string, React.RefObject<HTMLDivElement>> = {
+                interest: interestRef,
+                branch: branchRef,
+                visitType: visitTypeRef,
+                doctor: doctorRef,
+                name: nameRef,
+                isForYou: isForYouRef,
+                nationality: nationalityRef,
+                countryOfResidence: countryRef,
+                cityIfInSA: cityRef,
+                gender: genderRef,
+                mobile: mobileRef,
+                email: emailRef,
+                preferredDate: dateRef,
+                preferredTime: timeRef,
+                howHeard: howHeardRef,
+                recaptcha: recaptchaRef,
+            };
 
-        refsMap[firstEmptyField]?.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-        });
-
-        return;
-    }
-
-    // ✅ START loading here
-    setIsLoading(true);
-
-    try {
-        const response = await fetch('/api/send-appointment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            if (typeof window !== "undefined" && !sessionStorage.getItem("bnoon_booking_tracked")) {
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({ event: "book_appointment" });
-                sessionStorage.setItem("bnoon_booking_tracked", "true");
-            }
-
-            setMessage(  <>
-                        <div className="section-title">
-                            <div className="row justify-content-center align-items-center g-4">
-                                <div className="col-lg-12 col-md-12">
-                                    <div className="left">
-                                        <h2 ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
-                                            Thank you for submitting your appointment request.
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div className="left">
-                                    <p>
-                                        Our team will contact you within 48 hours to discuss your appointment request and arrange the next steps.
-                                        <br />
-                                        We look forward to connecting with you soon.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </>);
-            setShowThankYou(true);
-
-            setFormData({
-                interest: '',
-                branch: '',
-                visitType: '',
-                doctor: '',
-                name: '',
-                isForYou: '',
-                nationality: '',
-                countryOfResidence: '',
-                cityIfInSA: '',
-                gender: '',
-                mobile: '',
-                email: '',
-                preferredDate: '',
-                preferredTime: '',
-                howHeard: '',
-                recaptcha: '',
+            refsMap[firstEmptyField]?.current?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
             });
 
-            setSubmitted(false);
-        } else {
-            setMessage('❌ ' + data.error);
+            return;
         }
-    } catch (error) {
-        setMessage('❌ Something went wrong.');
-    } finally {
-        setIsLoading(false); // ✅ always stop
-    }
-};
+
+        // ✅ START loading here
+        setIsLoading(true);
+
+        try {
+            submitIndentMeForm(
+                formData as Record<string, string>,
+                INDENTME_CONFIG,
+            ).catch(() => { /* silent — IndentMe failure must not affect user */ });
+            const response = await fetch('/api/send-appointment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // fire IndentMe submission in background — do not block or affect UX
+
+
+                if (typeof window !== "undefined" && !sessionStorage.getItem("bnoon_booking_tracked")) {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: "book_appointment" });
+                    sessionStorage.setItem("bnoon_booking_tracked", "true");
+                }
+
+                setMessage(<>
+                    <div className="section-title">
+                        <div className="row justify-content-center align-items-center g-4">
+                            <div className="col-lg-12 col-md-12">
+                                <div className="left">
+                                    <h2 ref={headerRef} className={`left animate-left ${headerVisible ? 'show' : ''}`}>
+                                        Thank you for submitting your appointment request.
+                                    </h2>
+                                </div>
+                            </div>
+                            <div className="left">
+                                <p>
+                                    Our team will contact you within 48 hours to discuss your appointment request and arrange the next steps.
+                                    <br />
+                                    We look forward to connecting with you soon.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </>);
+                setShowThankYou(true);
+
+                setFormData({
+                    interest: '',
+                    branch: '',
+                    visitType: '',
+                    doctor: '',
+                    name: '',
+                    isForYou: '',
+                    nationality: '',
+                    countryOfResidence: '',
+                    cityIfInSA: '',
+                    gender: '',
+                    mobile: '',
+                    email: '',
+                    preferredDate: '',
+                    preferredTime: '',
+                    howHeard: '',
+                    recaptcha: '',
+                });
+
+                setSubmitted(false);
+            } else {
+                setMessage('❌ ' + data.error);
+            }
+        } catch (error) {
+            setMessage('❌ Something went wrong.');
+        } finally {
+            setIsLoading(false); // ✅ always stop
+        }
+    };
     return (
         <div className="fertility-area mt-5 text-center mb-5">
             <div className="container">
@@ -1501,15 +1532,15 @@ const [isLoading, setIsLoading] = useState(false);
                                 />
                             </div>
                             {/* Submit */}
-                         <div className="text-center">
-    <button
-        type="submit"
-        disabled={isLoading}
-        className="btn btn-primary feedback-btn btn-large mt-3"
-    >
-        {isLoading ? 'Submitting...' : 'Submit'}
-    </button>
-</div>
+                            <div className="text-center">
+                                <button
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="btn btn-primary feedback-btn btn-large mt-3"
+                                >
+                                    {isLoading ? 'Submitting...' : 'Submit'}
+                                </button>
+                            </div>
                         </form>
                     </div>
                 )}

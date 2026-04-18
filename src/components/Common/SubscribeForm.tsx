@@ -4,119 +4,126 @@ import React, { useState } from 'react';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 
 const SubscribeForm = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
-  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
+        try {
+            const subscriberPayload = new FormData();
+            subscriberPayload.append('email', email);
+            fetch('https://indentme.io/newsletter/bnoon/subscriber/add/', {
+                method: 'POST',
+                body: subscriberPayload,
+            }).catch(() => { });
 
-      const data = await res.json();
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
 
-      if (data.success) {
-        setMessage('✅ Thank you for subscribing!');
-        setEmail('');
-      } else {
-        setMessage('❌ ' + (data.error || 'Something went wrong'));
-      }
-    } catch (err) {
-      console.error(err);
-      setMessage('⚠️ Server error. Please try again later.');
-    }
-  };
+            const data = await res.json();
 
-  return (
-    <>
-      <div className="subscribe-area ptb-140">
-        <div className="container">
-          <div className="subscribe-content">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>
-              Get expert health tips, product updates, and exclusive telemedicine insights delivered
-              straight to your inbox—no spam, ever.
-            </p>
-          </div>
+            if (data.success) {
+                setMessage('✅ Thank you for subscribing!');
+                setEmail('');
+            } else {
+                setMessage('❌ ' + (data.error || 'Something went wrong'));
+            }
+        } catch (err) {
+            console.error(err);
+            setMessage('⚠️ Server error. Please try again later.');
+        }
+    };
 
-          <form className="subscribe-form" onSubmit={handleSubscribe}>
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+    return (
+        <>
+            <div className="subscribe-area ptb-140">
+                <div className="container">
+                    <div className="subscribe-content">
+                        <h2>Subscribe to Our Newsletter</h2>
+                        <p>
+                            Get expert health tips, product updates, and exclusive telemedicine insights delivered
+                            straight to your inbox—no spam, ever.
+                        </p>
+                    </div>
 
-            <button type="submit" className="default-btn">
-              <span className="left">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="19"
-                  height="19"
-                  viewBox="0 0 19 19"
-                  fill="none"
-                >
-                  <path
-                    d="M17.8077 0.98584H1.19231C0.810154 0.98584 0.5 1.29599 0.5 1.67815C0.5 2.0603 0.810154 2.37046 1.19231 2.37046H16.1361L0.702846 17.8041C0.4325 18.0744 0.4325 18.5126 0.702846 18.783C0.838192 18.9183 1.01508 18.9858 1.19231 18.9858C1.36954 18.9858 1.54677 18.9183 1.68177 18.783L17.1154 3.34938V18.2935C17.1154 18.6757 17.4255 18.9858 17.8077 18.9858C18.1898 18.9858 18.5 18.6757 18.5 18.2935V1.67815C18.5 1.29599 18.1898 0.98584 17.8077 0.98584Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-              Subscribe Now
-              <span className="right">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="19"
-                  height="19"
-                  viewBox="0 0 19 19"
-                  fill="none"
-                >
-                  <path
-                    d="M17.8077 0.98584H1.19231C0.810154 0.98584 0.5 1.29599 0.5 1.67815C0.5 2.0603 0.810154 2.37046 1.19231 2.37046H16.1361L0.702846 17.8041C0.4325 18.0744 0.4325 18.5126 0.702846 18.783C0.838192 18.9183 1.01508 18.9858 1.19231 18.9858C1.36954 18.9858 1.54677 18.9183 1.68177 18.783L17.1154 3.34938V18.2935C17.1154 18.6757 17.4255 18.9858 17.8077 18.9858C18.1898 18.9858 18.5 18.6757 18.5 18.2935V1.67815C18.5 1.29599 18.1898 0.98584 17.8077 0.98584Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-            </button>
-          </form>
+                    <form className="subscribe-form" onSubmit={handleSubscribe}>
+                        <input
+                            type="email"
+                            name="email"
+                            className="form-control"
+                            placeholder="Enter your email address"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
 
-          {message && <p className="text-success mt-3">{message}</p>}
+                        <button type="submit" className="default-btn">
+                            <span className="left">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 19 19"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M17.8077 0.98584H1.19231C0.810154 0.98584 0.5 1.29599 0.5 1.67815C0.5 2.0603 0.810154 2.37046 1.19231 2.37046H16.1361L0.702846 17.8041C0.4325 18.0744 0.4325 18.5126 0.702846 18.783C0.838192 18.9183 1.01508 18.9858 1.19231 18.9858C1.36954 18.9858 1.54677 18.9183 1.68177 18.783L17.1154 3.34938V18.2935C17.1154 18.6757 17.4255 18.9858 17.8077 18.9858C18.1898 18.9858 18.5 18.6757 18.5 18.2935V1.67815C18.5 1.29599 18.1898 0.98584 17.8077 0.98584Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            Subscribe Now
+                            <span className="right">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 19 19"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M17.8077 0.98584H1.19231C0.810154 0.98584 0.5 1.29599 0.5 1.67815C0.5 2.0603 0.810154 2.37046 1.19231 2.37046H16.1361L0.702846 17.8041C0.4325 18.0744 0.4325 18.5126 0.702846 18.783C0.838192 18.9183 1.01508 18.9858 1.19231 18.9858C1.36954 18.9858 1.54677 18.9183 1.68177 18.783L17.1154 3.34938V18.2935C17.1154 18.6757 17.4255 18.9858 17.8077 18.9858C18.1898 18.9858 18.5 18.6757 18.5 18.2935V1.67815C18.5 1.29599 18.1898 0.98584 17.8077 0.98584Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
 
-          <ul className="subscribe-list">
-            <li>
-              <i className="ri-check-line"></i>
-              <span>No spam, unsubscribe anytime</span>
-            </li>
-            <li>
-              <i className="ri-check-line"></i>
-              <span>Monthly insights from real doctors</span>
-            </li>
-            <li>
-              <i className="ri-check-line"></i>
-              <span>Includes early access to new features or offers</span>
-            </li>
-          </ul>
-        </div>
+                    {message && <p className="text-success mt-3">{message}</p>}
 
-        <div className="subscribe-shape">
-          <OptimizedImage
-            imageName="subscribe-shape"
-            fallbackSrc="/images/shape.png"
-            alt="Decorative shape"
-            width={260}
-            height={202}
-          />
-        </div>
-      </div>
-    </>
-  );
+                    <ul className="subscribe-list">
+                        <li>
+                            <i className="ri-check-line"></i>
+                            <span>No spam, unsubscribe anytime</span>
+                        </li>
+                        <li>
+                            <i className="ri-check-line"></i>
+                            <span>Monthly insights from real doctors</span>
+                        </li>
+                        <li>
+                            <i className="ri-check-line"></i>
+                            <span>Includes early access to new features or offers</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="subscribe-shape">
+                    <OptimizedImage
+                        imageName="subscribe-shape"
+                        fallbackSrc="/images/shape.png"
+                        alt="Decorative shape"
+                        width={260}
+                        height={202}
+                    />
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default SubscribeForm;

@@ -4,161 +4,168 @@ import { usePathname } from 'next/navigation';
 import { getCdnUrl } from '@/lib/cdn-utils';
 
 const PopupAr = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
 
-  const pathname = usePathname();
+    const pathname = usePathname();
 
-  // ✅ Updated async function
-  const handleContact = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // ✅ Updated async function
+    const handleContact = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-    try {
-      const res = await fetch('/api/subscribe-ar', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
+        try {
+            const subscriberPayload = new FormData();
+            subscriberPayload.append('email', email);
+            fetch('https://indentme.io/newsletter/bnoon/subscriber/add/', {
+                method: 'POST',
+                body: subscriberPayload,
+            }).catch(() => { });
 
-      const data = await res.json();
+            const res = await fetch('/api/subscribe-ar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
 
-      if (data.success) {
-        setMessage('✅ شكرًا لاشتراكك!');
-        setEmail('');
-      } else {
-        setMessage('❌ ' + (data.error || 'حدث خطأ ما'));
-      }
-    } catch (err) {
-      console.error('خطأ في الخادم:', err);
-      setMessage('⚠️ حدث خطأ في الخادم. حاول مرة أخرى لاحقًا.');
-    }
-  };
+            const data = await res.json();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const popupShown = sessionStorage.getItem('popupShownAr');
-      if (!popupShown && pathname === '/ar') {
-        setTimeout(() => {
-          setIsOpen(true);
-          sessionStorage.setItem('popupShownAr', 'true');
-        }, 500);
-      }
-    }
-  }, [pathname]);
+            if (data.success) {
+                setMessage('✅ شكرًا لاشتراكك!');
+                setEmail('');
+            } else {
+                setMessage('❌ ' + (data.error || 'حدث خطأ ما'));
+            }
+        } catch (err) {
+            console.error('خطأ في الخادم:', err);
+            setMessage('⚠️ حدث خطأ في الخادم. حاول مرة أخرى لاحقًا.');
+        }
+    };
 
-  return (
-    <>
-      {isOpen && (
-        <div
-          className="popup-overlay"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#c3c1c199',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 9999,
-          }}
-          onClick={() => setIsOpen(false)}
-        >
-          <div
-            className="popup-content"
-            dir="rtl"
-            style={{
-              backgroundImage: `url('${getCdnUrl('popup-image') || '/images/popup-image.avif'}')`,
-              borderRadius: '0%',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              padding: '50px',
-              maxWidth: '600px',
-              width: '100%',
-              position: 'relative',
-              color: '#fff',
-              overflow: 'hidden',
-              textAlign: 'right',
-              fontFamily: 'Tajawal, sans-serif',
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: '#004e788c',
-                zIndex: 1,
-              }}
-            ></div>
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const popupShown = sessionStorage.getItem('popupShownAr');
+            if (!popupShown && pathname === '/ar') {
+                setTimeout(() => {
+                    setIsOpen(true);
+                    sessionStorage.setItem('popupShownAr', 'true');
+                }, 500);
+            }
+        }
+    }, [pathname]);
 
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <button
-                onClick={() => setIsOpen(false)}
-                style={{
-                  position: 'absolute',
-                  top: '-20px',
-                  left: '-20px',
-                  border: 'none',
-                  background: 'transparent',
-                  color: '#fff',
-                  fontSize: '20px',
-                  cursor: 'pointer',
-                  width: '25px',
-                  height: '25px',
-                  lineHeight: '35px',
-                  textAlign: 'center',
-                }}
-              >
-                ✖
-              </button>
+    return (
+        <>
+            {isOpen && (
+                <div
+                    className="popup-overlay"
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: '#c3c1c199',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 9999,
+                    }}
+                    onClick={() => setIsOpen(false)}
+                >
+                    <div
+                        className="popup-content"
+                        dir="rtl"
+                        style={{
+                            backgroundImage: `url('${getCdnUrl('popup-image') || '/images/popup-image.avif'}')`,
+                            borderRadius: '0%',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            padding: '50px',
+                            maxWidth: '600px',
+                            width: '100%',
+                            position: 'relative',
+                            color: '#fff',
+                            overflow: 'hidden',
+                            textAlign: 'right',
+                            fontFamily: 'Tajawal, sans-serif',
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                backgroundColor: '#004e788c',
+                                zIndex: 1,
+                            }}
+                        ></div>
 
-              <h2 className="popup-heading">
-                انطلاقة متجددة لبنون: هوية جديدة وموقع إلكتروني يواكب الجيل الجديد من علاجات الإخصاب
-                وصحة المرأة
-              </h2>
-              <p className="popup-text">
-                أطلقنــــا هويتنا الجــــديدة وطــــوّرنا موقعنا الإلــــكتروني لـــــنـــمنحــــكم
-                تجـــــربـــــة أسرع وأســـــهــــل۔
-              </p>
-              <p className="popup-text mb-2">
-                <strong>هل ترغبون في معرفة كل جديد لدينا؟</strong>
-              </p>
+                        <div style={{ position: 'relative', zIndex: 2 }}>
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                style={{
+                                    position: 'absolute',
+                                    top: '-20px',
+                                    left: '-20px',
+                                    border: 'none',
+                                    background: 'transparent',
+                                    color: '#fff',
+                                    fontSize: '20px',
+                                    cursor: 'pointer',
+                                    width: '25px',
+                                    height: '25px',
+                                    lineHeight: '35px',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                ✖
+                            </button>
 
-              {/* ✅ connected form */}
-              <form onSubmit={handleContact} className="w-full">
-                <div className="flex w-full items-center max-w-xl">
-                  <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    placeholder="أدخل بريدك الإلكتروني"
-                    className="form-input flex-grow border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    dir="rtl"
-                  />
-                  <button type="submit" className="btn btn-primary px-5 py-2 rounded-lg submit-btn">
-                    إرسال
-                  </button>
-                </div>
-                {message && <p className="text-success mt-2">{message}</p>}
-              </form>
+                            <h2 className="popup-heading">
+                                انطلاقة متجددة لبنون: هوية جديدة وموقع إلكتروني يواكب الجيل الجديد من علاجات الإخصاب
+                                وصحة المرأة
+                            </h2>
+                            <p className="popup-text">
+                                أطلقنــــا هويتنا الجــــديدة وطــــوّرنا موقعنا الإلــــكتروني لـــــنـــمنحــــكم
+                                تجـــــربـــــة أسرع وأســـــهــــل۔
+                            </p>
+                            <p className="popup-text mb-2">
+                                <strong>هل ترغبون في معرفة كل جديد لدينا؟</strong>
+                            </p>
 
-              <p className="popup-text">
-                من خلال إدخال بريدكم الإلكتروني، فإنكم توافقون على سياسة الخصوصية الخاصة بنا. يمكنكم
-                إلغاء الاشتراك في أي وقت۔
-              </p>
-            </div>
-          </div>
+                            {/* ✅ connected form */}
+                            <form onSubmit={handleContact} className="w-full">
+                                <div className="flex w-full items-center max-w-xl">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                        placeholder="أدخل بريدك الإلكتروني"
+                                        className="form-input flex-grow border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        dir="rtl"
+                                    />
+                                    <button type="submit" className="btn btn-primary px-5 py-2 rounded-lg submit-btn">
+                                        إرسال
+                                    </button>
+                                </div>
+                                {message && <p className="text-success mt-2">{message}</p>}
+                            </form>
 
-          {/* ✅ Mobile responsive styles */}
-          <style jsx>{`
+                            <p className="popup-text">
+                                من خلال إدخال بريدكم الإلكتروني، فإنكم توافقون على سياسة الخصوصية الخاصة بنا. يمكنكم
+                                إلغاء الاشتراك في أي وقت۔
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* ✅ Mobile responsive styles */}
+                    <style jsx>{`
             @media (max-width: 768px) {
               .popup-content {
                 max-width: 90% !important;
@@ -192,10 +199,10 @@ const PopupAr = () => {
               }
             }
           `}</style>
-        </div>
-      )}
-    </>
-  );
+                </div>
+            )}
+        </>
+    );
 };
 
 export default PopupAr;

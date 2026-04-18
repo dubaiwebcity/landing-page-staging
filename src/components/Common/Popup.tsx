@@ -14,6 +14,13 @@ const Popup = () => {
     e.preventDefault();
 
     try {
+      const subscriberPayload = new FormData();
+      subscriberPayload.append('email', email);
+      fetch('https://indentme.io/newsletter/bnoon/subscriber/add/', {
+        method: 'POST',
+        body: subscriberPayload,
+      }).catch(() => {});
+
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
