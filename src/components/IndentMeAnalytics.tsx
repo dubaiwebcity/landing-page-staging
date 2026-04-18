@@ -63,7 +63,7 @@ function IndentAnalytics() {
 }
 window._IndentAnalytics = new IndentAnalytics(); 
 `;
-
+ 
 export const IndentMeAnalytics = () => {
     return <Script id="indentme-analytics" dangerouslySetInnerHTML={{ __html: indentScript }} />;
 }
