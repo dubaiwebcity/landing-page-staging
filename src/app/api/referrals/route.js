@@ -14,7 +14,7 @@ export async function POST(req) {
     const RECIPIENTS = {
       "Bnoon – Jeddah": "referral.jeddah@bnoon.sa",
       "Bnoon – Riyadh": "referral.riyadh@bnoon.sa",
-      "Bnoon – Al Ahsa": "zulaikhakhalid18@gmail.com",
+      "Bnoon – Al Ahsa": "rizno1@gmail.com",
     };
 
     // default fallback (optional)
