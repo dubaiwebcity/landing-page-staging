@@ -16,9 +16,9 @@ export async function POST(req) {
   "Bnoon – Jeddah": ["referral.jeddah@bnoon.sa"],
   "Bnoon – Riyadh": ["referral.riyadh@bnoon.sa"],
   "Bnoon – Al Ahsa": [
-    "zulaikhakhalid18@gmail.com",
-    "zulaikhakhalid541@gmail.com",
-    "websitedesignbahrain@gmail.com",
+   "referral.alahsa@bnoon.sa",
+    "abdullah.sallout@bnoon.sa",
+    "khloud.alramadan@bnoon.sa",
   ],
 };
 
