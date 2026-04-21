@@ -5,7 +5,8 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   try {
     const data = await req.json();
-
+     console.log("ReferTo Value:", data.referTo);
+    console.log("All Data:", data);
     // ✅ DB connect + save
     await connectDB();
     const saved = await ReferralEN.create(data);
@@ -19,7 +20,7 @@ export async function POST(req) {
 
     // default fallback (optional)
     const recipient = RECIPIENTS[data?.referTo] || "referral.jeddah@bnoon.sa";
-
+        console.log("Recipient:", recipient);
     // ✅ Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
