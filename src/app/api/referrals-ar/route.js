@@ -24,10 +24,14 @@ export async function POST(req) {
     const saved = await ReferralAR.create(data);
 
     // ✅ Recipient mapping based on selected branch (Arabic form)
-   const RECIPIENTS = {
-  "بنـــون – جدة": "referral.jeddah@bnoon.sa",
-  "بنـــون – الرياض": "referral.riyadh@bnoon.sa",
-  "بنـــون – الأحساء": "referral.alahsa@bnoon.sa",
+  const RECIPIENTS = {
+  "بنـــون – جدة": ["referral.jeddah@bnoon.sa"],
+  "بنـــون – الرياض": ["referral.riyadh@bnoon.sa"],
+  "بنـــون – الأحساء": [
+    "referral.alahsa@bnoon.sa",
+    "abdullah.sallout@bnoon.sa",
+    "khloud.alramadan@bnoon.sa",
+  ],
 };
 
     // default fallback (optional)
