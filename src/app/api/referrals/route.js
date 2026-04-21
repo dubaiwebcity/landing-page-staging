@@ -12,11 +12,15 @@ export async function POST(req) {
     const saved = await ReferralEN.create(data);
 
     // ✅ Recipient mapping based on selected branch
-    const RECIPIENTS = {
-      "Bnoon – Jeddah": "referral.jeddah@bnoon.sa",
-      "Bnoon – Riyadh": "referral.riyadh@bnoon.sa",
-      "Bnoon – Al Ahsa": "referral.alahsa@bnoon.sa",
-    };
+   const RECIPIENTS = {
+  "Bnoon – Jeddah": ["referral.jeddah@bnoon.sa"],
+  "Bnoon – Riyadh": ["referral.riyadh@bnoon.sa"],
+  "Bnoon – Al Ahsa": [
+    "zulaikhakhalid18@gmail.com",
+    "zulaikhakhalid541@gmail.com",
+    "websitedesignbahrain@gmail.com",
+  ],
+};
 
     // default fallback (optional)
     const recipient = RECIPIENTS[data?.referTo] || "referral.jeddah@bnoon.sa";
