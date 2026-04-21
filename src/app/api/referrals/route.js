@@ -13,9 +13,9 @@ export async function POST(req) {
 
     // ✅ Recipient mapping based on selected branch
     const RECIPIENTS = {
-      "Bnoon – Jeddah": "zulaikhakhalid541@gmail.com",
+      "Bnoon – Jeddah": "referral.jeddah@bnoon.sa",
       "Bnoon – Riyadh": "referral.riyadh@bnoon.sa",
-      "Bnoon – Al Ahsa": "zulaikhakhalid18@gmail.com",
+      "Bnoon – Al Ahsa": "referral.alahsa@bnoon.sa",
     };
 
     // default fallback (optional)
