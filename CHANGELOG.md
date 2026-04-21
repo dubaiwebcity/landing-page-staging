@@ -1,3 +1,9 @@
+## [1.4.11](https://github.com/bnoon-ksa/landing-page/compare/v1.4.10...v1.4.11) (2026-04-21)
+
+### Bug Fixes
+
+* Update route.js ([#473](https://github.com/bnoon-ksa/landing-page/issues/473)) ([5085a30](https://github.com/bnoon-ksa/landing-page/commit/5085a3022d45fdc59a2735383ec00b08c1fe53c2))
+
 ## [1.4.10](https://github.com/bnoon-ksa/landing-page/compare/v1.4.9...v1.4.10) (2026-04-21)
 
 ### Bug Fixes
