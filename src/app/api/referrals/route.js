@@ -31,7 +31,7 @@ export async function POST(req) {
     });
 
     // ✅ Email body
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"Referral Request" <${process.env.SMTP_USER}>`,
       to: recipient,
       subject: `New Patient Referral - Website (${data.referTo || "N/A"})`,
@@ -74,7 +74,7 @@ ${data.medicalReason ? `
 
 `,
     });
-
+console.log("EMAIL INFO:", info);
     return Response.json(
       { success: true, message: "Saved & email sent successfully!", savedId: saved?._id },
       { status: 200 }
