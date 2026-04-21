@@ -79,11 +79,24 @@ ${data.medicalReason ? `
       { success: true, message: "Saved & email sent successfully!", savedId: saved?._id },
       { status: 200 }
     );
-  } catch (error) {
-    console.error("❌ API Error:", error);
-    return Response.json(
-      { success: false, error: error.message || "Server error" },
-      { status: 500 }
-    );
+  } } catch (error) {
+  console.error("❌ Full Error:", error);
+
+  if (error.response) {
+    console.error("SMTP Response:", error.response);
   }
+
+  if (error.responseCode) {
+    console.error("SMTP Code:", error.responseCode);
+  }
+
+  if (error.command) {
+    console.error("SMTP Command:", error.command);
+  }
+
+  return Response.json(
+    { success: false, error: error.message || "Server error" },
+    { status: 500 }
+  );
+}
 }
