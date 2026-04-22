@@ -121,7 +121,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon about us page banner',
+    alt: 'About Us',
     blurDataURL:
       'data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoUAAQAPzmGuVO/qSWisAgD8CcJZQAAeyAA/uCRvXtboCPifRjAAA==',
     category: 'banner',
@@ -133,7 +133,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon clinics page banner',
+    alt: 'Our Clinics',
     blurDataURL:
       'data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAgCdASoUAAQAPzmEuVOvKKWkMAgB4CcJQBdgBaSAAP7nosWgibsO+9aYrWwAQGtQAAAA',
     category: 'banner',
@@ -145,7 +145,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon experts page banner',
+    alt: 'Our Experts',
     blurDataURL:
       'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAgCdASoUAAQAPzmEuVOvKKWisAgB4CcJZQCzgC0kAAD+1zmldPkVlzUGv/xNx2P37BamUAY6wAAA',
     category: 'banner',
@@ -157,7 +157,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon contact us page banner',
+    alt: 'Contact Us',
     blurDataURL:
       'data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAgCdASoUAAQAPzmGuVO/qSWisAgD8CcJZQCw7DLBAAD+3d3D7NYl8jZ0V64urPllsEAA',
     category: 'banner',
@@ -169,7 +169,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon feedback page banner',
+    alt: 'Feedback',
     blurDataURL:
       'data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAgCdASoUAAQAPzmGulO/qSWisAgD8CcJZwAAifQAAP7rg1SfvhSvv3SlOja6LxcAAA==',
     category: 'banner',
@@ -181,7 +181,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon fertility guide page banner',
+    alt: 'Fertility Guide',
     blurDataURL:
       'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAgCdASoUAAQAPzmGulQ/qSWjMAgD8CcJZQC7AEMiAAD+0DeZO/VYjeQrvDgXRjnBfIAAAAA=',
     category: 'banner',
@@ -285,7 +285,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1665,
     height: 1600,
     sizes: '(max-width: 768px) 100vw, 50vw',
-    alt: 'Bnoon doctors background',
+    alt: 'Our Doctors',
     blurDataURL:
       'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAAAQAwCdASoUABMAPzmWwlmvKqcjqAgB4CcJZwDOOBanFAAA/u1vU3Hu75GAAAAA',
     category: 'about',
@@ -297,7 +297,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1920,
     height: 1484,
     sizes: '100vw',
-    alt: 'Bnoon patient testimonial background',
+    alt: 'Patient Testimonials',
     blurDataURL:
       'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA8APzmIvlSvKSajMAgB4CcJZwDKACzbpTgFUAD+6CLvhoFNMG6txa/9LR/AAAA=',
     category: 'about',
@@ -345,7 +345,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 517,
     height: 547,
     sizes: '(max-width: 768px) 100vw, 517px',
-    alt: 'Bnoon fertility doctor',
+    alt: 'Fertility Doctor',
     blurDataURL:
       'data:image/webp;base64,UklGRrQAAABXRUJQVlA4WAoAAAAQAAAAEwAAFAAAQUxQSFAAAAAFTyAQIPjfsuYhIhIXGNW2reS99Qt4ACWAB9ACmgAq/Ark5k6ZR/R/At7yzA19y310EVzH1gSwzmPtwdA0WoMqBqWA01pJYJVkBoZYEhT011ZQOCA+AAAAEAMAnQEqFAAVAD8xhLJTrqiqIrAMAdAmCWcAyFwqOXu+AP7hn/AMD/7VkFlGZZJBzJb+gGXog3QdOFZfAAA=',
     category: 'about',
@@ -419,7 +419,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon join our team page banner',
+    alt: 'Join Our Team',
     blurDataURL:
       'data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoUAAQAPzmKulOvKaWisAgB4CcJYwCo9CG581vCIHWAAP7Dizvf7hChosC1R0L9JLh67EGv/vzazMFDNciMAAAA',
     category: 'banner',
@@ -431,7 +431,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1471,
     height: 330,
     sizes: '100vw',
-    alt: 'Bnoon national day offer banner',
+    alt: 'National Day Offer',
     blurDataURL:
       'data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQBACdASoUAAQAPzmQvlWvKqajMAgB4CcJbACdMoRwACnxzM+mo6odoAD+n9Oh9GMaLYteODGW/2nKZSckfW2N6OO/M+S5ZlLJEgcmcwAAAA==',
     category: 'banner',
@@ -455,7 +455,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon treatments page banner',
+    alt: 'Treatments',
     blurDataURL:
       'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoUAAQAPzmGulOvKSWisAgB4CcJYwC7ABg6h10nRxcAAP6vjHRKgpLSzJBYnB+ItBNhCrUGBtJkxZwnmgAAAA==',
     category: 'banner',
@@ -480,7 +480,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon your visit page banner',
+    alt: 'Your Visit',
     blurDataURL:
       'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACQAwCdASoUAAQAPzmIvlOvKScisAgB4CcJQAAKKwDW2sIP71kAAP6vlwOJcD/u0rQIMMUvbC0Rd9duHKIVBceoAAA=',
     category: 'banner',
@@ -505,7 +505,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon success stories page banner',
+    alt: 'Success Stories',
     blurDataURL:
       'data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUAAQAPzmKu1SvKaYjMAgB4CcJZQCnFBkjslFYsaLqAAD+syS6e+ycO+YGp2Vq+4SuPsG/hUQYtdcmTWM2gAAA',
     category: 'banner',
@@ -530,7 +530,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon telemedicine page banner',
+    alt: 'Telemedicine',
     blurDataURL:
       'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoUAAQAPzmIvlOvKScisAgB4CcJYwCo9CHrR9oQWstSAAD+w4s2acVrBRbEd8AOGljTtOSVOWRGGjQTdlUAAA==',
     category: 'banner',
@@ -554,7 +554,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon request an appointment page banner',
+    alt: 'Request an Appointment',
     blurDataURL:
       'data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoUAAQAPzmOvlOvKqcisAgB4CcJQBUehEDWYa/wsZD3QAD+w0g+QKgJU7tKxQd48lWYruG0Uem3YnpbBD/gMtaFOBQAAA==',
     category: 'banner',
@@ -580,7 +580,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon refer a patient page banner',
+    alt: 'Refer a Patient',
     blurDataURL:
       'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoUAAQAPzmGuVOvKSWkMAgB4CcJZwAAK5SpQAD+jhf2bj9Yor2NBA8o+ly2nZIg/rT64k0AAAA=',
     category: 'banner',
@@ -592,7 +592,7 @@ export const IMAGE_MANIFEST: ImageManifest = {
     width: 1470,
     height: 329,
     sizes: '100vw',
-    alt: 'Bnoon Waad program banner',
+    alt: 'Waad Program',
     blurDataURL:
       'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABwAwCdASoUAAQAPzmIulOvKSWisAgB4CcJZwAAWkcbMz0Z9/gA/tW99L/Zxy1ANeVQZpVcCJ5+Tnhap9OgAAAA',
     category: 'banner',
