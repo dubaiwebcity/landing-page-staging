@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.sb-form-container {
+    padding: 0;
+    margin: 0;
+}
+
+.sb-fields-container {
+    letter-spacing: 0;
+    color: #000
+}
+
+.sb-fields-container label,
+.sb-fields-container legend {
+    font-weight: 400
+}
+
+.sb-fields-container .button,
+.sb-fields-container button,
+.sb-fields-container input[type=button],
+.sb-fields-container input[type=reset],
+.sb-fields-container input[type=submit] {
+    letter-spacing: 0;
+    color: #fff;
+    text-transform: none;
+    background-color: #38bdf8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
