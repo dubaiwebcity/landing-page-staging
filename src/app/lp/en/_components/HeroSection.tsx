@@ -12,7 +12,7 @@ declare global {
 
 declare let gtag: any;
 declare let fbq: any;
-
+ 
 export default function HeroSection() {
     useEffect(() => {
         window._indentme = window._indentme || [];
