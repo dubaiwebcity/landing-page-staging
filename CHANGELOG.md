@@ -1,3 +1,12 @@
+## [1.4.13](https://github.com/bnoon-ksa/landing-page/compare/v1.4.12...v1.4.13) (2026-04-27)
+
+### Bug Fixes
+
+* add landing page ([#478](https://github.com/bnoon-ksa/landing-page/issues/478)) ([2ad4231](https://github.com/bnoon-ksa/landing-page/commit/2ad42317a45eedf33f58b49319f92ad5c140d4cb))
+* add landing page ([#479](https://github.com/bnoon-ksa/landing-page/issues/479)) ([e1e1010](https://github.com/bnoon-ksa/landing-page/commit/e1e1010ab51029f00ffc34343ed47442de32eac5))
+* indentme integration ([#480](https://github.com/bnoon-ksa/landing-page/issues/480)) ([9e20c2f](https://github.com/bnoon-ksa/landing-page/commit/9e20c2fce952723d4fd9a9d42b120309839938c2))
+* metadata ([#476](https://github.com/bnoon-ksa/landing-page/issues/476)) ([bf6224c](https://github.com/bnoon-ksa/landing-page/commit/bf6224ce3d4abdffef792ef2d8b3e6012f8c0041))
+
 ## [1.4.12](https://github.com/bnoon-ksa/landing-page/compare/v1.4.11...v1.4.12) (2026-04-21)
 
 ### Bug Fixes
