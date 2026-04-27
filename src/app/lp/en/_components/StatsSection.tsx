@@ -44,7 +44,7 @@ const STATS = [
   { target: 5000, suffix: '+', label: 'IVḞ CYCLES ANNUALLY' },
   { target: 80,   suffix: '+', label: 'CLINICIANS' },
   { target: 150,  suffix: '',  label: 'PROFESSIONAL STAFF' },
-  { target: 1000, suffix: '+', label: 'HAPPY FAMILIES' },
+  { target: 50000, suffix: '+', label: 'FAMILIES SUPPORTED' },
   { target: 5,    suffix: '',  label: 'STRATEGIC LOCATIONS' },
 ];
 

@@ -44,7 +44,7 @@ export default function BookSection() {
             Book Your
           </h2>
           <p className="mb-4 max-w-xl text-2xl font-bold text-left lg:mb-14 lg:text-4xl">
-            Free Consultation Now
+            Consultation Now
           </p>
           <p>
             Whether you&apos;re exploring ḟertility options, seeking treatment for reproductive challenges, or considering assisted reproductive solutions, we&apos;re here to provide personalised care and support every step of the way.
