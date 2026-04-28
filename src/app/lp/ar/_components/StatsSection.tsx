@@ -35,17 +35,17 @@ function StatCounter({ target, suffix, label, visible }: StatCounterProps) {
       <span className="text-4xl font-normal text-[#38bdf8]">
         {current}{suffix}
       </span>
-      <span className="text-xs font-bold tracking-widest text-[#64748b] uppercase">{label}</span>
+      <span className="text-xs font-bold tracking-widest text-[#64748b] text-center">{label}</span>
     </div>
   );
 }
 
 const STATS = [
-  { target: 5000, suffix: '+', label: 'IVḞ CYCLES ANNUALLY' },
-  { target: 80,   suffix: '+', label: 'CLINICIANS' },
-  { target: 180,  suffix: '+',  label: 'PROFESSIONAL STAFF' },
-  { target: 50000, suffix: '+', label: 'FAMILIES SUPPORTED' },
-  { target: 5,    suffix: '',  label: 'STRATEGIC LOCATIONS' },
+  { target: 5000,  suffix: '+', label: 'دورة أطفال أنابيب سنوياً' },
+  { target: 80,    suffix: '+', label: 'أطباء واختصاصيون سريريون' },
+  { target: 180,   suffix: '+', label: 'طاقماً مهنياً' },
+  { target: 50000, suffix: '+', label: 'عائلة تم دعمها' },
+  { target: 5,     suffix: '',  label: 'مواقع استراتيجية' },
 ];
 
 export default function StatsSection() {

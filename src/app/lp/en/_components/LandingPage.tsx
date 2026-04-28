@@ -11,22 +11,24 @@ import ReviewsSection from './ReviewsSection';
 import BookSection from './BookSection';
 import Footer from './Footer';
 import Modal from './Modal';
+import DoctorCarousel from './Doctors';
 
 export default function LandingPage() {
-  const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
-  return (
-    <div className="relative min-h-screen overflow-hidden antialiased text-slate-800">
-      <Navbar onBookNow={() => setShowModal(true)} />
-      <HeroSection />
-      <StatsSection />
-      <ServicesSection onBookNow={() => setShowModal(true)} />
-      <LocationsSection />
-      <SpecialistsSection />
-      <ReviewsSection />
-      <BookSection />
-      <Footer />
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
-    </div>
-  );
+    return (
+        <div className="relative min-h-screen overflow-hidden antialiased text-zinc-800">
+            <Navbar onBookNow={() => setShowModal(true)} />
+            <HeroSection />
+            <StatsSection />
+            <ServicesSection onBookNow={() => setShowModal(true)} />
+            <DoctorCarousel />
+            <LocationsSection />
+            <SpecialistsSection />
+            <ReviewsSection />
+            <BookSection />
+            <Footer />
+            <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
+        </div>
+    );
 }

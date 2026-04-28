@@ -46,8 +46,7 @@ export default function Navbar({ onBookNow }: NavbarProps) {
 
     return (
         <header
-            className={`fixed w-full flex items-center justify-center z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' : 'bg-transparent'
-                }`}
+            className={`fixed w-full flex items-center justify-center z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' : 'bg-transparent'}`}
         >
             <nav className="w-full z-10 flex items-center justify-between px-6 py-6 mx-auto max-w-7xl">
                 <div className="flex items-center gap-3">
@@ -55,29 +54,20 @@ export default function Navbar({ onBookNow }: NavbarProps) {
                 </div>
 
                 <div className="hidden gap-8 text-sm font-semibold text-zinc-600 md:flex">
-                    <a href="#services" className="hover:text-zinc-900 transition-colors">Services</a>
-                    <a href="#locations" className="hover:text-zinc-900 transition-colors">Locations</a>
-                    <a href="#doctors" className="hover:text-zinc-900 transition-colors">Doctors</a>
-                    {/* <a href="#specialists" className="hover:text-zinc-900 transition-colors">Specialists</a> */}
-                    <a href="#reviews" className="hover:text-zinc-900 transition-colors">Reviews</a>
+                    <a href="#services" className="hover:text-zinc-900 transition-colors">الخدمات</a>
+                    <a href="#locations" className="hover:text-zinc-900 transition-colors">المواقع</a>
+                    <a href="#doctors" className="hover:text-zinc-900 transition-colors">الأطباء</a>
+                    {/* <a href="#specialists" className="hover:text-zinc-900 transition-colors">المتخصصون</a> */}
+                    <a href="#reviews" className="hover:text-zinc-900 transition-colors">التقييمات</a>
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <a
-                        href="tel:+966114448080"
-                        className="hidden items-center gap-2 text-sm font-bold text-zinc-700 hover:text-zinc-900"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="#38bdf8" className="w-4 h-4">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.48-4.18-7.076-7.076l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                        </svg>
-                        +966 11 444 8080
-                    </a>
                     <button
                         onClick={onBookNow}
                         className="px-6 py-2.5 text-sm font-bold text-white transition rounded-md bg-[#38bdf8] hover:bg-[#0ea5e9] shadow-sm"
                     >
-                        Book Now
-                    </button> 
+                        احجز الآن
+                    </button>
                 </div>
             </nav>
         </header>

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Helvetica, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .sb-form-container {
@@ -28,6 +28,6 @@ body {
     text-transform: none;
     background-color: #38bdf8;
     border: none;
-    border-radius: 50px;
+    border-radius: 6px;
     cursor: pointer;
 }

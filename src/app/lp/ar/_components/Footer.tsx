@@ -23,7 +23,7 @@ export default function Footer() {
                         </g>
                     </svg>
                 </div>
-                <p className="text-sm font-medium text-zinc-400">© 2026 Bnoon Ḟertility Center. All Rights Reserved.</p>
+                <p className="text-sm font-medium text-zinc-400">© 2026 مراكز بنون للخصوبة. جميع الحقوق محفوظة.</p>
             </div>
         </footer>
     );
