@@ -16,7 +16,7 @@ const Stars = () => (
 
 const REVIEWS = [
     {
-        author: 'Ilham',
+        author: 'Bayan',
         meta: '7 تقييمات',
         text: 'كانت تجربتي مع د. عاصم الوهيبي رائعة. محترف للغاية، يشرح كل شيء بوضوح، ويحرص على أن تفهم علاجك. يُدرك المرء بالتأكيد أنه يهتم حقاً بمرضاه.',
     },
@@ -88,7 +88,7 @@ export default function ReviewsSection() {
         <section id="reviews" className="py-10 mx-1 rounded-2xl lg:py-16 lg:mx-8 bg-white/80">
             <div className="mx-auto mb-10 w-full max-w-4xl sm:px-12 lg:mb-20">
                 <h2 className="mb-1 text-2xl font-thin leading-snug text-center text-black lg:text-4xl sm:text-5xl">
-                    تقييمات جوجل
+                    تقييمات نفتخر بها
                 </h2>
                 <p className="mx-auto mb-14 max-w-xl text-xl font-bold text-center lg:text-2xl">
                     موثوق من قِبل العائلات حول العالم
