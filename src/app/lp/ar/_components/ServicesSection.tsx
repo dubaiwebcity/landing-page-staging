@@ -57,7 +57,7 @@ const SERVICES = [
             </svg>
         ),
     },
-];
+]; 
 
 export default function ServicesSection({ onBookNow }: ServicesSectionProps) {
     return (
