@@ -1,3 +1,10 @@
+## [1.4.14](https://github.com/bnoon-ksa/landing-page/compare/v1.4.13...v1.4.14) (2026-04-28)
+
+### Bug Fixes
+
+* indentme integration landing page ([#481](https://github.com/bnoon-ksa/landing-page/issues/481)) ([a886e7e](https://github.com/bnoon-ksa/landing-page/commit/a886e7e4eb4f395adf7b6823f9be39ed2fa3399c))
+* indentme landing page ([#482](https://github.com/bnoon-ksa/landing-page/issues/482)) ([01fcca4](https://github.com/bnoon-ksa/landing-page/commit/01fcca476f9badccdcdce38d6577f71c58c12d37))
+
 ## [1.4.13](https://github.com/bnoon-ksa/landing-page/compare/v1.4.12...v1.4.13) (2026-04-27)
 
 ### Bug Fixes
