@@ -1,3 +1,9 @@
+## [1.4.21](https://github.com/bnoon-ksa/landing-page/compare/v1.4.20...v1.4.21) (2026-04-29)
+
+### Bug Fixes
+
+* Update SearchBar.tsx ([#490](https://github.com/bnoon-ksa/landing-page/issues/490)) ([2b60b1e](https://github.com/bnoon-ksa/landing-page/commit/2b60b1ef2d2b8649c151a564918045ec4d14575a))
+
 ## [1.4.20](https://github.com/bnoon-ksa/landing-page/compare/v1.4.19...v1.4.20) (2026-04-29)
 
 ### Bug Fixes
