@@ -1,3 +1,9 @@
+## [1.4.18](https://github.com/bnoon-ksa/landing-page/compare/v1.4.17...v1.4.18) (2026-04-29)
+
+### Bug Fixes
+
+* Update OurDoctors.tsx ([0e442dc](https://github.com/bnoon-ksa/landing-page/commit/0e442dc4cc2066a082a8244e2b3db567fbf8f77c))
+
 ## [1.4.17](https://github.com/bnoon-ksa/landing-page/compare/v1.4.16...v1.4.17) (2026-04-29)
 
 ### Bug Fixes
