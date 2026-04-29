@@ -116,7 +116,7 @@ const Benefits = () => {
                 display: 'inline-block',
               }}
             >
-              <div className="image-wrapper">
+              <div className="image-wrapper benefit-image">
                 {imageNames.map((name, index) => (
                   <OptimizedImage
                     key={name}

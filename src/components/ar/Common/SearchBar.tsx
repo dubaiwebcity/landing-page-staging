@@ -177,7 +177,7 @@ const SearchBar = () => {
               {doctorsToShow.map((doc, i) => (
                 <li
                   key={i}
-                  className="dropdown-item"
+                  className="search-dropdown-item dropdown-item"
                   onClick={() => {
                     setDoctor(doc);
                     document.querySelector('.doctor-menu')?.classList.remove('open');
@@ -207,7 +207,7 @@ const SearchBar = () => {
 
             <ul className="dropdown-menu location-menu">
               <li
-                className="dropdown-item"
+                className="search-dropdown-item dropdown-item"
                 onClick={() => {
                   setLocation('الرياض');
                   setDoctor('');
@@ -218,7 +218,7 @@ const SearchBar = () => {
               </li>
 
               <li
-                className="dropdown-item"
+                className="search-dropdown-item dropdown-item"
                 onClick={() => {
                   setLocation('جدة');
                   setDoctor('');
@@ -229,7 +229,7 @@ const SearchBar = () => {
               </li>
 
               <li
-                className="dropdown-item"
+                className="search-dropdown-item dropdown-item"
                 onClick={() => {
                   setLocation('الأحساء');
                   setDoctor('');
@@ -249,179 +249,7 @@ const SearchBar = () => {
 
       {/* ✅ Animation CSS */}
       <style jsx global>{`
-        img.arrow-icon {
-          width: 12px !important;
-          height: auto;
-          margin-right: auto;
-        }
-        .doctor-select,
-        .location-select {
-          appearance: none;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-        }
-        .search-button:hover {
-          background: #39bced;
-        }
-
-        .animate-left {
-          opacity: 0;
-          transform: translateX(-50px);
-          transition: all 0.5s ease-in-out;
-        }
-        .animate-left.show {
-          opacity: 1;
-          transform: translateX(0);
-        }
-        .search-button {
-          width: 163px !important ;
-          border-radius: 0px !important;
-          font-weight: 400 !important;
-          height: 44px;
-        }
-        .search-bar {
-          gap: 65px !important;
-        }
-        .search-bar select {
-          color: #757575ff !important;
-        }
-        .arrow-icon {
-          width: 12px !important;
-          height: auto;
-          margin-right: auto;
-        }
-        .doctor-menu.open {
-          background-color: #fff !important;
-        }
-        .custom-dropdown {
-          position: relative;
-        }
-
-        .dropdown-btn {
-          width: 100%;
-          background: #ffffff;
-          border: 1px solid #ccd6e8;
-          padding: 12px 14px;
-          border-radius: 6px;
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          color: #00375f;
-          font-size: 16px;
-          margin-bottom: 10px;
-        }
-
-        .dropdown-menu {
-          position: absolute;
-          width: 600px;
-          background: #fff !important;
-          border: 1px solid #000000ff;
-          border-radius: 0px;
-          display: none;
-          z-index: 999;
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-          padding: 0;
-          margin: 0;
-          line-height: 10px;
-          font-size: 16px !important;
-          text-align: right;
-        }
-        .dropdown-menu.open {
-          display: block;
-        }
-        .dropdown-item {
-          padding: 12px 14px;
-          cursor: pointer;
-          transition: 0.2s;
-          color: #000 !important;
-        }
-        .dropdown-item:hover {
-          background: #000;
-          color: #fff !important;
-        }
-
-        /* Desktop styles remain the same */
-        .doctor-select {
-          width: 600px;
-          padding: 12px 18px;
-          border: none;
-          outline: none;
-          border-radius: 6px;
-          font-size: 16px;
-          background-color: #fff;
-          font-weight: 400;
-          height: 44px;
-          color: rgb(117, 117, 117);
-          margin-bottom: 0px;
-        }
-        .location-select {
-          width: 348px;
-          padding: 12px 18px;
-          border: none;
-          outline: none;
-          border-radius: 6px;
-          font-size: 16px;
-          background-color: #fff;
-          font-weight: 400;
-          height: 44px;
-          color: rgb(117, 117, 117);
-          margin-bottom: 0px;
-        }
-        .dropdown-menu.location-menu.open {
-          width: 348px;
-        }
-
-        .search-bar {
-          margin-top: 0px;
-        }
-        .doctor-bar {
-          margin-top: 20px;
-        }
-        /* Only Doctor Dropdown Scrollable */
-        .dropdown-menu.doctor-menu {
-          max-height: 200px;
-          overflow-y: auto;
-          overflow-x: hidden;
-        }
-        .placeholder-text {
-          color: #757575 !important; /* Default grey */
-        }
-
-        .selected-text {
-          color: #000 !important; /* Black when selected */
-          font-weight: 600;
-        }
-
-        /* ✅ Mobile responsive */
-        @media (max-width: 767px) {
-          .search-bar {
-            display: flex;
-            flex-direction: column;
-            gap: 12px !important;
-            height: 200px;
-          }
-          .doctor-select,
-          .location-select,
-          .search-button {
-            width: 300px;
-          }
-          .dropdown-menu {
-            width: 100% !important;
-          }
-          .dropdown-menu.location-menu.open {
-            width: 100% !important;
-          }
-          .search-button {
-            width: 120px !important;
-            -webkit-border-radius: 0px !important;
-            -moz-border-radius: 0px !important;
-            border-radius: 0px !important;
-            font-weight: 400 !important;
-            margin: 0px 175px 0px 0px;
-            height: 30px;
-            padding: 0px 20px;
-          }
-        }
+    
       `}</style>
     </div>
   );

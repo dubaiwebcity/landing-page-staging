@@ -164,7 +164,7 @@ const SearchBar = () => {
               {doctorsToShow.map((doc, i) => (
                 <div
                   key={i}
-                  className="dropdown-item"
+                  className="search-dropdown-item dropdown-item"
                   onClick={() => {
                     setDoctor(doc);
                     document.querySelector('.doctor-menu')?.classList.remove('open');
@@ -199,7 +199,7 @@ const SearchBar = () => {
               {['Riyadh', 'Jeddah', 'Al Ahsa'].map((loc, i) => (
                 <div
                   key={i}
-                  className="dropdown-item"
+                  className="search-dropdown-item dropdown-item"
                   onClick={() => {
                     setLocation(loc as LocationType);
                     setDoctor('');
@@ -220,141 +220,7 @@ const SearchBar = () => {
 
       {/* CSS for animation and dropdowns */}
       <style jsx>{`
-        .animate-left {
-          opacity: 0;
-          transform: translateX(-50px);
-          transition: all 0.5s ease-in-out;
-        }
-        .animate-left.show {
-          opacity: 1;
-          transform: translateX(0);
-        }
-
-        .custom-dropdown {
-          position: relative;
-        }
-
-        .dropdown-btn {
-          width: 100%;
-          background: #ffffff;
-          border: 1px solid #ccd6e8;
-          padding: 12px 14px;
-          border-radius: 6px;
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          color: #00375f;
-          font-size: 16px;
-          margin-bottom: 10px;
-        }
-
-        .arrow-icon {
-          width: 12px;
-          height: auto;
-          margin-left: auto;
-        }
-
-        .dropdown-menu {
-          position: absolute;
-          width: 600px;
-          background: #fff;
-          border: 1px solid #000000ff;
-          border-radius: 0px;
-          display: none;
-          z-index: 999;
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-          padding: 0;
-          margin: 0;
-          line-height: 10px;
-          font-size: 18px;
-        }
-        .dropdown-menu.open {
-          display: block;
-        }
-        .dropdown-item {
-          padding: 12px 14px;
-          cursor: pointer;
-          transition: 0.2s;
-        }
-        .dropdown-item:hover {
-          background: #000;
-          color: #fff;
-        }
-
-        /* Desktop styles remain the same */
-        .doctor-select {
-          width: 600px;
-          padding: 12px;
-          padding-right: 35px;
-          border: none;
-          outline: none;
-          border-radius: 6px;
-          font-size: 18px;
-          background-color: #fff;
-          font-weight: 600;
-          height: 44px;
-          color: rgb(117, 117, 117);
-          margin-bottom: 0px;
-        }
-        .location-select {
-          width: 348px;
-          padding: 12px;
-          padding-right: 35px;
-          border: none;
-          outline: none;
-          border-radius: 6px;
-          font-size: 18px;
-          background-color: #fff;
-          font-weight: 600;
-          height: 44px;
-          color: rgb(117, 117, 117);
-          margin-bottom: 0px;
-        }
-        .dropdown-menu.location-menu.open {
-          width: 348px;
-        }
-
-        .search-bar {
-          margin-top: 0px;
-        }
-        .doctor-bar {
-          margin-top: 20px;
-        }
-        /* Only Doctor Dropdown Scrollable */
-        .dropdown-menu.doctor-menu {
-          max-height: 200px;
-          overflow-y: auto;
-          overflow-x: hidden;
-        }
-        .placeholder-text {
-          color: #757575 !important; /* Default grey */
-        }
-
-        .selected-text {
-          color: #000 !important; /* Black when selected */
-          font-weight: 600;
-        }
-
-        /* ✅ Mobile responsive */
-        @media (max-width: 767px) {
-          .search-bar {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            height: 200px;
-          }
-          .doctor-select,
-          .location-select,
-          .search-button {
-            width: 300px;
-          }
-          .dropdown-menu {
-            width: 100% !important;
-          }
-          .dropdown-menu.location-menu.open {
-            width: 100% !important;
-          }
-        }
+      
       `}</style>
     </div>
   );
