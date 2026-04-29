@@ -156,6 +156,14 @@ const OurExperts = () => {
       profileLink: 'dr-median-alkhalaf',
       location: 'Al Ahsa',
     },
+     {
+      id: 17,
+      name: 'Dr. Dina Alkehaimi',
+      qualification: 'Senior Registrar, Obstetrics, Gynecology, Reproductive Endorincology & Infertility (IVF)',
+      imageName: 'doctor-grid-18',
+      profileLink: 'dr-dina-alkehaimi',
+      location: 'Riyadh',
+    },
     {
       id: 15,
       name: 'Dr. Maram Dadoua',

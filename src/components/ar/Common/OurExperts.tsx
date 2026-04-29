@@ -150,6 +150,14 @@ const OurExperts = () => {
       profileLink: 'dr-median-alkhalaf',
       location: 'الأحساء',
     },
+      {
+      id: 17,
+      name: 'الدكتورة دينا الكحيمي',
+      qualification: 'أخصائية أمراض النساء والولادة والعقم وأطفال الأنابيب',
+      imageName: 'doctor-grid-18',
+      profileLink: 'dr-dina-alkehaimi',
+      location: 'الرياض',
+    },
     {
       id: 15,
       name: 'الدكتورة مرام دعدوع',

@@ -827,6 +827,18 @@ export const IMAGE_MANIFEST: ImageManifest = {
     cdnSrcSet:
       'https://bnoon-website.b-cdn.net/images/doctors/17.jpg 268w',
   },
+   'doctor-grid-18': {
+    src: '/images/doctors/18.jpg',
+    width: 275,
+    height: 236,
+    sizes: '(max-width: 768px) 50vw, 340px',
+    alt: 'Dr. Dina Alkehaimi',
+    blurDataURL:
+      'data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoUABEAPzmOv1cvKaajqAqp4CcJQigAcx8LaetUaaGkGb4km9jwAP3M7ar5mcGUh7MrPkE7pM7L+yYZQLbHgjUDZ6QIDf+K3KNQcyl+K8vXQxA64nGJZHBJfIuYc7Og9q6oW9EnCTAaoEUz2hluwR+PWdTqSg97gAAAAA==',
+    category: 'doctor',
+    cdnSrcSet:
+      'https://bnoon-website.b-cdn.net/images/doctors/18.jpg 275w',
+  },
   'dr-abdulaziz': {
     src: '/images/doctors/dr-abdulaziz.avif',
     width: 502,
@@ -994,6 +1006,18 @@ export const IMAGE_MANIFEST: ImageManifest = {
     category: 'doctor',
     cdnSrcSet:
       'https://bnoon-website.b-cdn.net/images/doctors/dr-maram.avif 502w',
+  },
+    'dr-dina': {
+    src: '/images/doctors/dr-dina.jpg',
+    width: 502,
+    height: 626,
+    sizes: '(max-width: 768px) 100vw, 502px',
+    alt: 'Dr. Dina Alkehaimi',
+    blurDataURL:
+      'data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBQCdASoUABkAPzmQvlevKaYjqAqp4CcJQBdgAhyxV7JHib/37Kskv65B4suPI6RAAP3M+KB9hcLoBKNX7A9I4q9mn1ckZ1WZ+ltnEvOhZ5jdUgzLzfWIYupnIPdhmDA3psTxRtkOqIfvKU4oBi2bo8adpPj4uvCsBY8AAAA=',
+    category: 'doctor',
+    cdnSrcSet:
+      'https://bnoon-website.b-cdn.net/images/doctors/dr-dina.jpg 502w',
   },
   'dr-rania': {
     src: '/images/doctors/dr-rania.jpg',
