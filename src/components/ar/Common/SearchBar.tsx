@@ -69,6 +69,7 @@ const SearchBar = () => {
       'الدكتور عاصم الوهيبي',
       'الدكتور وجدي  العمري',
       'الدكتورة داليا  نور',
+      'الدكتورة دينا الكحيمي',
       'الدكتور موسى  النعمي',
     ],
     جدة: [
@@ -110,15 +111,14 @@ const SearchBar = () => {
     'الدكتور موسى  النعمي': '/ar/dr-moussa-el-naiemy',
     'الدكتورة رزان غيث': '/ar/dr-razan-ghaith',
     'الدكتور مدين الخلف ': '/ar/dr-median-alkhalaf',
+    'الدكتورة دينا الكحيمي': '/ar/dr-dina-alkehaimi',
     'الدكتورة مرام دعدوع': '/ar/dr-maram-dadoua',
     'الدكتورة رانيا الشريفي': '/ar/dr-rania-elsherify',
   };
   const orderedDoctors = Object.keys(doctorProfileLinks);
-  const doctorsToShow = location
-    ? orderedDoctors.filter((doc) =>
-        doctorsByLocation[location as Exclude<LocationType, ''>].includes(doc),
-      )
-    : orderedDoctors;
+const doctorsToShow = location
+  ? doctorsByLocation[location as Exclude<LocationType, ''>]
+  : orderedDoctors;
 
   // ✅ Handle search
   const handleSearch = () => {

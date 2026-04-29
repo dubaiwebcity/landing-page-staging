@@ -28,6 +28,7 @@ const SearchBar = () => {
     'Dr. Mussa AlNumi': '/en/dr-moussa-el-naiemy',
     'Dr. Razan Ghaith': '/en/dr-razan-ghaith',
     'Dr. Median Alkhalaf': '/en/dr-median-alkhalaf',
+    'Dr. Dina Alkehaimi': '/en/dr-dina-alkehaimi',
     'Dr. Maram Dadoua': '/en/dr-maram-dadoua',
 
     'Dr. Rania Elsherify': '/en/dr-rania-elsherify',
@@ -97,6 +98,7 @@ const SearchBar = () => {
       'Dr. Asim Al Wohaibi',
       'Dr. Wajdi Al Omari',
       'Dr. Dalia Nour',
+      'Dr. Dina Alkehaimi',
       'Dr. Mussa AlNumi',
     ],
     Jeddah: [
@@ -122,10 +124,8 @@ const SearchBar = () => {
     ...doctorsByLocation['Al Ahsa'],
   ];
   const doctorsToShow = location
-    ? orderedDoctors.filter((doc) =>
-        doctorsByLocation[location as Exclude<LocationType, ''>].includes(doc),
-      )
-    : orderedDoctors;
+  ? doctorsByLocation[location as Exclude<LocationType, ''>]
+  : orderedDoctors;
 
   return (
     <div className="partner-area ptb-140">
