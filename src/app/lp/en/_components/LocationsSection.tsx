@@ -55,7 +55,7 @@ export default function LocationsSection() {
               Our Locations
             </h2>
             <p className="mb-10 text-sm leading-relaxed text-zinc-500 max-w-md">
-              Conveniently located to serve families across Saudi Arabia with five world-class facilities.
+              Conveniently located to serve families across Saudi Arabia with world-class facilities.
             </p>
 
             <div className="flex flex-col gap-4">

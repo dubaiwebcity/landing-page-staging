@@ -9,7 +9,7 @@ const doctors = [
         title: "Group Medical Director",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Riyadh",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/1.jpg",
+        img: "/images/doctors/Dr.-Abdel%20Aziz%20(1).png",
         profileUrl: "en/dr-abdalaziz-alshahrani"
     },
     {
@@ -18,7 +18,7 @@ const doctors = [
         title: "Executive Director",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF), Minimally Invasive Surgery & Maternal Fetal Medicine",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/2.jpg",
+        img: "/images/doctors/Fawaz%20(1).png",
         profileUrl: "en/dr-fawaz-edris"
     },
     {
@@ -27,7 +27,7 @@ const doctors = [
         title: "Medical Director",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/3.jpg",
+        img: "/images/doctors/Mazin.png",
         profileUrl: "en/dr-mazin-bishara"
     },
     {
@@ -36,7 +36,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Al Ahsa",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/15.jpg",
+        img: "/images/doctors/Dr.%20Bassam%20Mohammad%20Nusair1.jpg",
         profileUrl: "en/dr-bassamnusair"
     },
     {
@@ -45,7 +45,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Riyadh",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/4.jpg",
+        img: "/images/doctors/Dr.%20Asim.png",
         profileUrl: "en/dr-asim-alwohaibi"
     },
     {
@@ -54,7 +54,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/6.jpg",
+        img: "/images/doctors/Dr%20Ahmed%20Shaikh.png",
         profileUrl: "en/dr-ahmed-alshaikh"
     },
     {
@@ -63,7 +63,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology & Infertility (IVF), Minimally Invasive Surgery",
         location: "Riyadh",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/7.jpg",
+        img: "/images/doctors/Dr%20wajdi%20(1).png",
         profileUrl: "en/dr-wajdi-alomari"
     },
     {
@@ -72,7 +72,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Al Ahsa",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/16.jpg",
+        img: "/images/doctors/1 (20).jpg",
         profileUrl: "en/dr-ahmedal-nowasser"
     },
     {
@@ -81,7 +81,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology & Infertility (IVF)",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/11.jpg",
+        img: "/images/doctors/Maya.png",
         profileUrl: "en/dr-maya-albezreh"
     },
     {
@@ -90,7 +90,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology & Infertility",
         location: "Riyadh",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/8.jpg",
+        img: "/images/doctors/Dr.%20Dalia%20Adel.png",
         profileUrl: "en/dr-dalia-nour"
     },
     {
@@ -99,7 +99,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Urology, Andrology & Male Infertility",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/9.jpg",
+        img: "/images/doctors/Dr%20haroun%20(1).png",
         profileUrl: "en/dr-ahmad-haroun"
     },
     {
@@ -108,7 +108,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Urology, Andrology & Male Infertility",
         location: "Riyadh",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/10.jpg",
+        img: "/images/doctors/Dr.%20Moussa%20El%20Naiemy.png",
         profileUrl: "en/dr-moussa-el-naiemy"
     },
     {
@@ -117,7 +117,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics, Gynecology & Delayed Pregnancy",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/12.jpg",
+        img: "/images/doctors/Razan.png",
         profileUrl: "en/dr-razan-ghaith"
     },
     {
@@ -126,7 +126,7 @@ const doctors = [
         title: "Consultant",
         sub: "Consultant, Obstetrics & Gynecology",
         location: "Al Ahsa",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/17.jpg",
+        img: "/images/doctors/2 (13).jpg",
         profileUrl: "en/dr-median-alkhalaf"
     },
     {
@@ -135,7 +135,7 @@ const doctors = [
         title: "Senior Registrar",
         sub: "Senior Registrar, Obstetrics & Gynecology",
         location: "Jeddah",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/13.jpg",
+        img: "/images/doctors/Maryam.png",
         profileUrl: "en/dr-maram-dadoua"
     },
     {
@@ -144,7 +144,7 @@ const doctors = [
         title: "Registrar",
         sub: "Obstetrics & Gynecology Registrar",
         location: "Al Ahsa",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/14.jpg",
+        img: "/images/doctors/Dr.%20Rania%20Mohamed%20Ibrahim%20Elsherify1.jpg",
         profileUrl: "en/dr-rania-elsherify"
     }
 ];
@@ -222,7 +222,7 @@ export default function DoctorCarousel() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                     <div>
                         <h2 className="text-4xl font-extrabold text-zinc-900 tracking-tight">Our Consultants</h2>
-                        <p className="text-zinc-600 mt-2 text-lg">Meet our experienced medical team across the region.</p>
+                        <p className="text-zinc-600 mt-2 text-lg">Meet our experienced board-certified physicians across the region.</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
@@ -269,7 +269,7 @@ export default function DoctorCarousel() {
                                     <img
                                         src={doctor.img}
                                         alt={doctor.name}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
 

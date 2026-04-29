@@ -9,7 +9,7 @@ const doctors = [
         title: "المدير الطبي للمجموعة",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
         location: "الرياض",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/1.jpg",
+        img: "/images/doctors/Dr.-Abdel%20Aziz%20(1).png",
         profileUrl: "ar/dr-abdalaziz-alshahrani"
     },
     {
@@ -18,7 +18,7 @@ const doctors = [
         title: "المدير التنفيذي",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب)، الجراحة بالمنظار وطب الأم والجنين",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/2.jpg",
+        img: "/images/doctors/Fawaz%20(1).png",
         profileUrl: "ar/dr-fawaz-edris"
     },
     {
@@ -27,7 +27,7 @@ const doctors = [
         title: "المدير الطبي",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/3.jpg",
+        img: "/images/doctors/Mazin.png",
         profileUrl: "ar/dr-mazin-bishara"
     },
     {
@@ -36,7 +36,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
         location: "الأحساء",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/15.jpg",
+        img: "/images/doctors/Dr.%20Bassam%20Mohammad%20Nusair1.jpg",
         profileUrl: "ar/dr-bassamnusair"
     },
     {
@@ -45,7 +45,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
         location: "الرياض",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/4.jpg",
+        img: "/images/doctors/Dr.%20Asim.png",
         profileUrl: "ar/dr-asim-alwohaibi"
     },
     {
@@ -54,7 +54,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/6.jpg",
+        img: "/images/doctors/Dr%20Ahmed%20Shaikh.png",
         profileUrl: "ar/dr-ahmed-alshaikh"
     },
     {
@@ -63,7 +63,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية والعقم (أطفال الأنابيب)، الجراحة بالمنظار",
         location: "الرياض",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/7.jpg",
+        img: "/images/doctors/Dr%20wajdi%20(1).png",
         profileUrl: "ar/dr-wajdi-alomari"
     },
     {
@@ -72,7 +72,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
         location: "الأحساء",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/16.jpg",
+        img: "/images/doctors/1%20(20).jpg",
         profileUrl: "ar/dr-ahmedal-nowasser"
     },
     {
@@ -81,7 +81,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية والعقم (أطفال الأنابيب)",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/11.jpg",
+        img: "/images/doctors/Maya.png",
         profileUrl: "ar/dr-maya-albezreh"
     },
     {
@@ -90,7 +90,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد والعقم",
         location: "الرياض",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/8.jpg",
+        img: "/images/doctors/Dr.%20Dalia%20Adel.png",
         profileUrl: "ar/dr-dalia-nour"
     },
     {
@@ -99,7 +99,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، المسالك البولية وأمراض الذكورة والعقم عند الرجال",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/9.jpg",
+        img: "/images/doctors/Dr%20haroun%20(1).png",
         profileUrl: "ar/dr-ahmad-haroun"
     },
     {
@@ -108,7 +108,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، المسالك البولية وأمراض الذكورة والعقم عند الرجال",
         location: "الرياض",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/10.jpg",
+        img: "/images/doctors/Dr.%20Moussa%20El%20Naiemy.png",
         profileUrl: "ar/dr-moussa-el-naiemy"
     },
     {
@@ -117,7 +117,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد وتأخر الإنجاب",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/12.jpg",
+        img: "/images/doctors/Razan.png",
         profileUrl: "ar/dr-razan-ghaith"
     },
     {
@@ -126,7 +126,7 @@ const doctors = [
         title: "استشاري",
         sub: "استشاري، أمراض النساء والتوليد",
         location: "الأحساء",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/17.jpg",
+        img: "/images/doctors/2%20(13).jpg",
         profileUrl: "ar/dr-median-alkhalaf"
     },
     {
@@ -135,7 +135,7 @@ const doctors = [
         title: "طبيبة مقيمة أولى",
         sub: "طبيبة مقيمة أولى، أمراض النساء والتوليد",
         location: "جدة",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/13.jpg",
+        img: "/images/doctors/Maryam.png",
         profileUrl: "ar/dr-maram-dadoua"
     },
     {
@@ -144,7 +144,7 @@ const doctors = [
         title: "طبيبة مقيمة",
         sub: "طبيبة مقيمة، أمراض النساء والتوليد",
         location: "الأحساء",
-        img: "https://bnoon-website.b-cdn.net/images/doctors/14.jpg",
+        img: "/images/doctors/Dr.%20Rania%20Mohamed%20Ibrahim%20Elsherify1.jpg",
         profileUrl: "ar/dr-rania-elsherify"
     }
 ];
@@ -271,7 +271,7 @@ export default function DoctorCarousel() {
                                     <img
                                         src={doctor.img}
                                         alt={doctor.name}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
 

@@ -39,6 +39,7 @@ const REVIEWS = [
         author: 'alshaymaa alshaikh',
         meta: '8 تقييمات',
         text: `الدكتورة زينا هي بصدق إحدى أفضل الأطباء اللواتي التقيت بهن. إنها محترفة جداً ولطيفة وتهتم حقاً بمرضاها. منذ الزيارة الأولى، لاحظت مدى التزامها بالمواعيد، مما يعكس احترامها الكبير لوقت مرضاها.
+
 ما أعجبني أكثر هو وضوحها في شرح خطة العلاج. تستغرق وقتاً في الاستماع إلى مخاوفك وتضمن الإجابة على جميع أسئلتك بشكل شامل. منحني ذلك الكثير من الراحة والثقة في عملية العلاج.
 أنا ممتنة حقاً لدعمها وتفانيها.`,
     },
@@ -46,7 +47,7 @@ const REVIEWS = [
 
 function ReviewCard({ text }: { text: string }) {
     const [expanded, setExpanded] = useState(false);
-    const firstBreak = text.indexOf('\n\n');
+    const firstBreak = text.indexOf('\n');
     const hasMore = firstBreak !== -1;
     const first = hasMore ? text.slice(0, firstBreak) : text;
     const rest = hasMore ? text.slice(firstBreak + 2) : '';
@@ -87,10 +88,10 @@ export default function ReviewsSection() {
     return (
         <section id="reviews" className="py-10 mx-1 rounded-2xl lg:py-16 lg:mx-8 bg-white/80">
             <div className="mx-auto mb-10 w-full max-w-4xl sm:px-12 lg:mb-20">
-                <h2 className="mb-1 text-2xl font-thin leading-snug text-center text-black lg:text-4xl sm:text-5xl">
-                    تقييمات نفتخر بها
+                <h2 className="mb-1 text-2xl font-bold leading-snug text-center text-black lg:text-4xl sm:text-5xl">
+                    بكلمات مرضانا
                 </h2>
-                <p className="mx-auto mb-14 max-w-xl text-xl font-bold text-center lg:text-2xl">
+                <p className="mx-auto mb-14 max-w-xl text-base text-center lg:text-base">
                     موثوق من قِبل العائلات حول العالم
                 </p>
             </div>

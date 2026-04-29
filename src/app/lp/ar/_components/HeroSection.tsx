@@ -64,13 +64,13 @@ export default function HeroSection() {
 
                 <div className="w-full max-w-xl text-right">
                     <h1 className="mb-6 text-3xl md:text-4xl mt-24 md:mt-0 font-extrabold leading-[1.3] text-[#0a192f] lg:text-6xl">
-                       عائلتكم تكبر معنا.. <br/>في قلب المملكة
+                        عائلتكم تكبر معنا.. <br />في قلب المملكة
                     </h1>
                     <p className="mb-10 text-lg font-medium leading-relaxed text-zinc-700">
-                        من خلال رعاية متقدمة للخصوبة وعقود من الخبرة الطبية. ندعم العائلات برعاية موثوقة وأطباء متخصصين ذوي خبرة.
+                        من خلال أحدث التقنيات ومختبرات متطورة وفق أعلى المعايير العالمية، نقدّم الجيل القادم من رعاية الخصوبة، بقيادة نخبة من الأطباء ذوي الخبرة.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                        <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">أطفال الأنابيب IVF</span>
+                        <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">أطفال الأنابيب والحقن المجهري  (ICSI/IVF)</span>
                         <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">الفحوصات الجينية</span>
                         <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">اختيار جنس الجنين</span>
                     </div>
@@ -79,7 +79,7 @@ export default function HeroSection() {
                 <div className="w-full max-w-md">
                     <div className="p-8 bg-white/95 backdrop-blur-md rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/20">
                         <h2 className="mb-2 text-2xl font-bold text-gray-900 text-right">
-                            تحدث إلى أخصائي
+                            تواصل معنا
                         </h2>
                         <p className="mb-6 text-sm font-medium text-zinc-500 text-right">
                             املأ النموذج أدناه ليتم التواصل معك لاحقاً.

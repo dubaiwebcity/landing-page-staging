@@ -22,11 +22,11 @@ export default function SpecialistsSection() {
     <section id="specialists" className="py-16 mx-1 rounded-2xl bg-[#f4f9fc]">
       <div className="px-8 mx-auto max-w-7xl">
         <div className="mx-auto mb-10 w-full max-w-4xl sm:px-12">
-          <h2 className="mb-1 text-2xl font-thin leading-snug text-center text-black lg:text-4xl sm:text-5xl">
-            من خبرائنا
+          <h2 className="mb-1 text-2xl font-bold leading-snug text-center text-black lg:text-4xl sm:text-5xl">
+            حوارات مع أطبائنا المختصين
           </h2>
-          <p className="mx-auto mb-14 max-w-xl text-xl font-bold text-center lg:text-2xl">
-            رؤى طبية حول الخصوبة وأطفال الأنابيب
+          <p className="mx-auto mb-14 max-w-xl text-base text-center lg:text-base">
+            مقتطفات موجزة من أطبائنا حول الخصوبة وأطفال الأنابيب وخيارات العلاج
           </p>
         </div>
 

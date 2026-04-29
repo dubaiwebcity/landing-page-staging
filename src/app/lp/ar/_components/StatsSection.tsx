@@ -42,9 +42,9 @@ function StatCounter({ target, suffix, label, visible }: StatCounterProps) {
 
 const STATS = [
   { target: 5000,  suffix: '+', label: 'دورة أطفال أنابيب سنوياً' },
-  { target: 80,    suffix: '+', label: 'أطباء واختصاصيون سريريون' },
-  { target: 180,   suffix: '+', label: 'طاقماً مهنياً' },
-  { target: 50000, suffix: '+', label: 'عائلة تم دعمها' },
+  { target: 80,    suffix: '+', label: 'أطباء واختصاصيون' },
+  { target: 180,   suffix: '+', label: 'كوادر مهنية' },
+  { target: 50000, suffix: '+', label: 'عائلة تمت رعايتها' },
   { target: 5,     suffix: '',  label: 'مواقع استراتيجية' },
 ];
 

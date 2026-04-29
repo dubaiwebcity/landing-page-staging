@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lp:dev": "npx tailwindcss -i ./input.css -o ./style.css --content \"./src/app/lp/**/*.tsx\""
   },
   "dependencies": {
     "@next/third-parties": "16.2.3",
@@ -49,6 +50,7 @@
     "eslint-config-next": "^14.2.5",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
+    "tailwindcss": "4.2.4",
     "typescript": "5.9.2",
     "vitest": "^4.0.18"
   },

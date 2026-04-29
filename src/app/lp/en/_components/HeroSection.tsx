@@ -12,7 +12,7 @@ declare global {
 
 declare let gtag: any;
 declare let fbq: any;
- 
+
 export default function HeroSection() {
     useEffect(() => {
         window._indentme = window._indentme || [];
@@ -67,10 +67,10 @@ export default function HeroSection() {
                         Building families<br />across Saudi Arabia
                     </h1>
                     <p className="mb-10 text-lg font-medium leading-relaxed text-zinc-700">
-                        Through advanced ḟertility care and decades of medical expertise. Supporting families with trusted care and experienced specialists.
+                        Through advanced ḟertility care and decades of medical expertise, we support families with trusted care and experienced consultants.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                        <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">IVḞ</span>
+                        <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">IVḞ/ICSI</span>
                         <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">Genetic Testing</span>
                         <span className="px-5 py-2 text-xs font-bold rounded-full bg-[#38bdf8] text-white">Gender Selection</span>
                     </div>
