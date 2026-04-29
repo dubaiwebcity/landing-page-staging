@@ -1,3 +1,9 @@
+## [1.4.22](https://github.com/bnoon-ksa/landing-page/compare/v1.4.21...v1.4.22) (2026-04-29)
+
+### Bug Fixes
+
+* landing page styles ([#491](https://github.com/bnoon-ksa/landing-page/issues/491)) ([2b4b51f](https://github.com/bnoon-ksa/landing-page/commit/2b4b51ff1ba99e1bb86f15772ab20d839fd93c7d))
+
 ## [1.4.21](https://github.com/bnoon-ksa/landing-page/compare/v1.4.20...v1.4.21) (2026-04-29)
 
 ### Bug Fixes
