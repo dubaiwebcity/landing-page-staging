@@ -147,7 +147,6 @@ const doctors = [
         img: "/images/doctors/Dr.%20Rania%20Mohamed%20Ibrahim%20Elsherify1.jpg",
         profileUrl: "ar/dr-rania-elsherify"
     },
-
     {
         id: 15,
         name: "د. دينا الكحيمي",
