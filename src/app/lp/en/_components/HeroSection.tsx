@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import { useEffect } from 'react';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 declare global {
     interface Window {
@@ -37,7 +38,11 @@ export default function HeroSection() {
                 if (event.origin == "https://indentme.io") {
                     var data = JSON.parse(event.data);
                     if (data.status === "success") {
-                        gtag("event", "generate_lead");
+                        sendGTMEvent({
+                            event: 'generate_lead',
+                            value: '1'
+                        });
+                        if (typeof gtag != "undefined") gtag("event", "generate_lead");
                         if (typeof fbq != "undefined") fbq("track", "Lead", {});
                     }
                 }
