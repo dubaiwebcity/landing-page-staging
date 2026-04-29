@@ -1,3 +1,10 @@
+## [1.4.24](https://github.com/bnoon-ksa/landing-page/compare/v1.4.23...v1.4.24) (2026-04-29)
+
+### Bug Fixes
+
+* add dr dina ([#493](https://github.com/bnoon-ksa/landing-page/issues/493)) ([9e78f0d](https://github.com/bnoon-ksa/landing-page/commit/9e78f0db70ba37e62f504b8267b8109c280d8416))
+* doctor dina ([#494](https://github.com/bnoon-ksa/landing-page/issues/494)) ([92cbea3](https://github.com/bnoon-ksa/landing-page/commit/92cbea32999dbf0108035bfd1dc81cbf89b25726))
+
 ## [1.4.23](https://github.com/bnoon-ksa/landing-page/compare/v1.4.22...v1.4.23) (2026-04-29)
 
 ### Bug Fixes
