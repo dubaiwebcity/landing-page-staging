@@ -1,3 +1,9 @@
+## [1.4.17](https://github.com/bnoon-ksa/landing-page/compare/v1.4.16...v1.4.17) (2026-04-29)
+
+### Bug Fixes
+
+* Feature/new updates ([#486](https://github.com/bnoon-ksa/landing-page/issues/486)) ([b3c03c1](https://github.com/bnoon-ksa/landing-page/commit/b3c03c181a5de38795ed38066c8f2fc6e03e1ce7))
+
 ## [1.4.16](https://github.com/bnoon-ksa/landing-page/compare/v1.4.15...v1.4.16) (2026-04-29)
 
 ### Bug Fixes
