@@ -146,6 +146,16 @@ const doctors = [
         location: "الأحساء",
         img: "/images/doctors/Dr.%20Rania%20Mohamed%20Ibrahim%20Elsherify1.jpg",
         profileUrl: "ar/dr-rania-elsherify"
+    },
+
+    {
+        id: 15,
+        name: "د. دينا الكحيمي",
+        title: "طبيبة مقيمة",
+        sub: "أخصائية أمراض النساء والولادة والعقم وأطفال الأنابيب",
+        location: "الرياض",
+        img: "/images/doctors/dina.jpeg",
+        profileUrl: "ar/dr-dina-alkehaimi"
     }
 ];
 

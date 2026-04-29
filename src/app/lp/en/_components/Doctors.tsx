@@ -146,6 +146,15 @@ const doctors = [
         location: "Al Ahsa",
         img: "/images/doctors/Dr.%20Rania%20Mohamed%20Ibrahim%20Elsherify1.jpg",
         profileUrl: "en/dr-rania-elsherify"
+    },
+    {
+        id: 15,
+        name: "Dr. Dina Alkehaimi",
+        title: "Registrar",
+        sub: "Senior Registrar, Obstetrics, Gynecology, Reproductive Endorincology & Infertility (IVF)",
+        location: "Riyadh",
+        img: "/images/doctors/dina.jpeg",
+        profileUrl: ""
     }
 ];
 export default function DoctorCarousel() {
