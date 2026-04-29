@@ -222,10 +222,27 @@ const OurExperts = () => {
         {/* ✅ Doctors List */}
         <div className="doctors-scroll-container">
           <div className="row g-4">
-            {doctorsData.map((doctor) => {
-              const isVisible = filter === 'الجميع' || doctor.location === filter;
-              return (
-              <div key={doctor.id} className="col-xl-3 col-md-6" style={{ display: isVisible ? '' : 'none' }}>
+            {doctorsData
+  .filter((doctor) => filter === 'الجميع' || doctor.location === filter)
+  .sort((a, b) => {
+    if (filter === 'الرياض') {
+      if (
+        a.name === 'الدكتورة دينا الكحيمي' &&
+        b.name === 'الدكتور موسى النعمي'
+      )
+        return -1;
+
+      if (
+        a.name === 'الدكتور موسى النعمي' &&
+        b.name === 'الدكتورة دينا الكحيمي'
+      )
+        return 1;
+    }
+    return 0;
+  })
+  .map((doctor) => {
+  return (
+    <div key={doctor.id} className="col-xl-3 col-md-6">
                 <div className="doctor-card">
                   <div className="image-wrapper" style={{ position: 'relative' }}>
                     <OptimizedImage

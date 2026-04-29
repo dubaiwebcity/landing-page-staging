@@ -226,7 +226,20 @@ const OurExperts = () => {
 
         <div className="doctors-scroll-container">
           <div className="row g-4">
-            {doctorsData.map((doctor) => {
+            {doctorsData
+  .filter((doctor) => filter === 'ALL' || doctor.location === filter)
+.sort((a, b) => {
+  // Sirf Riyadh filter pe apply karo
+  if (filter === 'Riyadh') {
+    // Dono Riyadh ke hi hone chahiye
+    if (a.location === 'Riyadh' && b.location === 'Riyadh') {
+      if (a.name === 'Dr. Dina Alkehaimi' && b.name === 'Dr. Mussa AlNumi') return -1;
+      if (a.name === 'Dr. Mussa AlNumi' && b.name === 'Dr. Dina Alkehaimi') return 1;
+    }
+  }
+  return 0;
+})
+  .map((doctor) => {
               const isVisible = filter === 'ALL' || doctor.location === filter;
               return (
               <div key={doctor.id} className="col-xl-3 col-md-6" style={{ display: isVisible ? '' : 'none' }}>
