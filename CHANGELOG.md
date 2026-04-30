@@ -1,3 +1,9 @@
+## [1.4.29](https://github.com/bnoon-ksa/landing-page/compare/v1.4.28...v1.4.29) (2026-04-30)
+
+### Bug Fixes
+
+* tracking ([#499](https://github.com/bnoon-ksa/landing-page/issues/499)) ([78887df](https://github.com/bnoon-ksa/landing-page/commit/78887df5784421d7539df6319d924c84d51394a9))
+
 ## [1.4.28](https://github.com/bnoon-ksa/landing-page/compare/v1.4.27...v1.4.28) (2026-04-30)
 
 ### Bug Fixes
