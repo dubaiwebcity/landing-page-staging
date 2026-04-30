@@ -178,7 +178,7 @@ const Benefits = () => {
               @media (max-width: 768px) {
                 .service-overview-image {
                   box-shadow: 20px 20px 0px #d7f2fb; /* smaller shadow for mobile */
-                  width: 85% !important;
+                  width: 85%;
                 }
 
                 .responsive-image {
