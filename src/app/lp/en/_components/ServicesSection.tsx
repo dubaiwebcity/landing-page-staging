@@ -1,3 +1,7 @@
+"use client";
+
+import React from "react";
+
 interface ServicesSectionProps {
     onBookNow: () => void;
 }
@@ -64,28 +68,28 @@ const SERVICES = [
             </svg>
         ),
     },
-    {
-        label: 'Family Planning',
-        description: 'Comprehensive guidance and medical support for timing and spacing your family\'s growth according to your needs.',
-        icon: (
-            <svg
-                fill="currentColor"
-                className="w-6 h-6"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 266.578 266.578"
-                xmlSpace="preserve"
-            >
-                <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M38.136,61.876c15.093,0,27.372-12.278,27.372-27.371c0-15.095-12.278-27.375-27.372-27.375 c-15.092,0-27.371,12.28-27.371,27.375C10.765,49.598,23.044,61.876,38.136,61.876z M38.136,16.175 c10.105,0,18.326,8.223,18.326,18.33c0,10.104-8.221,18.326-18.326,18.326c-10.104,0-18.326-8.221-18.326-18.326 C19.81,24.398,28.032,16.175,38.136,16.175z" />
-                <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M11.787,173.464v81.461c0,2.498,2.025,4.523,4.522,4.523c2.498,0,4.522-2.024,4.522-4.523v-83.79 c0-0.069-0.007-0.138-0.01-0.207c0.007-1.624-0.861-3.199-2.395-4.016c-5.786-3.081-9.38-9.04-9.38-15.553v-49.717 c0-9.703,7.892-17.596,17.593-17.596H49.82c9.701,0,17.593,7.894,17.593,17.596v49.717c0,6.511-3.597,12.471-9.386,15.553 c-1.565,0.833-2.435,2.454-2.392,4.113c-0.001,0.037-0.005,0.072-0.005,0.109v83.79c0,2.498,2.025,4.523,4.523,4.523 c2.498,0,4.522-2.024,4.522-4.523v-81.468c7.332-4.935,11.784-13.171,11.784-22.097v-49.717c0-14.69-11.95-26.642-26.638-26.642 H26.639C11.95,75.002,0,86.954,0,101.644v49.717C0,160.292,4.453,168.531,11.787,173.464z" />
-                <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M124.779,123.669c15.095,0,27.375-12.282,27.375-27.377c0-15.095-12.28-27.375-27.375-27.375 c-15.092,0-27.371,12.28-27.371,27.375C97.408,111.387,109.687,123.669,124.779,123.669z M124.779,77.962 c10.107,0,18.33,8.223,18.33,18.329c0,10.108-8.223,18.332-18.33,18.332c-10.104,0-18.326-8.224-18.326-18.332 C106.454,86.185,114.675,77.962,124.779,77.962z" />
-                <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M105.559,211.485v43.44c0,2.498,2.025,4.523,4.523,4.523c2.498,0,4.522-2.024,4.522-4.523v-45.768 c0-0.07-0.007-0.138-0.01-0.207c0.007-1.624-0.861-3.198-2.394-4.015c-5.789-3.084-9.385-9.044-9.385-15.553v-25.952 c0-9.703,7.893-17.596,17.593-17.596h8.925c9.701,0,17.593,7.893,17.593,17.596v25.952c0,6.509-3.597,12.468-9.385,15.554 c-1.564,0.833-2.434,2.454-2.391,4.113c0,0.036-0.005,0.071-0.005,0.108v45.768c0,2.498,2.025,4.523,4.523,4.523 c2.498,0,4.523-2.024,4.523-4.523v-43.447c7.329-4.939,11.78-13.173,11.78-22.096v-25.952c0-14.69-11.95-26.641-26.638-26.641 h-8.925c-14.688,0-26.638,11.951-26.638,26.641v25.952C93.769,198.311,98.224,206.549,105.559,211.485z" />
-                <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M216.367,76.136c15.093,0,27.371-12.277,27.371-27.369c0-15.099-12.278-27.383-27.371-27.383 c-15.094,0-27.374,12.284-27.374,27.383C188.993,63.859,201.273,76.136,216.367,76.136z M216.367,30.429 c10.105,0,18.326,8.227,18.326,18.338c0,10.103-8.222,18.323-18.326,18.323c-10.107,0-18.329-8.22-18.329-18.323 C198.038,38.656,206.26,30.429,216.367,30.429z" />
-                <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M170.675,189.69h26.467v65.236c0,2.498,2.025,4.523,4.523,4.523c2.498,0,4.523-2.024,4.523-4.523v-69.759 c0-0.313-0.032-0.618-0.092-0.912c-0.031-0.147-0.067-0.292-0.112-0.433c-0.573-1.841-2.29-3.178-4.319-3.178 c-0.001,0-0.001,0-0.002,0h-23.67l20.495-40.994c0.314-0.627,0.478-1.32,0.478-2.022v-21.926c0-9.592,7.807-17.396,17.402-17.396 c9.594,0,17.399,7.804,17.399,17.396v21.926c0,0.703,0.163,1.395,0.477,2.022l20.495,40.994h-23.485c0,0-0.001,0-0.002,0 c-2.029,0-3.747,1.337-4.319,3.178c-0.044,0.142-0.081,0.286-0.111,0.433c-0.061,0.294-0.092,0.599-0.092,0.912v69.759 c0,2.498,2.024,4.523,4.522,4.523c2.498,0,4.523-2.024,4.523-4.523V189.69h26.282c1.567,0,3.023-0.812,3.848-2.145 c0.823-1.333,0.898-2.998,0.198-4.4l-23.291-46.585v-20.859c0-14.58-11.862-26.441-26.443-26.441 c-14.583,0-26.447,11.861-26.447,26.441v20.859l-23.29,46.585c-0.701,1.402-0.626,3.066,0.198,4.4 C167.652,188.878,169.108,189.69,170.675,189.69z" />
-            </svg>
-        ),
-    },
+    // {
+    //     label: 'Family Planning',
+    //     description: 'Comprehensive guidance and medical support for timing and spacing your family\'s growth according to your needs.',
+    //     icon: (
+    //         <svg
+    //             fill="currentColor"
+    //             className="w-6 h-6"
+    //             version="1.1"
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             xmlnsXlink="http://www.w3.org/1999/xlink"
+    //             viewBox="0 0 266.578 266.578"
+    //             xmlSpace="preserve"
+    //         >
+    //             <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M38.136,61.876c15.093,0,27.372-12.278,27.372-27.371c0-15.095-12.278-27.375-27.372-27.375 c-15.092,0-27.371,12.28-27.371,27.375C10.765,49.598,23.044,61.876,38.136,61.876z M38.136,16.175 c10.105,0,18.326,8.223,18.326,18.33c0,10.104-8.221,18.326-18.326,18.326c-10.104,0-18.326-8.221-18.326-18.326 C19.81,24.398,28.032,16.175,38.136,16.175z" />
+    //             <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M11.787,173.464v81.461c0,2.498,2.025,4.523,4.522,4.523c2.498,0,4.522-2.024,4.522-4.523v-83.79 c0-0.069-0.007-0.138-0.01-0.207c0.007-1.624-0.861-3.199-2.395-4.016c-5.786-3.081-9.38-9.04-9.38-15.553v-49.717 c0-9.703,7.892-17.596,17.593-17.596H49.82c9.701,0,17.593,7.894,17.593,17.596v49.717c0,6.511-3.597,12.471-9.386,15.553 c-1.565,0.833-2.435,2.454-2.392,4.113c-0.001,0.037-0.005,0.072-0.005,0.109v83.79c0,2.498,2.025,4.523,4.523,4.523 c2.498,0,4.522-2.024,4.522-4.523v-81.468c7.332-4.935,11.784-13.171,11.784-22.097v-49.717c0-14.69-11.95-26.642-26.638-26.642 H26.639C11.95,75.002,0,86.954,0,101.644v49.717C0,160.292,4.453,168.531,11.787,173.464z" />
+    //             <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M124.779,123.669c15.095,0,27.375-12.282,27.375-27.377c0-15.095-12.28-27.375-27.375-27.375 c-15.092,0-27.371,12.28-27.371,27.375C97.408,111.387,109.687,123.669,124.779,123.669z M124.779,77.962 c10.107,0,18.33,8.223,18.33,18.329c0,10.108-8.223,18.332-18.33,18.332c-10.104,0-18.326-8.224-18.326-18.332 C106.454,86.185,114.675,77.962,124.779,77.962z" />
+    //             <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M105.559,211.485v43.44c0,2.498,2.025,4.523,4.523,4.523c2.498,0,4.522-2.024,4.522-4.523v-45.768 c0-0.07-0.007-0.138-0.01-0.207c0.007-1.624-0.861-3.198-2.394-4.015c-5.789-3.084-9.385-9.044-9.385-15.553v-25.952 c0-9.703,7.893-17.596,17.593-17.596h8.925c9.701,0,17.593,7.893,17.593,17.596v25.952c0,6.509-3.597,12.468-9.385,15.554 c-1.564,0.833-2.434,2.454-2.391,4.113c0,0.036-0.005,0.071-0.005,0.108v45.768c0,2.498,2.025,4.523,4.523,4.523 c2.498,0,4.523-2.024,4.523-4.523v-43.447c7.329-4.939,11.78-13.173,11.78-22.096v-25.952c0-14.69-11.95-26.641-26.638-26.641 h-8.925c-14.688,0-26.638,11.951-26.638,26.641v25.952C93.769,198.311,98.224,206.549,105.559,211.485z" />
+    //             <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M216.367,76.136c15.093,0,27.371-12.277,27.371-27.369c0-15.099-12.278-27.383-27.371-27.383 c-15.094,0-27.374,12.284-27.374,27.383C188.993,63.859,201.273,76.136,216.367,76.136z M216.367,30.429 c10.105,0,18.326,8.227,18.326,18.338c0,10.103-8.222,18.323-18.326,18.323c-10.107,0-18.329-8.22-18.329-18.323 C198.038,38.656,206.26,30.429,216.367,30.429z" />
+    //             <path stroke="currentColor" strokeWidth={10} paintOrder={"stroke fill"} d="M170.675,189.69h26.467v65.236c0,2.498,2.025,4.523,4.523,4.523c2.498,0,4.523-2.024,4.523-4.523v-69.759 c0-0.313-0.032-0.618-0.092-0.912c-0.031-0.147-0.067-0.292-0.112-0.433c-0.573-1.841-2.29-3.178-4.319-3.178 c-0.001,0-0.001,0-0.002,0h-23.67l20.495-40.994c0.314-0.627,0.478-1.32,0.478-2.022v-21.926c0-9.592,7.807-17.396,17.402-17.396 c9.594,0,17.399,7.804,17.399,17.396v21.926c0,0.703,0.163,1.395,0.477,2.022l20.495,40.994h-23.485c0,0-0.001,0-0.002,0 c-2.029,0-3.747,1.337-4.319,3.178c-0.044,0.142-0.081,0.286-0.111,0.433c-0.061,0.294-0.092,0.599-0.092,0.912v69.759 c0,2.498,2.024,4.523,4.522,4.523c2.498,0,4.523-2.024,4.523-4.523V189.69h26.282c1.567,0,3.023-0.812,3.848-2.145 c0.823-1.333,0.898-2.998,0.198-4.4l-23.291-46.585v-20.859c0-14.58-11.862-26.441-26.443-26.441 c-14.583,0-26.447,11.861-26.447,26.441v20.859l-23.29,46.585c-0.701,1.402-0.626,3.066,0.198,4.4 C167.652,188.878,169.108,189.69,170.675,189.69z" />
+    //         </svg>
+    //     ),
+    // },
     {
         label: 'Genetic Testing',
         description: 'Advanced screening (PGT-A/M) to detect chromosomal abnormalities and ensure the healthiest start possible.',
@@ -124,38 +128,50 @@ const SERVICES = [
 ];
 
 export default function ServicesSection({ onBookNow }: ServicesSectionProps) {
+    const [more, setMore] = React.useState(false);
     return (
-        <section id="services" className="py-24 bg-[#f4f9fc]">
+        <section id="services" className="py-16 md:py-24 bg-[#f4f9fc]">
             <div className="px-6 mx-auto max-w-7xl">
                 <div className="mx-auto mb-10 w-full max-w-4xl sm:px-12">
-                    <h2 className="mb-1 text-2xl font-thin leading-snug text-center text-black lg:text-4xl sm:text-5xl">
+                    <h2 className="mb-1 text-2xl font-bold leading-snug text-center text-black lg:text-4xl sm:text-5xl">
                         The Next Generation of Fertility Care
                     </h2>
-                    <p className="mx-auto mb-2 mt-4 max-w-xl text-xl font-bold text-center lg:text-2xl">
+                    {/* <p className="mx-auto mb-2 mt-4 max-w-xl text-xl font-bold text-center lg:text-2xl">
                         Let&apos;s guide you through the right path for you.
-                    </p>
+                    </p> */}
                     <p className="mx-auto mb-14 max-w-xl text-sm text-center">
-                        Serving families across five locations in Saudi Arabia.
+                        Caring for families across Saudi Arabia.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
-                    {SERVICES.map((service) => (
-                        <div key={service.label} className="flex flex-col h-full p-10 bg-white shadow-sm rounded-[2rem]">
-                            <div className="flex items-center justify-center w-14 h-14 mb-6 bg-[#f0f7fb] rounded-2xl text-[#0ea5e9]">
-                                {service.icon}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {SERVICES.map((service, index) => (
+                        <div
+                            key={service.label}
+                            className={" flex-col h-full p-10 bg-white shadow-sm rounded-[2rem] text-left" + (index > 2 && !more ? " hidden md:flex" : " flex")}
+                        >
+                            <div className="flex flex-row-reverse items-center gap-3 w-full mb-6">
+                                <div className="flex items-center">
+                                    <div className="flex items-center justify-center w-14 h-14 bg-[#f0f7fb] rounded-2xl text-[#0ea5e9]">
+                                        {service.icon}
+                                    </div>
+                                </div>
+                                <h3 className="text-lg font-bold flex-1 text-[#0a192f]">{service.label}</h3>
                             </div>
-                            <h3 className="mb-3 text-xl font-bold text-[#0a192f]">{service.label}</h3>
-                            <p className="flex-grow mb-8 text-sm leading-relaxed text-zinc-500">{service.description}</p>
-                            {/* <button
-                onClick={onBookNow}
-                className="flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] text-[#38bdf8] uppercase hover:text-[#0ea5e9] transition-colors mt-auto"
-              >
-                Book Now
-                <ArrowIcon />
-              </button> */}
+                            <p className="flex-grow mb-8 text-sm leading-relaxed text-zinc-500">
+                                {service.description}
+                            </p>
                         </div>
                     ))}
+                    {!more ? <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setMore((m) => !m);
+                        }}
+                        className="flex md:hidden col-span-full mx-auto px-4 py-1 bg-[#133e51] text-white rounded-md text-sm font-medium hover:bg-[#0b83a5] transition-colors"
+                    >
+                        Read More
+                    </button> : null}
                 </div>
             </div>
         </section>

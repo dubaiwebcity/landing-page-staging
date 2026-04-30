@@ -4,8 +4,8 @@ import Script from 'next/script';
 
 const REELS = [
     {
-        url: 'https://www.instagram.com/reel/DWmUusMCna2/?utm_source=ig_embed&utm_campaign=loading',
-        permalink: 'https://www.instagram.com/reel/DWmUusMCna2/?utm_source=ig_embed&utm_campaign=loading',
+        url: 'https://www.instagram.com/reel/DXrO1UvCqSo/?utm_source=ig_embed&amp;utm_campaign=loading',
+        permalink: 'https://www.instagram.com/reel/DXrO1UvCqSo/?utm_source=ig_embed&amp;utm_campaign=loading',
     },
     {
         url: 'https://www.instagram.com/reel/DXbfhX2CkLm/?utm_source=ig_embed&utm_campaign=loading',
@@ -23,7 +23,7 @@ export default function SpecialistsSection() {
             <div className="px-8 mx-auto max-w-7xl">
                 <div className="mx-auto mb-10 w-full max-w-4xl sm:px-12">
                     <h2 className="mb-1 text-2xl font-thin leading-snug text-center text-black lg:text-4xl sm:text-5xl">
-                        In Conversation with Our Specialists
+                        In Conversation with Our Consultants
                     </h2>
                     <p className="mx-auto mb-14 max-w-xl text-xl font-bold text-center lg:text-2xl">
                         Short insights from our doctors on ḟertility, IVḞ, and treatment options.
@@ -32,7 +32,7 @@ export default function SpecialistsSection() {
 
                 <div className="flex flex-col gap-8 lg:flex-row">
                     {REELS.map((reel) => (
-                        <div key={reel.url} style={{ maxHeight: "730px", boxShadow: "-1px 5px 6px #00000017" }} className="overflow-hidden aspect-[7/16] relative flex-1">
+                        <div key={reel.url} style={{ maxHeight: "735px", boxShadow: "-1px 5px 6px #00000017" }} className="overflow-hidden aspect-[7/16] relative flex-1">
                             <div className="absolute inset-0">
                                 <blockquote
                                     className="instagram-media"

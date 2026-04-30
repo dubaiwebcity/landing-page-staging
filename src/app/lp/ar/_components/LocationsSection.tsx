@@ -36,9 +36,9 @@ export default function LocationsSection() {
     const loc = LOCATIONS[activeTab];
 
     return (
-        <section id="locations" className="py-24 bg-white">
+        <section id="locations" className="py-16 md:py-24 bg-white">
             <div className="px-6 mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 md:gap-16 lg:grid-cols-2">
 
                     <div className="text-right">
                         <h2 className="mb-1 text-2xl font-bold leading-snug text-black lg:text-4xl sm:text-5xl">
@@ -48,12 +48,12 @@ export default function LocationsSection() {
                             شبكة بنـــون للإخصاب وصحة المرأة تمتد عبر عدة مراكز متطورة في مختلف مناطق المملكة العربية السعودية لخدمة العائلات بمعايير عالمية.
                         </p>
 
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-1 md:gap-4">
                             {(Object.entries(LOCATIONS) as [keyof typeof LOCATIONS, Location][]).map(([key, location]) => (
                                 <button
                                     key={key}
                                     onClick={() => setActiveTab(key)}
-                                    className={`flex items-center justify-between p-6 text-right transition-colors border-2 rounded-2xl group ${activeTab === key
+                                    className={`flex items-center justify-between p-4 md:p-6 text-right transition-colors border-2 rounded-2xl group ${activeTab === key
                                             ? 'border-[#e0f2fe] bg-[#f0f9ff]'
                                             : 'border-transparent hover:bg-zinc-50'
                                         }`}
@@ -75,7 +75,7 @@ export default function LocationsSection() {
                     </div>
 
                     <div className="flex items-center lg:justify-end">
-                        <div className="w-full max-w-lg p-10 bg-white border shadow-[0_20px_50px_rgb(0,0,0,0.04)] border-zinc-100 rounded-[2rem]">
+                        <div className="w-full max-w-lg p-4 md:p-10 bg-white border shadow-[0_20px_50px_rgb(0,0,0,0.04)] border-zinc-100 rounded-[2rem]">
                             <div className="w-full h-48 mb-8 overflow-hidden bg-zinc-100 rounded-2xl">
                                 <iframe
                                     src={loc.mapSrc}
@@ -90,7 +90,7 @@ export default function LocationsSection() {
                                 />
                             </div>
 
-                            <h3 className="mb-10 text-3xl font-normal text-[#0a192f] text-right">
+                            <h3 className="mb-10 text-xm md:text-3xl font-normal text-[#0a192f] text-right">
                                 {loc.name}
                             </h3>
 

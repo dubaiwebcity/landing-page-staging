@@ -32,10 +32,9 @@ const BnoonLogo = () => (
 );
 
 interface NavbarProps {
-    onBookNow: () => void;
 }
 
-export default function Navbar({ onBookNow }: NavbarProps) {
+export default function Navbar({  }: NavbarProps) {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -72,12 +71,18 @@ export default function Navbar({ onBookNow }: NavbarProps) {
                         </svg>
                         +966 11 444 8080
                     </a>
-                    <button
-                        onClick={onBookNow}
+                    <a
+                        href="/lp/ar"
+                        className=" items-center gap-2 text-sm font-bold text-zinc-700 hover:text-zinc-900"
+                    >
+                        العربية
+                    </a>
+                    <a
+                        href="#book-appointment"
                         className="px-6 py-2.5 text-sm font-bold text-white transition rounded-md bg-[#38bdf8] hover:bg-[#0ea5e9] shadow-sm"
                     >
                         Book Now
-                    </button> 
+                    </a>
                 </div>
             </nav>
         </header>

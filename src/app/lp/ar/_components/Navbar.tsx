@@ -32,10 +32,9 @@ const BnoonLogo = () => (
 );
 
 interface NavbarProps {
-    onBookNow: () => void;
 }
 
-export default function Navbar({ onBookNow }: NavbarProps) {
+export default function Navbar({ }: NavbarProps) {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -50,7 +49,7 @@ export default function Navbar({ onBookNow }: NavbarProps) {
         >
             <nav className="w-full z-10 flex items-center justify-between px-6 py-6 mx-auto max-w-7xl">
                 <div className="flex items-center gap-3">
-                    <BnoonLogo />
+                    <BnoonLogo /> 
                 </div>
 
                 <div className="hidden gap-8 text-sm font-semibold text-zinc-600 md:flex">
@@ -62,12 +61,18 @@ export default function Navbar({ onBookNow }: NavbarProps) {
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <button
-                        onClick={onBookNow}
+                    <a
+                        href="/lp/en"
+                        className=" items-center gap-2 text-sm font-bold text-zinc-700 hover:text-zinc-900"
+                    >
+                        English
+                    </a>
+                    <a
+                        href="#book-appointment"
                         className="px-6 py-2.5 text-sm font-bold text-white transition rounded-md bg-[#38bdf8] hover:bg-[#0ea5e9] shadow-sm"
                     >
                         احجز الآن
-                    </button>
+                    </a>
                 </div>
             </nav>
         </header>

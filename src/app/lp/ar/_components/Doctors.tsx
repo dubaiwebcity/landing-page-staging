@@ -148,7 +148,7 @@ const doctors = [
         profileUrl: "ar/dr-rania-elsherify"
     },
     {
-        id: 15,
+        id: 18,
         name: "د. دينا الكحيمي",
         title: "طبيبة مقيمة",
         sub: "أخصائية أمراض النساء والولادة والعقم وأطفال الأنابيب",
@@ -230,7 +230,7 @@ export default function DoctorCarousel() {
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                     <div className="text-right md:text-right">
-                        <h2 className="text-4xl font-extrabold text-zinc-900 tracking-tight">أطباؤنا المتخصصون</h2>
+                        <h2 className="mb-1 text-2xl font-bold leading-snug text-black lg:text-4xl sm:text-5xl">أطباؤنا المتخصصون</h2>
                         <p className="text-zinc-600 mt-2 text-lg">تعرّف على فريقنا الطبي المتميز في جميع أنحاء المنطقة.</p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -296,7 +296,7 @@ export default function DoctorCarousel() {
                                     </p>
 
                                     <div className="pt-4 border-t border-gray-100 flex items-center mt-auto">
-                                        <div className="flex items-center text-zinc-400 text-xs font-medium">
+                                        <div className="flex items-center text-zinc-900 text-xs font-bold">
                                             
                                             <svg className="w-3.5 h-3.5 ml-1.5 mr-0 text-[#38bdf8]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
                                             {doctor.location}

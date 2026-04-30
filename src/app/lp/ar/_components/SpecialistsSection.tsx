@@ -4,8 +4,8 @@ import Script from 'next/script';
 
 const REELS = [
   {
-    url: 'https://www.instagram.com/reel/DWmUusMCna2/?utm_source=ig_embed&utm_campaign=loading',
-    permalink: 'https://www.instagram.com/reel/DWmUusMCna2/?utm_source=ig_embed&utm_campaign=loading',
+    url: 'https://www.instagram.com/reel/DXrO1UvCqSo/?utm_source=ig_embed&amp;utm_campaign=loading',
+    permalink: 'https://www.instagram.com/reel/DXrO1UvCqSo/?utm_source=ig_embed&amp;utm_campaign=loading',
   },
   {
     url: 'https://www.instagram.com/reel/DXbfhX2CkLm/?utm_source=ig_embed&utm_campaign=loading',
@@ -32,7 +32,7 @@ export default function SpecialistsSection() {
 
         <div className="flex flex-col gap-8 lg:flex-row">
           {REELS.map((reel) => (
-            <div key={reel.url} style={{ maxHeight: '730px', boxShadow: '-1px 5px 6px #00000017' }} className="overflow-hidden aspect-[7/16] relative flex-1">
+            <div key={reel.url} style={{ boxShadow: '-1px 5px 6px #00000017' }} className="min-h-[610px] md:h-[735px] overflow-hidden md:aspect-[7/16] relative flex-1">
               <div className="absolute inset-0">
                 <blockquote
                   className="instagram-media"

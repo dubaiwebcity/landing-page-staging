@@ -18,7 +18,7 @@ export default function LandingPage() {
 
     return (
         <div className="relative min-h-screen overflow-hidden antialiased text-zinc-800">
-            <Navbar onBookNow={() => setShowModal(true)} />
+            <Navbar />
             <HeroSection />
             <StatsSection />
             <ServicesSection onBookNow={() => setShowModal(true)} />
@@ -28,7 +28,6 @@ export default function LandingPage() {
             <ReviewsSection />
             <BookSection />
             <Footer />
-            <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
         </div>
     );
 }

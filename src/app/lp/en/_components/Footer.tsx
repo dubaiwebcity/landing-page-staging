@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-[#0a192f] py-12 border-t border-zinc-800 relative z-10 w-full left-0 bottom-0 mt-20">
+        <footer className="bg-[#0a192f] py-12 border-t border-zinc-800 relative z-10 w-full left-0 bottom-0 mt-4 md:mt-20">
             <div className="px-6 mx-auto text-center max-w-7xl">
                 <div className="flex items-center justify-center gap-3 mb-6">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183 76" width={183} height={75} aria-label="Bnoon">
