@@ -1,3 +1,9 @@
+## [1.4.25](https://github.com/bnoon-ksa/landing-page/compare/v1.4.24...v1.4.25) (2026-04-30)
+
+### Bug Fixes
+
+* Update Benefits.tsx ([482e471](https://github.com/bnoon-ksa/landing-page/commit/482e471d98058db10b6d12959bbb0275c3701812))
+
 ## [1.4.24](https://github.com/bnoon-ksa/landing-page/compare/v1.4.23...v1.4.24) (2026-04-29)
 
 ### Bug Fixes
