@@ -1,5 +1,6 @@
 'use client';
 
+import { sendGTMEvent } from '@next/third-parties/google';
 import Script from 'next/script';
 import { useEffect } from 'react';
 
@@ -37,8 +38,12 @@ export default function HeroSection() {
                 if (event.origin === 'https://indentme.io') {
                     const data = JSON.parse(event.data as string);
                     if (data.status === 'success') {
-                        gtag('event', 'generate_lead');
-                        if (typeof fbq !== 'undefined') fbq('track', 'Lead', {});
+                        sendGTMEvent({
+                            event: 'generate_lead',
+                            value: '1'
+                        });
+                        if (typeof gtag != "undefined") gtag("event", "generate_lead");
+                        if (typeof fbq != "undefined") fbq("track", "Lead", {});
                     }
                 }
             } catch {
