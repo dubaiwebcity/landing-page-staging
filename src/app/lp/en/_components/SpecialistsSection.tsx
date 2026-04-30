@@ -17,7 +17,7 @@ const REELS = [
     },
 ];
 
-export default function SpecialistsSection() {
+export default function SpecialistsSection() { 
     return (
         <section id="specialists" className="py-16 mx-1 rounded-2xl bg-[#f4f9fc]">
             <div className="px-8 mx-auto max-w-7xl">
