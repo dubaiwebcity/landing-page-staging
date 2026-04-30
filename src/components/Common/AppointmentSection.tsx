@@ -930,6 +930,7 @@ const AppointmentSection = () => {
                                                 'Dr. Asim Al Wohaibi',
                                                 'Dr. Wajdi Al Omari',
                                                 'Dr. Dalia Nour',
+                                                'Dr. Dina Alkehaimi',
                                                 'Dr. Mussa AlNumi ',
                                             ]
                                             : formData.branch === 'Jeddah'
