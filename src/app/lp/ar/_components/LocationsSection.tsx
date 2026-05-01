@@ -10,17 +10,17 @@ interface Location {
 
 const LOCATIONS: Record<string, Location> = {
     riyadh: {
-        name: 'بنون – الرياض',
+        name: 'بنــــون – الـرياض',
         address: 'شارع أبو جعفر المنصور، حي الشهداء، الرياض',
         mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.1839039641172!2d46.7350649!3d24.789155499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efddca951caad%3A0xff57eb5bc69f10ea!2zQm5vb24gLSBSaXlhZGgg2KjZhtmI2YYgLSDYp9mE2LHZitin2LY!5e0!3m2!1sen!2s!4v1762873112473!5m2!1sen!2s',
     },
     jeddah: {
-        name: 'بنون – جدة',
+        name: 'بنــــون – جـــــــدة',
         address: 'مبنى كوارتز، شارع الكورنيش، حي الشاطىء، جدة',
         mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.6924446189687!2d39.1215956!3d21.558878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3dbc1b47a93e5%3A0x403eb3afa0ca3bd7!2zQm5vb24gLSBKZWRkYWgg2KjZhtmI2YYgLSDYrNiv2KkgKGZvcm1lcmx5IGtub3duIGFzIEhlYWx0aFBsdXMgRmVydGlsaXR5IEplZGRhaCk!5e0!3m2!1sen!2s!4v1762873494627!5m2!1sen!2s',
     },
     alahsa: {
-        name: 'بنون – الأحساء',
+        name: 'بنــــون – الأحساء',
         address: 'طريق الظهران, حي الفيصل، الطابق 12، البرج الجنوبي، مستشفى الموسى التخصصي، الأحساء',
         mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3603.0477616735334!2d49.572361099999995!3d25.4366667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDI2JzEyLjAiTiA0OcKwMzQnMjAuNSJF!5e0!3m2!1sen!2s!4v1765622876993!5m2!1sen!2s',
     },
@@ -37,7 +37,7 @@ export default function LocationsSection() {
 
     return (
         <section id="locations" className="py-16 md:py-24 bg-white">
-            <div className="px-6 mx-auto max-w-7xl">
+            <div className="px-3 md:px-6 mx-auto max-w-7xl">
                 <div className="grid grid-cols-1 gap-4 md:gap-16 lg:grid-cols-2">
 
                     <div className="text-right">

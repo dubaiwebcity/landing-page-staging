@@ -36,7 +36,7 @@ export default function BookSection() {
     }, []);
 
     return (
-        <section id="book-appointment" className="px-8 py-4 md:py-16 mx-auto max-w-7xl bg-[#f4f9fc] rounded-3xl">
+        <section id="book-appointment" className="px-3 md:px-8 py-4 md:py-16 mx-auto max-w-7xl bg-[#f4f9fc] md:rounded-3xl">
             <div className="flex flex-col gap-10 items-center lg:flex-row-reverse">
                 <div className="mx-auto lg:w-1/2 text-right">
                     <h2 className="mb-1 text-2xl font-bold leading-snug text-right text-black lg:text-4xl sm:text-5xl">

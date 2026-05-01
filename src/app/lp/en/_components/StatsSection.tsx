@@ -70,7 +70,7 @@ export default function StatsSection() {
 
   return (
     <section ref={sectionRef} id="stats" className="py-16 bg-white border-b border-gray-100">
-      <div className="px-6 mx-auto max-w-7xl">
+      <div className="px-3 md:px-6 mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-5">
           {STATS.map((stat, i) => (
             <div

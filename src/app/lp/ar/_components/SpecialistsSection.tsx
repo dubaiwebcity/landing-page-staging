@@ -20,7 +20,7 @@ const REELS = [
 export default function SpecialistsSection() {
   return (
     <section id="specialists" className="py-16 mx-1 rounded-2xl bg-[#f4f9fc]">
-      <div className="px-8 mx-auto max-w-7xl">
+      <div className="px-3 md:px-8 mx-auto max-w-7xl">
         <div className="mx-auto mb-10 w-full max-w-4xl sm:px-12">
           <h2 className="mb-1 text-2xl font-bold leading-snug text-center text-black lg:text-4xl sm:text-5xl">
             حوارات مع أطبائنا المختصين

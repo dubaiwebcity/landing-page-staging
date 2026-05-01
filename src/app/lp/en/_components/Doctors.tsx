@@ -120,15 +120,15 @@ const doctors = [
         img: "/images/doctors/Razan.png",
         profileUrl: "en/dr-razan-ghaith"
     },
-    {
-        id: 17,
-        name: "Dr. Median Alkhalaf",
-        title: "Consultant",
-        sub: "Consultant, Obstetrics & Gynecology",
-        location: "Al Ahsa",
-        img: "/images/doctors/2 (13).jpg",
-        profileUrl: "en/dr-median-alkhalaf"
-    },
+    // {
+    //     id: 17,
+    //     name: "Dr. Median Alkhalaf",
+    //     title: "Consultant",
+    //     sub: "Consultant, Obstetrics & Gynecology",
+    //     location: "Al Ahsa",
+    //     img: "/images/doctors/2 (13).jpg",
+    //     profileUrl: "en/dr-median-alkhalaf"
+    // },
     {
         id: 13,
         name: "Dr. Maram Dadoua",

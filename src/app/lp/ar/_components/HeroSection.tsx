@@ -56,18 +56,13 @@ export default function HeroSection() {
 
     return ( 
         <section
-            className="relative flex items-center min-h-screen"
-            style={{
-                backgroundImage: "url('/images/Family.png?v3')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-            }}
+            className="relative flex items-center min-h-screen bg-size-[100%_auto] bg-no-repeat bg-bottom md:bg-center bg-[url('/images/Banner--Size-4.jpg')] md:bg-[url('/images/Family.png?v3')]"
         >
             <div className="absolute inset-0 bg-white/70 sm:bg-gradient-to-l sm:from-white/90 sm:via-white/70 sm:to-white/40 opacity-70" />
 
-            <div className="relative z-10 w-full overflow-hidden flex flex-col items-center justify-between px-6 pt-12 pb-24 mx-auto gap-14 max-w-7xl lg:flex-row lg:pt-24">
+            <div className="relative z-10 w-full overflow-hidden flex flex-col items-center justify-between md:px-6 pt-12 md:pb-24 mx-auto gap-14 max-w-7xl lg:flex-row lg:pt-24">
 
-                <div className="w-full max-w-xl text-right">
+                <div className="w-full max-w-xl text-right px-4 md:px-0">
                     <h1 className="mb-6 text-3xl md:text-4xl mt-24 md:mt-0 font-extrabold leading-[1.3] text-[#0a192f] lg:text-6xl">
                         عائلتكم تكبر معنا.. <br />في قلب المملكة
                     </h1>
@@ -82,7 +77,7 @@ export default function HeroSection() {
                 </div>
 
                 <div className="w-full max-w-md">
-                    <div className="p-8 bg-white/40 md:bg-white/95 md:backdrop-blur-md rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/20">
+                    <div className="p-4 md:p-8 bg-white/40 md:bg-white/95 md:backdrop-blur-md md:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/20">
                         <h2 className="mb-2 text-2xl font-bold text-gray-900 text-right">
                             تواصل معنا
                         </h2>

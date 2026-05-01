@@ -48,7 +48,7 @@ export default function Navbar({  }: NavbarProps) {
             className={`fixed w-full flex items-center justify-center z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' : 'bg-transparent'
                 }`}
         >
-            <nav className="w-full z-10 flex items-center justify-between px-6 py-6 mx-auto max-w-7xl">
+            <nav className="w-full z-10 flex items-center justify-between px-3 md:px-6 py-3 md:py-6 mx-auto max-w-7xl">
                 <div className="flex items-center gap-3">
                     <BnoonLogo />
                 </div>
@@ -61,7 +61,7 @@ export default function Navbar({  }: NavbarProps) {
                     <a href="#reviews" className="hover:text-zinc-900 transition-colors">Reviews</a>
                 </div>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2 md:gap-6">
                     <a
                         href="tel:+966114448080"
                         className="hidden items-center gap-2 text-sm font-bold text-zinc-700 hover:text-zinc-900"
@@ -79,7 +79,7 @@ export default function Navbar({  }: NavbarProps) {
                     </a>
                     <a
                         href="#book-appointment"
-                        className="px-6 py-2.5 text-sm font-bold text-white transition rounded-md bg-[#38bdf8] hover:bg-[#0ea5e9] shadow-sm"
+                        className="px-4 md:px-6 py-2.5 text-sm font-bold text-white transition rounded-md bg-[#38bdf8] hover:bg-[#0ea5e9] shadow-sm"
                     >
                         Book Now
                     </a>

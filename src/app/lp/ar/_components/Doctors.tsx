@@ -120,15 +120,15 @@ const doctors = [
         img: "/images/doctors/Razan.png",
         profileUrl: "ar/dr-razan-ghaith"
     },
-    {
-        id: 17,
-        name: "د. ميدان الخلف",
-        title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد",
-        location: "الأحساء",
-        img: "/images/doctors/2%20(13).jpg",
-        profileUrl: "ar/dr-median-alkhalaf"
-    },
+    // {
+    //     id: 17,
+    //     name: "د. ميدان الخلف",
+    //     title: "استشاري",
+    //     sub: "استشاري، أمراض النساء والتوليد",
+    //     location: "الأحساء",
+    //     img: "/images/doctors/2%20(13).jpg",
+    //     profileUrl: "ar/dr-median-alkhalaf"
+    // },
     {
         id: 13,
         name: "د. مرام دادوا",

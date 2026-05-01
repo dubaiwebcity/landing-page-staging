@@ -47,7 +47,7 @@ export default function LocationsSection() {
 
   return (
     <section id="locations" className="py-16 md:py-24 bg-white">
-      <div className="px-6 mx-auto max-w-7xl">
+      <div className="px-3 md:px-6 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-4 md:gap-16 lg:grid-cols-2">
 
           <div>
