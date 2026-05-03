@@ -56,7 +56,7 @@ export default function HeroSection() {
 
     return (
         <section
-            className="relative flex items-center min-h-screen bg-size-[100%_auto] bg-no-repeat bg-bottom md:bg-center bg-[url('/images/Banner--Size-4-en.jpg')] md:bg-[url('/images/Family-en.png?v3')]"
+            className="relative flex items-center min-h-screen bg-size-[100%_auto] bg-no-repeat bg-top md:bg-center bg-[url('/images/Banner--Size-4-en.jpg')] md:bg-[url('/images/Family-en.png?v3')]"
         >
             <div className="absolute inset-0 bg-white/70 sm:bg-gradient-to-r sm:from-white/90 sm:via-white/70 sm:to-white/40 opacity-70" />
 
