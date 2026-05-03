@@ -1,3 +1,9 @@
+## [1.4.31](https://github.com/bnoon-ksa/landing-page/compare/v1.4.30...v1.4.31) (2026-05-03)
+
+### Bug Fixes
+
+* mobile issue ([#501](https://github.com/bnoon-ksa/landing-page/issues/501)) ([df8dfd9](https://github.com/bnoon-ksa/landing-page/commit/df8dfd9d77c5c2e2e152ad74684ca138d22d8264))
+
 ## [1.4.30](https://github.com/bnoon-ksa/landing-page/compare/v1.4.29...v1.4.30) (2026-05-01)
 
 ### Bug Fixes
