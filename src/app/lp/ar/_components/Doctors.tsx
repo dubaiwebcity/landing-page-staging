@@ -5,9 +5,9 @@ import React, { useRef, useState, useEffect } from 'react';
 const doctors = [
     {
         id: 1,
-        name: "د. عبدالعزيز الشهراني",
+        name: "د. عبد العزيز الشهراني",
         title: "المدير الطبي للمجموعة",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
+        sub: "المدير الطبي للمجموعة استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "الرياض",
         img: "/images/doctors/Dr.-Abdel%20Aziz%20(1).png",
         profileUrl: "ar/dr-abdalaziz-alshahrani"
@@ -16,7 +16,7 @@ const doctors = [
         id: 2,
         name: "د. فواز إدريس",
         title: "المدير التنفيذي",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب)، الجراحة بالمنظار وطب الأم والجنين",
+        sub: "المدير التنفيذي، بنون - جدة استشاري أمراض النساء والولادة والحمل الحرج وطب الأجنة والأمومة والعقم وأطفال الأنابيب والمناظير",
         location: "جدة",
         img: "/images/doctors/Fawaz%20(1).png",
         profileUrl: "ar/dr-fawaz-edris"
@@ -25,7 +25,7 @@ const doctors = [
         id: 3,
         name: "د. مازن بشارة",
         title: "المدير الطبي",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
+        sub: "المدير الطبي، بنون - جدة استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "جدة",
         img: "/images/doctors/Mazin.png",
         profileUrl: "ar/dr-mazin-bishara"
@@ -34,7 +34,7 @@ const doctors = [
         id: 15,
         name: "د. بسام نصير",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
+        sub: "استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "الأحساء",
         img: "/images/doctors/Dr.%20Bassam%20Mohammad%20Nusair1.jpg",
         profileUrl: "ar/dr-bassamnusair"
@@ -43,7 +43,7 @@ const doctors = [
         id: 4,
         name: "د. عاصم الوهيبي",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
+        sub: "استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "الرياض",
         img: "/images/doctors/Dr.%20Asim.png",
         profileUrl: "ar/dr-asim-alwohaibi"
@@ -52,43 +52,43 @@ const doctors = [
         id: 6,
         name: "د. أحمد الشيخ",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
+        sub: "استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "جدة",
         img: "/images/doctors/Dr%20Ahmed%20Shaikh.png",
         profileUrl: "ar/dr-ahmed-alshaikh"
     },
     {
         id: 7,
-        name: "د. وجدي العمري",
+        name: "د. وجدي العمرى",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية والعقم (أطفال الأنابيب)، الجراحة بالمنظار",
+        sub: "استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "الرياض",
         img: "/images/doctors/Dr%20wajdi%20(1).png",
         profileUrl: "ar/dr-wajdi-alomari"
     },
     {
         id: 16,
-        name: "د. أحمد النواصر",
+        name: "د. أحمد النويصر",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية، العقم (أطفال الأنابيب) والجراحة بالمنظار",
+        sub: "استشاري أمراض النساء والولادة والعقم وأطفال الأنابيب والمناظير",
         location: "الأحساء",
         img: "/images/doctors/1%20(20).jpg",
         profileUrl: "ar/dr-ahmedal-nowasser"
     },
     {
         id: 11,
-        name: "د. مايا البزرة",
+        name: "د. مايا البزره",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد، الغدد الصماء التناسلية والعقم (أطفال الأنابيب)",
+        sub: "استشارية أمراض النساء والولادة والعقم وأطفال الأنابيب",
         location: "جدة",
         img: "/images/doctors/Maya.png",
         profileUrl: "ar/dr-maya-albezreh"
     },
     {
         id: 8,
-        name: "د. داليا عادل",
+        name: "د. داليا نور",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد والعقم",
+        sub: "استشارية أمراض النساء والولادة وتأخر الحمل",
         location: "الرياض",
         img: "/images/doctors/Dr.%20Dalia%20Adel.png",
         profileUrl: "ar/dr-dalia-nour"
@@ -97,16 +97,16 @@ const doctors = [
         id: 9,
         name: "د. أحمد هارون",
         title: "استشاري",
-        sub: "استشاري، المسالك البولية وأمراض الذكورة والعقم عند الرجال",
+        sub: "استشاري المسالك البولية وأمراض الذكورة والعقم",
         location: "جدة",
         img: "/images/doctors/Dr%20haroun%20(1).png",
         profileUrl: "ar/dr-ahmad-haroun"
     },
     {
         id: 10,
-        name: "د. موسى النعيمي",
+        name: "د. موسى النعمي",
         title: "استشاري",
-        sub: "استشاري، المسالك البولية وأمراض الذكورة والعقم عند الرجال",
+        sub: "استشاري المسالك البولية وأمراض الذكورة والعقم",
         location: "الرياض",
         img: "/images/doctors/Dr.%20Moussa%20El%20Naiemy.png",
         profileUrl: "ar/dr-moussa-el-naiemy"
@@ -115,25 +115,25 @@ const doctors = [
         id: 12,
         name: "د. رزان غيث",
         title: "استشاري",
-        sub: "استشاري، أمراض النساء والتوليد وتأخر الإنجاب",
+        sub: "استشارية أمراض النساء والولادة وتأخر الحمل",
         location: "جدة",
         img: "/images/doctors/Razan.png",
         profileUrl: "ar/dr-razan-ghaith"
     },
-    // {
-    //     id: 17,
-    //     name: "د. ميدان الخلف",
-    //     title: "استشاري",
-    //     sub: "استشاري، أمراض النساء والتوليد",
-    //     location: "الأحساء",
-    //     img: "/images/doctors/2%20(13).jpg",
-    //     profileUrl: "ar/dr-median-alkhalaf"
-    // },
+    {
+        id: 17,
+        name: "د. مدين الخلف",
+        title: "استشاري",
+        sub: "استشاري أمراض النساء والولادة",
+        location: "الأحساء",
+        img: "/images/doctors/2%20(13).jpg",
+        profileUrl: "ar/dr-median-alkhalaf"
+    },
     {
         id: 13,
-        name: "د. مرام دادوا",
+        name: "د. مرام دعدوع",
         title: "طبيبة مقيمة أولى",
-        sub: "طبيبة مقيمة أولى، أمراض النساء والتوليد",
+        sub: "نائب أول، أمراض النساء والولادة",
         location: "جدة",
         img: "/images/doctors/Maryam.png",
         profileUrl: "ar/dr-maram-dadoua"
@@ -142,7 +142,7 @@ const doctors = [
         id: 14,
         name: "د. رانيا الشريفي",
         title: "طبيبة مقيمة",
-        sub: "طبيبة مقيمة، أمراض النساء والتوليد",
+        sub: "أخصائية أمراض النساء والولادة",
         location: "الأحساء",
         img: "/images/doctors/Dr.%20Rania%20Mohamed%20Ibrahim%20Elsherify1.jpg",
         profileUrl: "ar/dr-rania-elsherify"

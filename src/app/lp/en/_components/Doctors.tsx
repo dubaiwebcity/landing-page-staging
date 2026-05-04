@@ -5,7 +5,7 @@ import React, { useRef, useState, useEffect } from 'react';
 const doctors = [
     {
         id: 1,
-        name: "Dr. Abdalaziz Al-Shahrani",
+        name: "Dr. AbdulAziz AlShahrani",
         title: "Group Medical Director",
         sub: "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, Infertility (IVF) & Minimally Invasive Surgery",
         location: "Riyadh",
