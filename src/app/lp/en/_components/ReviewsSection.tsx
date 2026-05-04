@@ -39,11 +39,9 @@ We are deeply thankful to 💙💙💙Dr. Fawaz and the entire Banoon Clinic tea
 `,
     },
     {
-        author: 'alshaymaa alshaikh', 
+        author: 'KENG OF JMAA', 
         meta: '8 reviews',
-        text: `Dr. Zeina is honestly one of the best doctors I have ever met. She is very professional, kind, and truly cares about her patients. From the very first visit, I noticed how punctual she is with her appointments, which shows great respect for her patients’ time. She is also very flexible and makes you feel comfortable, as if you are speaking to someone who genuinely understands you.
-What impressed me the most is how clearly she explains the treatment plan.She goes through every detail and makes sure you understand each step.Even if you ask the same question more than once, she patiently explains again without showing any sign of annoyance.She really takes her time to listen to your concerns and ensures all your questions are answered thoroughly.This gave me a lot of comfort and confidence in the treatment process.
-I am truly grateful for her support and dedication.`,
+        text: `thanks.dr.maya.for.your.great.help.in.our.case.now.finally.i.have.2.kids`,
     },
 ];
 
