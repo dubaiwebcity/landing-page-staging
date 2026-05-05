@@ -41,7 +41,7 @@ We are deeply thankful to 💙💙💙Dr. Fawaz and the entire Banoon Clinic tea
     {
         author: 'KENG OF JMAA', 
         meta: '8 reviews',
-        text: `thanks.dr.maya.for.your.great.help.in.our.case.now.finally.i.have.2.kids`,
+        text: `thanks dr maya for your great help in our case. now finally i have 2 kids`,
     },
 ];
 

@@ -33,7 +33,7 @@ export default function SpecialistsSection() {
                 <div className="flex flex-col gap-8 lg:flex-row">
                     {REELS.map((reel) => (
                         <div key={reel.url} className="min-h-[610px] md:h-[735px] overflow-hidden md:aspect-[7/16] relative flex-1">
-                            <div className="absolute inset-0 flex justify-center">
+                            <div className="md:absolute inset-0 flex justify-center">
                                 <blockquote
                                     className="instagram-media"
                                     data-instgrm-captioned
