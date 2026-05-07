@@ -17,5 +17,7 @@ export default function Page() {
         const timer = setTimeout(() => setIsHuman(true), 1500);
         return () => clearTimeout(timer);
     }, []);
+
+    if (!isHuman) return <div className="loading-state">Loading...</div>;
     return <LandingPage />;
 }
