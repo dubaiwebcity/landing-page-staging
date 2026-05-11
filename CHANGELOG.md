@@ -1,3 +1,9 @@
+## [1.4.40](https://github.com/bnoon-ksa/landing-page/compare/v1.4.39...v1.4.40) (2026-05-11)
+
+### Bug Fixes
+
+* Update DrBassam.tsx ([d1cda17](https://github.com/bnoon-ksa/landing-page/commit/d1cda1754ce46c547543b2d8ea32e99d37ef5544))
+
 ## [1.4.39](https://github.com/bnoon-ksa/landing-page/compare/v1.4.38...v1.4.39) (2026-05-11)
 
 ### Bug Fixes
