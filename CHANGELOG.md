@@ -1,3 +1,10 @@
+## [1.4.41](https://github.com/bnoon-ksa/landing-page/compare/v1.4.40...v1.4.41) (2026-05-14)
+
+### Bug Fixes
+
+* added metadata and removed landing page ([#511](https://github.com/bnoon-ksa/landing-page/issues/511)) ([0a09e16](https://github.com/bnoon-ksa/landing-page/commit/0a09e16333589300f020bca49e69b04e697dc22c))
+* permanently remove deprecated lp folder ([#512](https://github.com/bnoon-ksa/landing-page/issues/512)) ([79b1293](https://github.com/bnoon-ksa/landing-page/commit/79b1293c898fd7cd78835ca4a7dd3cf0486ed1a2))
+
 ## [1.4.40](https://github.com/bnoon-ksa/landing-page/compare/v1.4.39...v1.4.40) (2026-05-11)
 
 ### Bug Fixes
