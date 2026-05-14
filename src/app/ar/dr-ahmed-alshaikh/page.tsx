@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import DrAhmedAlshaikh from '@/components/ar/Common/DrAhmedAlshaikh';
 
 export const metadata: Metadata = {
-  title: 'د. أحمد الشيخ – أفضل طبيب أطفال الأنابيب والعقم في جدة| بنون ',
+  title: "د. أحمد الشيخ، استشاري أطفال الأنابيب والعقم | بنون - جدة",
   description:
-    'الدكتور أحمد الشيخ، استشاري أطفال الأنابيب والعقم في مركز بنون بجدة. خبرة واسعة في علاجات الإخصاب المساعد.',
+    "الدكتور أحمد الشيخ هو استشاري أطفال الأنابيب والعقم في مركز بنون بجدة، ويمتلك خبرة واسعة في علاجات الإخصاب المساعد وتقديم الرعاية المتكاملة لحالات تاخر الإنجاب. احجزوا اليوم.",
 };
 
 export default function DrAhmedAlShaikhPage() {

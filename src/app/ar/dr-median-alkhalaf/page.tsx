@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import DrMedianAlkhalaf from '@/components/ar/Common/DrMedianAlkhalaf';
 
 export const metadata: Metadata = {
-  title: 'الدكتور مدين الخلف - استشاري أمراض النساء والولادة في بنون بالأحساء',
+  title: "د. مدين الخلف، استشاري أمراض النساء والولادة | بنون - الأحساء",
   description:
-    'الدكتور مدين الخلف، استشاري أمراض النساء والولادة في مركز بنون بالأحساء. خبرة واسعة في صحة المرأة والولادة.',
+    "الدكتور مدين الخلف هواستشاري أمراض النساء والولادة في مركز بنون بالأحساء، ويمتلك خبرة واسعة في أمراض النساء والولادة لتقديم رعاية طبية شاملة ومتميزة لكِ.",
 };
 
 export default function DrMedianAlkhalafPage() {

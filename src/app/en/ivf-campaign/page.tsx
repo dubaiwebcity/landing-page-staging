@@ -4,8 +4,16 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import NationalDayOffer from '@/components/Common/NationalDayOffer';
 
 export const metadata: Metadata = {
-  title: 'Founding Day Offer - IVF | Bnoon - Riyadh, Jeddah & Al Ahsa',
-  description: '',
+  title: "Founding Day IVF Offer | Bnoon",
+  description: "Take advantage of Bnoon’s exclusive Founding Day IVF offers. Start your journey to parenthood with advanced treatments and special savings on fertility care.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function NationalDayOfferPage() {

@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import TelemedicineSection from '@/components/ar/Common/TelemedicineSection';
 
 export const metadata: Metadata = {
-  title: ' الاستشارات عن بُعد – بنون',
+  title: "الاستشارات عن بعد | بنون",
   description:
-    'استشارات طبية عن بُعد مع أطباء بنون المتخصصين في الإخصاب وصحة المرأة. احصلوا على استشارة مريحة من منزلكم في أي مكان بالسعودية.',
+    "احجزوا استشارة عن بُعد مع نخبة من أطباء بنون المتخصصين في الخصوبة وصحة المرأة. استمتعوا بخدمة الاستشارات الافتراضية المريحة والآمنة من أي مكان.",
 };
 
 export default function TelemedicinePage() {

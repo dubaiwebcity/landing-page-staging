@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import AppointmentSection from '@/components/Common/AppointmentSection';
 
 export const metadata: Metadata = {
-  title: 'Book an Appointment – Bnoon | Riyadh & Jeddah',
+  title: "Book an Appointment in Riyadh, Jeddah & Al Ahsa | Bnoon",
   description:
-    "Book your appointment with Bnoon's fertility specialists in Riyadh, Jeddah, or Al Ahsa. Quick and easy booking for reproductive health consultations.",
+    "Book your appointment with Bnoon’s fertility and IVF consultants in Riyadh, Jeddah, or Al Ahsa. Enjoy quick and easy booking for all your reproductive health needs.",
 };
 
 export default function RequestAppointmentServer() {

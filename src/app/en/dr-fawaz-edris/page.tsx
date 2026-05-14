@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrFawazEdris from '@/components/Common/DrFawazEdris';
 
 export const metadata: Metadata = {
-  title: 'Dr. Fawaz Edris – Best IVF Doctor in Jeddah | Bnoon ',
+  title: "Prof. Fawaz Edris, IVF and Infertility Consultant | Bnoon - Jeddah",
   description:
-    'Dr. Fawaz Edris, IVF and infertility consultant at Bnoon Jeddah. Specialized in assisted reproductive treatments and fertility care.',
+    "Consult with Prof. Fawaz Edris, an IVF and infertility specialist at Bnoon Jeddah, offering expert assisted reproductive treatments and personal fertility care.",
 };
 
 export default function ServerDrFawazEdrisPage() {

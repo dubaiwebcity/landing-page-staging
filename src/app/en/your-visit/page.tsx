@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import VisitTabs from '@/components/Common/VisitTabs';
 
 export const metadata: Metadata = {
-  title: 'Bnoon - Your Visit to Bnoon in Jeddah, Riyadh & Al Ahsa',
+  title: "Plan Your Visit KSA | Bnoon",
   description:
-    'Everything you need to know about visiting Bnoon in Jeddah, Riyadh, and Al Ahsa. Appointments, preparation, and available services.',
+    "Plan your visit to Bnoon’s clinics in Riyadh, Jeddah, or Al Ahsa. Find all details on appointments, preparation, and our comprehensive reproductive services.",
 };
 
 export default function YourVisitPage() {

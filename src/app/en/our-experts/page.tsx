@@ -5,9 +5,9 @@ import FertilityDoctor from '@/components/Common/FertilityDoctor';
 import OurExperts from '@/components/Common/OurExperts';
 
 export const metadata: Metadata = {
-  title: 'Find the Best IVF, Gynecology & Andrology Doctors – Bnoon',
+  title: "Find IVF & OBGYN Experts | Bnoon",
   description:
-    "Meet Bnoon's expert team of IVF, gynecology, and andrology doctors. Experienced fertility specialists across Riyadh, Jeddah, and Al Ahsa.",
+    "Connect with Bnoon’s expert team of IVF, gynecology, and andrology consultants. Our experienced doctors provide world-class fertility care across Saudi Arabia.",
 };
 
 export default function OurExpertsPage() {

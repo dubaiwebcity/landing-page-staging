@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrRazanGhaith from '@/components/Common/DrRazanGhaith';
 
 export const metadata: Metadata = {
-  title: 'Dr. Razan Ghaith - Best OBGYN & IVF Doctor in Jeddah| Bnoon ',
+  title: "Dr. Razan Ghaith, OBGYN & IVF Doctor | Bnoon - Jeddah",
   description:
-    "Dr. Razan Ghaith, OBGYN and IVF consultant at Bnoon Jeddah. Specialized in IVF, women's health, and reproductive medicine.",
+    "Consult with Dr. Razan Ghaith, a dedicated OBGYN and IVF Consultant at Bnoon Jeddah, specializing in women’s health and advanced reproductive medicine services.",
 };
 
 export default function ServerDrRazanGhaithPage() {

@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import WaadSection from '@/components/Common/WaadSection';
 
 export const metadata: Metadata = {
-  title: "Wa'ad Bnoon Program - Get Pregnant or Your Money Back ",
+  title: "Join Wa'ad Bnoon IVF Program | Bnoon",
   description:
-    "The Wa'ad Bnoon Program guarantees pregnancy or your money back. Learn about program details and eligibility for IVF success guarantee.",
+    "Learn about Wa’ad Bnoon IVF Program. Learn about eligibility and how we support your journey to successful parenthood.",
 };
 
 export default function WaadPage() {

@@ -44,6 +44,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+scripts/
+seo-metadata-update-report.json
 
 # typescript
 *.tsbuildinfo

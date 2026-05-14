@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import TeamsSection from '@/components/Common/TeamsSection';
 
 export const metadata: Metadata = {
-  title: 'Join Bnoon – Innovation, Education & Research ',
+  title: "Join Our Team | Innovation, Education & Research  | Bnoon",
   description:
-    "Join Bnoon's medical team. Career opportunities in fertility medicine, innovation, education, and research across Riyadh, Jeddah, and Al Ahsa.",
+    "Join Bnoon's medical team to advance your career in reproductive medicine, research and innovation. Explore rewarding opportunities in Riyadh, Jeddah, and Al Ahsa clinics.",
 };
 
 export default function JoinOurTeamPage() {

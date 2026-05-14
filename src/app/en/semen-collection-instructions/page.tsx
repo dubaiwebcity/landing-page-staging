@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import SemenCollection from '@/components/Common/SemenCollection';
 
 export const metadata: Metadata = {
-  title: 'Patients Rights – Bnoon',
+  title: "Semen Collection Instructions | Bnoon",
   description:
-    'Learn about your rights as a patient at Bnoon. We are committed to transparent, fair medical care that respects your privacy and dignity.',
+    "Follow Bnoon’s clear instructions for semen collection. We are committed to providing professional medical care that respects your privacy and patient rights.",
 };
 
 export default function ServerPatientsRightsPage() {

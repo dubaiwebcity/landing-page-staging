@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import Brochures from '@/components/Common/Brochures';
 import FoundingPageBanner from "@/components/Layout/FoundingPageBanner";
 export const metadata: Metadata = {
-  title: 'About Us – Bnoon',
+  title: "Patient Education | Bnoon",
   description:
-    "Learn about Bnoon, Saudi Arabia's leading fertility and women's health network. Advanced IVF and reproductive medicine across Riyadh, Jeddah, and Al Ahsa.",
+    "Explore Bnoon’s informative content to learn more about fertility, IVF and women’s health.",
 };
 
 export default function AboutUsPage() {

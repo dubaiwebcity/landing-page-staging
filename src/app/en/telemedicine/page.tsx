@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import TelemedicineSection from '@/components/Common/TelemedicineSection';
 
 export const metadata: Metadata = {
-  title: 'Telemedicine – Bnoon',
+  title: "Telemedicine Consultations | Bnoon",
   description:
-    "Book a telemedicine consultation with Bnoon's fertility and women's health specialists. Convenient virtual appointments from anywhere in Saudi Arabia.",
+    "Learn more about Bnoon's telemedicine consultations with our IVF consultants for expert reproductive health advice and care.",
 };
 
 export default function TelemedicinePage() {

@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import FeedbackSection from '@/components/Common/FeedbackSection';
 
 export const metadata: Metadata = {
-  title: 'Bnoon – We’d Love to Hear From You ',
+  title: "Submit Your Feedback | Bnoon",
   description:
-    'Share your experience with Bnoon. Your feedback and suggestions help us improve our services and provide the best healthcare for you.',
+    "Share your experience with Bnoon. Your valuable feedback and suggestions help us enhance our services to provide the best possible healthcare for every patient.",
 };
 
 export default function SubmitFeedbackServer() {

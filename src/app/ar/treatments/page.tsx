@@ -5,9 +5,9 @@ import TreatmentsSection from '@/components/ar/Common/TreatmentsSection';
 import TreatmentsTabs from '@/components/ar/Common/TreatmentsTabs';
 
 export const metadata: Metadata = {
-  title: 'بنون - أطفال الأنابيب والحقن المجهري والعقم وفحوصات الجينات ',
+  title: "علاجات أطفال الأنابيب والحقن المجهري والفحوصات الجينية المتقدمة | بنون",
   description:
-    'تعرّفوا على علاجات بنون: أطفال الأنابيب، الحقن المجهري، علاج العقم عند الرجال، فحوصات الجينات، ومنظار النساء. خطط علاج مخصصة في السعودية.',
+    "تعرّفوا على مجموعة واسعة من علاجات الخصوبة في بنون، تشمل أطفال الأنابيب والحقن المجهري وعلاج عقم الرجال والفحص الجيني للأجنة واختيار جنس الجنين والمناظير النسائية المتقدمة وغيرها.",
 };
 
 export default function TreatmentsPage() {

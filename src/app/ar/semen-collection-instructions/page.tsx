@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import SemenCollectionInstructions from '@/components/ar/Common/SemenCollectionInstructions';
 
 export const metadata: Metadata = {
-  title: 'حقوق المرضى – بنون',
+  title: "تعليمات جمع السائل المنوي | بنون",
   description:
-    'تعرّفوا على حقوقكم كمرضى في مراكز بنون. نلتزم بتقديم رعاية طبية شفافة وعادلة تحترم خصوصيتكم وكرامتكم وفقاً للمعايير الصحية السعودية.',
+    "اتبع تعليمات جمع السائل المنوي لضمان دقة الفحوصات. نلتزم في بنون بتقديم رعاية طبية متقدمة وفق أعلى المعايير الصحية في المملكة.",
 };
 
 export default function ServerPatientsRightsPage() {

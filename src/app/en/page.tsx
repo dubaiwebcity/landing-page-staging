@@ -16,9 +16,9 @@ import SearchBar from '@/components/Common/SearchBar';
 import Popup from '@/components/Common/Popup';
 
 export const metadata: Metadata = {
-  title: 'Bnoon | Saudi Arabia’s Best Fertility & Women’s Network ',
+  title: "Saudi Arabia's Best Fertility & Women's Health Network  | Bnoon",
   description:
-    'Bnoon Medical Center specializes in fertility, we provide the necessary examinations and treatments for the couple. We realize that every man and woman is unique, according their individual health problems. Depending on the individual circumstances of each case, we develop a specialized treatment plan as well as the emotional, physical and financial needs.',
+    "Choose Bnoon, Saudi Arabia’s leading fertility & women's health network. We provide the full spectrum of advanced fertility treatments for couples on their parenthood journey.",
 };
 
 export default function HomePage() {

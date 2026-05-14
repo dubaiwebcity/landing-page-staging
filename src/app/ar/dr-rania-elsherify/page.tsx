@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import DrRaniaAlsherify from '@/components/ar/Common/DrRaniaAlsherify';
 
 export const metadata: Metadata = {
-  title: 'الدكتورة رانيا الشريفي - طبيبة أمراض النساء والولادة في بنون بالأحساء',
+  title: "د. رانيا الشريفي، أخصائية أمراض النساء والولادة | بنون - الأحساء",
   description:
-    'الدكتورة رانيا الشريفي، استشارية أمراض النساء والولادة في مركز بنون بالأحساء. خبرة واسعة في صحة المرأة والولادة.',
+    "احجزي موعدك مع الدكتورة رانيا الشريفي، استشارية أمراض النساء والولادة في مركز بنون بالأحساء، صاحبة الخبرة الواسعة في صحة المرأة والولادة لتقديم أفضل رعاية طبية.",
 };
 
 export default function BnoonAlahsaPage() {

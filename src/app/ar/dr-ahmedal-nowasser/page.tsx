@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import DrAhmedNowasser from '@/components/ar/Common/DrAhmedNowasser';
 
 export const metadata: Metadata = {
-  title: 'الدكتور أحمد النويصر – أفضل استشاري إخصاب وعقم في الأحساء | بنون',
+  title: "د. أحمد النويصر، استشاري الإخصاب وعلاج العقم | بنون - الأحساء",
   description:
-    'الدكتور أحمد النويصر، استشاري الإخصاب وعلاج العقم في مركز بنون بالأحساء. خبرة واسعة في أطفال الأنابيب والحقن المجهري.',
+    "الدكتور أحمد النويصر هو استشاري الإخصاب وعلاج العقم في مركز بنون بالأحساء، صاحب الخبرة الواسعة في عمليات أطفال الأنابيب والحقن المجهري لتحقيق أفضل النتائج. احجزوا موعدكم اليوم.",
 };
 
 export default function DrAhmedNowasserPage() {

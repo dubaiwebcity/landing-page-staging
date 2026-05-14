@@ -5,9 +5,9 @@ import FertilityTabs from '@/components/ar/Common/FertilityTabs';
 import CustomList from '@/components/ar/Common/CustomList';
 
 export const metadata: Metadata = {
-  title: 'بنون – معلومات شاملة عن الخصوبة وعلاجات الإخصاب والحمل ',
+  title: "معلومات شاملة عن الخصوبة وعلاجات الإخصاب والحمل | بنون",
   description:
-    'دليل شامل عن الخصوبة من بنون. معلومات طبية موثوقة عن أسباب تأخر الحمل وعلاجات الإخصاب المتاحة ونصائح لتحسين فرص الحمل.',
+    "اكتشف دليل بنون الشامل للخصوبة، الذي يقدم معلومات طبية موثوقة حول أسباب العقم، وأحدث العلاجات المتاحة، ونصائح الخبراء لزيادة فرص الحمل بنجاح وأمان تام.",
 };
 
 export default function FertilityGuidePage() {

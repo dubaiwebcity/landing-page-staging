@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import DrBassam from '@/components/ar/Common/DrBassam';
 
 export const metadata: Metadata = {
-  title: 'الدكتور بسام نصير – أفضل استشاري إخصاب وعقم في الأحساء | بنون',
+  title: "د. بسام نصير، استشاري الإخصاب وعلاج العقم | بنون - الأحساء",
   description:
-    'الدكتور بسام نصير، استشاري الإخصاب وعلاج العقم في مركز بنون بالأحساء. خبرة واسعة في أطفال الأنابيب والحقن المجهري.',
+    "الدكتور بسام نصير هو استشاري الإخصاب وعلاج العقم في بنون بالأحساء، المتخصص في عمليات أطفال الأنابيب والحقن المجهري بأحدث التقنيات الطبية ونسب نجاح عالية.",
 };
 
 export default function BnoonBassamPage() {

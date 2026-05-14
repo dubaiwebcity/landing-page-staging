@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import EmbryoTransferPostOperative from '@/components/ar/Common/EmbryoTransferPostOperative';
 
 export const metadata: Metadata = {
-  title: 'حقوق المرضى – بنون',
+  title: "ما بعد عملية إرجاع الأجنة | بنون",
   description:
-    'تعرّفوا على حقوقكم كمرضى في مراكز بنون. نلتزم بتقديم رعاية طبية شفافة وعادلة تحترم خصوصيتكم وكرامتكم وفقاً للمعايير الصحية السعودية.',
+    "احصلي على إرشادات الرعاية اللازمة بعد عملية إرجاع الأجنة. نلتزم في بنون بتقديم الدعم الطبي والشفافية الكاملة لضمان راحتكم وسلامتكم في كل خطوة من رحلتكم.",
 };
 
 export default function ServerPatientsRightsPage() {

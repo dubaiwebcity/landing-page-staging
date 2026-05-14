@@ -4,8 +4,16 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import NationalDayOffer from '@/components/ar/Common/NationalDayOffer';
 
 export const metadata: Metadata = {
-  title: 'عرض يوم التأسيس بعلاجات أمراض الذكورة | بنون - الرياض وجدة',
-  description: '',
+  title: "عرض يوم التأسيس للذكورة | بنون",
+  description: "استفد من عروض يوم التأسيس الحصرية من بنون على خدمات أمراض الذكورة. نقدم استشارات متخصصة وعلاجات متطورة لدعم صحة الرجل وتحقيق حلم الإنجاب بأسعار مميزة.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function FoundingDayDiscountPage() {

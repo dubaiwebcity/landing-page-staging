@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import AppointmentSection from '@/components/ar/Common/AppointmentSection';
 
 export const metadata: Metadata = {
-  title: 'طلب موعد مع طبيب – بنون في الرياض وجدة ',
+  title: "احجز موعدك بالرياض وجدة والأحساء | بنون",
   description:
-    'احجزوا موعدكم مع أطباء بنون في الرياض أو جدة أو الأحساء. حجز سهل وسريع لاستشارات الإخصاب وصحة المرأة.',
+    "احجزوا موعدكم بسهولة مع أطباء بنون في الرياض أو جدة أو الأحساء. نوفر لكم نظام حجز سريع لاستشارات الإخصاب وصحة المرأة لضمان حصولكم على الرعاية في الوقت المناسب.",
 };
 
 export default function RequestAppointmentPage() {

@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import PaitentRights from '@/components/Common/PaitentRights';
 
 export const metadata: Metadata = {
-  title: 'Patients Rights – Bnoon',
+  title: "Know Your Patient Rights | Bnoon",
   description:
-    'Learn about your rights as a patient at Bnoon. We are committed to transparent, fair medical care that respects your privacy and dignity.',
+    "Understand your patient rights at Bnoon. We are dedicated to providing transparent, fair medical care that prioritizes your privacy, dignity, and well-being.",
 };
 
 export default function ServerPatientsRightsPage() {

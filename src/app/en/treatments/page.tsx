@@ -5,9 +5,9 @@ import TreatmentsSection from '@/components/Common/TreatmentsSection';
 import TreatmentsTabs from '@/components/Common/TreatmentsTabs';
 
 export const metadata: Metadata = {
-  title: 'Bnoon- IVF, ICSI, Male Infertility, PGT, Gyne Laproscopy|KSA ',
+  title: "Explore IVF, ICSI, Male Infertility, PGT & Gyne Laproscopy Treatments in KSA | Bnoon",
   description:
-    "Explore Bnoon's fertility treatments: IVF, ICSI, male infertility, preimplantation genetic testing, and gynecological laparoscopy in Saudi Arabia.",
+    "Explore advanced fertility treatments at Bnoon, including IVF, ICSI, IUI. gender selection, male infertility care, PGT, and gynecological laparoscopy tailored for your specific needs.",
 };
 
 export default function TreatmentsPage() {

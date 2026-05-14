@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrDaliaNour from '@/components/Common/DrDaliaNour';
 
 export const metadata: Metadata = {
-  title: 'Dr. Dalia Adel – Best OBGYN & IVF Doctor in Riyadh | Bnoon',
+  title: "Dr. Dalia Nour, IVF Consultant | Bnoon - Riyadh",
   description:
-    "Dr. Dalia Adel, OBGYN and IVF consultant at Bnoon Riyadh. Specialized in women's health, fertility, and reproductive medicine.",
+    "Meet Dr. Dalia Nour, a skilled OBGYN & Infertility Consultant at Bnoon Riyadh, providing expert care in women’s health, obstetrics, and comprehensive fertility care.",
 };
 
 export default function ServerDrDaliaNourPage() {

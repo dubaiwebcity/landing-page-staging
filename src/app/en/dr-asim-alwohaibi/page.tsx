@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrAsimAlWohaibi from '@/components/Common/DrAsimAlWohaibi';
 
 export const metadata: Metadata = {
-  title: 'Dr. Asim AlWohaibi – Best Fertility Doctor in Riyadh | Bnoon',
+  title: "Dr. Asim Alwohaibi, Fertility Consultant  | Bnoon - Riyadh",
   description:
-    'Dr. Asim AlWohaibi, fertility consultant at Bnoon Riyadh. Specialized in IVF, ICSI, and advanced infertility treatments.',
+    "Consult with Dr. Asim Alwohaibi, a leading fertility consultant at Bnoon in Riyadh. Expert care for IVF, ICSI, and advanced infertility treatments awaits you.",
 };
 
 export default function ServerDrAsimAlwohaibiPage() {

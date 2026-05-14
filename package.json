@@ -12,9 +12,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "format": "prettier --write .",
-    "lp:dev": "npx tailwindcss -i ./src/app/lp/input.css -o ./src/app/lp/style.css --content \"./src/app/lp/**/*.tsx\"",
-    "lp:build": "npx tailwindcss -i ./src/app/lp/input.css -o ./src/app/lp/style.css --content \"./src/app/lp/**/*.tsx\" --minify"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@next/third-parties": "16.2.3",

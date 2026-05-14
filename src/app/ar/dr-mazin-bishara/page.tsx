@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import DrMazinBishara from '@/components/ar/Common/DrMazinBishara';
 
 export const metadata: Metadata = {
-  title: 'د. مازن بشارة – أفضل طبيب أطفال الأنابيب والعقم في جدة| بنون ',
+  title: "د. مازن بشارة، استشاري الإخصاب وأطفال الأنابيب والعقم | بنون - جدة",
   description:
-    'الدكتور مازن بشارة، استشاري أطفال الأنابيب والعقم في مركز بنون بجدة. خبرة واسعة في علاجات الإخصاب المساعد.',
+    "الدكتور مازن بشارة هو استشاري أطفال الأنابيب والعقم في بنون بجدة، ويملك خبرة واسعة في علاجات الإخصاب المساعد وتقديم الرعاية الطبية المتميزة لكل حالة.",
 };
 
 export default function DrMazinBisharaPage() {

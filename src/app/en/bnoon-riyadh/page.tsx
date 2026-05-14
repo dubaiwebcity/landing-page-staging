@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import Riyadharea from '@/components/Common/Riyadharea';
 
 export const metadata: Metadata = {
-  title: 'Bnoon - Riyadh | The Fertility & Women Health Centers',
+  title: "Advanced Fertility & Women's Health Center | Riyadh | Bnoon",
   description:
-    "Bnoon fertility and women's health centers in Riyadh. IVF, ICSI, and infertility treatment services with an expert medical team.",
+    "Experience high-quality care at Bnoon’s fertility and women’s health centers in Riyadh. Our expert team is specialized in advanced IVF, ICSI, and infertility treatments using AI-based technologies.",
 };
 
 export default function BnoonRiyadhPage() {

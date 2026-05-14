@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import EggRetrievalPreOperative from '@/components/ar/Common/EggRetrievalPreOperative';
 
 export const metadata: Metadata = {
-  title: 'حقوق المرضى – بنون',
+  title: "ما قبل عملية سحب البويضات | بنون",
   description:
-    'تعرّفوا على حقوقكم كمرضى في مراكز بنون. نلتزم بتقديم رعاية طبية شفافة وعادلة تحترم خصوصيتكم وكرامتكم وفقاً للمعايير الصحية السعودية.',
+    "اتبعي تعليمات ما قبل عملية سحب البويضات في بنون لضمان أفضل النتائج. نلتزم بتقديم رعاية طبية شفافة تحترم خصوصيتكم وفق المعايير الصحية االمعتمدة.",
 };
 
 export default function ServerPatientsRightsPage() {

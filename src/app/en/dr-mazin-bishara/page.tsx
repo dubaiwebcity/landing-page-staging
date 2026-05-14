@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrMazinBishara from '@/components/Common/DrMazinBishara';
 
 export const metadata: Metadata = {
-  title: 'Dr. Mazin Bishara – Best IVF Doctor in Jeddah | Bnoon ',
+  title: "Dr. Mazin Bishara, IVF and Infertility Consultant | Bnoon - Jeddah",
   description:
-    'Dr. Mazin Bishara, IVF and infertility consultant at Bnoon Jeddah. Specialized in assisted reproductive treatments and fertility care.',
+    "Meet Dr. Mazin Bishara, an IVF and infertility consultant at Bnoon Jeddah, providing expert assisted reproductive treatments and compassionate fertility care.",
 };
 
 export default function ServerDrMazinBisharaPage() {

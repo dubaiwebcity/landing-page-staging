@@ -4,9 +4,17 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import NationalDayOffer from '@/components/Common/NationalDayOffer';
 
 export const metadata: Metadata = {
-  title: 'National Day Offer at Bnoon',
+  title: "National Day IVF Offers | Bnoon",
   description:
-    'Celebrate Saudi National Day with special offers from Bnoon fertility centers. Exclusive discounts on IVF treatments and reproductive health services.',
+    "Celebrate Saudi National Day with Bnoon’s exclusive IVF offers. Benefit from special discounts on advanced fertility treatments and reproductive health care.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function NationalDayOfferPage() {

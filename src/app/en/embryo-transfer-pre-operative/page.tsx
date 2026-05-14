@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import PreEmbryoTransfer from '@/components/Common/PreEmbryoTransfer';
 
 export const metadata: Metadata = {
-  title: 'Patients Rights – Bnoon',
+  title: "Pre Operative Embryo Transfer | Bnoon",
   description:
-    'Learn about your rights as a patient at Bnoon. We are committed to transparent, fair medical care that respects your privacy and dignity.',
+    "Prepare for your embryo transfer with Bnoon’s pre-operative guidance. We are committed to providing transparent medical care that respects your privacy.",
 };
 
 export default function ServerPatientsRightsPage() {

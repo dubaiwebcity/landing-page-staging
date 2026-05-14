@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import FeedbackSection from '@/components/ar/Common/FeedbackSection';
 
 export const metadata: Metadata = {
-  title: 'بنون – شاركونا تجربتكم ',
+  title: "شاركونا تجربتكم | بنون",
   description:
-    'شاركونا تجربتكم مع مراكز بنون. ملاحظاتكم واقتراحاتكم تساعدنا في تحسين خدماتنا وتقديم أفضل رعاية صحية لكم.',
+    "شاركونا تجربتكم في مراكز بنون، حيث تساعدنا ملاحظاتكم واقتراحاتكم القيمة في تحسين جودة خدماتنا وتقديم أفضل رعاية صحية ممكنة لكل زوجين يسعيان لتحقيق حلم الإنجاب.",
 };
 
 export default function SubmitFeedbackPage() {

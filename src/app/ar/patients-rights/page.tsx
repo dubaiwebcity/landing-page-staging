@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import PaitentRights from '@/components/Common/PaitentRights';
 
 export const metadata: Metadata = {
-  title: 'حقوق المرضى – بنون',
+  title: "اعرف حقوق المرضى | بنون",
   description:
-    'تعرّفوا على حقوقكم كمرضى في مراكز بنون. نلتزم بتقديم رعاية طبية شفافة وعادلة تحترم خصوصيتكم وكرامتكم وفقاً للمعايير الصحية السعودية.',
+    "تعرف على حقوقك كأحد مراجعي مراكز بنون. نحن نلتزم بتقديم رعاية طبية شفافة وعادلة تحترم خصوصيتك وتضمن لك أفضل تجربة علاجية في مجال طب الخصوبة دائماً.",
 };
 
 export default function ServerPatientsRightsPage() {

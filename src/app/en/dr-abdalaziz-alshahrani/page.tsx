@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrAbdulAzizAlShahrani from '@/components/Common/DrAbdulAzizAlShahrani';
 
 export const metadata: Metadata = {
-  title: 'Dr. AbdulAziz AlShahrani - Best IVF Doctor in Riyadh | Bnoon',
+  title: "Dr. AbdulAziz AlShahrani, IVF and Infertility Consultant | Bnoon - Riyadh",
   description:
-    'Dr. AbdulAziz AlShahrani, IVF and fertility consultant at Bnoon Riyadh. Specialized in ICSI and advanced reproductive medicine.',
+    "Consult with Dr. AbdulAziz AlShahrani, a leading IVF and fertility consultant at Bnoon Riyadh, specializing in advanced reproductive medicine.",
 };
 
 export default function ServerDrAbdalazizPage() {

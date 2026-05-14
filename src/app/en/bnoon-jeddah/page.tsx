@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import Jeddaharea from '@/components/Common/Jeddaharea';
 
 export const metadata: Metadata = {
-  title: 'Bnoon - Jeddah | The Fertility & Women Health Center',
+  title: "Visit our Fertility Center in Jeddah | Bnoon",
   description:
-    "Bnoon fertility and women's health center in Jeddah. IVF, ICSI, and infertility treatment services with an expert medical team.",
+    "Visit Bnoon’s fertility and women’s health center in Jeddah for expert IVF, ICSI, gender selection, genetic testing and infertility treatments delivered by our highly experienced medical team.",
 };
 
 export default function BnoonJeddahPage() {

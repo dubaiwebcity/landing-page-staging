@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import AlahsaArea from '@/components/ar/Common/AlahsaArea';
 
 export const metadata: Metadata = {
-  title: 'بنون - مركز الإخصاب وصحة المرأة في الأحساء',
+  title: "زوروا مركز الإخصاب وصحة المرأة بالأحساء | بنون",
   description:
-    'مركز بنون للإخصاب وصحة المرأة في الأحساء. خدمات أطفال الأنابيب والحقن المجهري وعلاج العقم مع فريق طبي متخصص.',
+    "تفضلوا بزيارة مركز بنون للإخصاب وصحة المرأة في الأحساء، حيث نوفر خدمات أطفال الأنابيب والحقن المجهري وعلاج العقم تحت إشراف فريق طبي متميز وتقنيات متطورة.",
 };
 
 export default function BnoonAlahsaPage() {

@@ -5,9 +5,9 @@ import ContactUsSection from '@/components/Common/ContactUsSection';
 import MediaSection from '@/components/Common/MediaSection';
 
 export const metadata: Metadata = {
-  title: 'Bnoon | Start Your Parenthood Journey – Contact Us ',
+  title: "Start Your Parenthood Journey - Contact Us Today | Bnoon",
   description:
-    "Contact Bnoon fertility and women's health centers. Book your appointment in Riyadh, Jeddah, or Al Ahsa and start your parenthood journey.",
+    "Contact Bnoon’s fertility and women’s health centers today. Book your appointment in Riyadh, Jeddah, or Al Ahsa to begin your personalized parenthood journey.",
 };
 
 export default function ContactUsPage() {

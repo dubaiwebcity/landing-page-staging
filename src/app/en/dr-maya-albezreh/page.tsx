@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrMayaAlbezreh from '@/components/Common/DrMayaAlbezreh';
 
 export const metadata: Metadata = {
-  title: 'Dr. Maya Albezreh - Best OBGYN & IVF Doctor in Jeddah| Bnoon ',
+  title: "Dr. Maya Albezreh, OBGYN and IVF Consultant | Bnoon - Jeddah",
   description:
-    "Dr. Maya Albezreh, OBGYN and IVF consultant at Bnoon Jeddah. Specialized in IVF, women's health, and reproductive medicine.",
+    "Consult with Dr. Maya Albezreh, an expert OBGYN and IVF Consultant at Bnoon Jeddah, specializing in women’s health and advanced reproductive medical services.",
 };
 
 export default function ServerDrMayaAlbezrehPage() {

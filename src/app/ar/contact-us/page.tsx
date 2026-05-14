@@ -5,9 +5,9 @@ import ContactUsSection from '@/components/ar/Common/ContactUsSection';
 import MediaSection from '@/components/ar/Common/MediaSection';
 
 export const metadata: Metadata = {
-  title: 'بنون – رحلة الأمومة والأبوة مع بنون، تواصلوا معنا ',
+  title: "رحلة الأمومة والأبوة مع بنون، تواصلوا معنا | بنون",
   description:
-    'تواصلوا مع مراكز بنون للإخصاب وصحة المرأة. احجزوا موعدكم في الرياض أو جدة أو الأحساء وابدأوا رحلة الأمومة والأبوة.',
+    "تواصل مع مراكز بنون للإخصاب وصحة المرأة اليوم. احجزوا موعدكم في الرياض أو جدة أو الأحساء لبدء رحلتكم نحو الأمومة والأبوة مع أفضل الخبراء في هذا المجال.",
 };
 
 export default function ContactUsPage() {

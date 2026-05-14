@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import SuccessSection from '@/components/Common/SuccessSection';
 
 export const metadata: Metadata = {
-  title: 'Bnoon - Leading Pregnancy Rates (IVF/ICSI) ',
+  title: "Discover IVF Success Rates | High Pregnancy Rates (IVF/ICSI) | Bnoon",
   description:
-    "Discover Bnoon's leading IVF and ICSI pregnancy success rates. Advanced reproductive technology and an expert medical team delivering results.",
+    "Discover Bnoon’s leading success rates for IVF and ICSI. Our advanced technology and expert medical team are dedicated to helping you achieve a pregnancy.",
 };
 
 export default function OurSuccessPage() {

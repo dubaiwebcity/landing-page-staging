@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrMoussaElNaiemy from '@/components/Common/DrMoussaElNaiemy';
 
 export const metadata: Metadata = {
-  title: 'Dr. Mousa ElNaiemy – Urologist/Andrologist in Riyadh | Bnoon ',
+  title: "Dr. Mussa AlNumi, Andrology Consultant | Bnoon- Riyadh",
   description:
-    'Dr. Mousa ElNaiemy, urologist and andrologist at Bnoon Riyadh. Specialized in diagnosing and treating male infertility.',
+    "Meet Dr. Mussa AlNumi, an expert Andrology Consultant at Bnoon Riyadh, specializing in male infertility and the latest in advanced reproductive medicine.",
 };
 
 export default function ServerDrMoussaElNaiemyPage() {

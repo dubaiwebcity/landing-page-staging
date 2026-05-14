@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import PostEggRetrieval from '@/components/Common/PostEggRetrieval';
 
 export const metadata: Metadata = {
-  title: 'Patients Rights – Bnoon',
+  title: "Post Operative Egg Retrieval | Bnoon",
   description:
-    'Learn about your rights as a patient at Bnoon. We are committed to transparent, fair medical care that respects your privacy and dignity.',
+    "Learn about essential post-operative care following egg retrieval at Bnoon. We ensure transparent medical care that respects your privacy and dignity always.",
 };
 
 export default function ServerPatientsRightsPage() {

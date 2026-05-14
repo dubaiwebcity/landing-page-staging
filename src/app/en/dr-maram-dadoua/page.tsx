@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrMaramDadoua from '@/components/Common/DrMaramDadoua';
 
 export const metadata: Metadata = {
-  title: 'Dr. Maram Dadoua - Best OBGYN Doctor in Jeddah| Bnoon ',
+  title: "Dr. Maram Dadoua, OBGYN Specialist | Bnoon - Jeddah",
   description:
-    "Dr. Maram Dadoua, OBGYN consultant at Bnoon Jeddah. Specialized in women's health, obstetrics, and gynecological care.",
+    "Meet Dr. Maram Dadoua, a dedicated OBGYN Specialist at Bnoon Jeddah, specializing in women’s health, obstetrics, and comprehensive gynecological care services.",
 };
 
 export default function ServerDrMaramDadouaPage() {

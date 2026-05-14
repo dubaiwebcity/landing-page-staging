@@ -5,9 +5,9 @@ import AboutusSection from '@/components/Common/AboutusSection';
 import WhoAreWe from '@/components/Common/WhoAreWe';
 
 export const metadata: Metadata = {
-  title: 'About Us – Bnoon',
+  title: "About Us | Bnoon",
   description:
-    "Learn about Bnoon, Saudi Arabia's leading fertility and women's health network. Advanced IVF and reproductive medicine across Riyadh, Jeddah, and Al Ahsa.",
+    "Discover Bnoon, Saudi Arabia’s leading and fastest-growing fertility & women's health network. We offer advanced IVF and reproductive medicine across our clinics in Riyadh, Jeddah, and Al Ahsa.",
 };
 
 export default function AboutUsPage() {

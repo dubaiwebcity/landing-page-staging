@@ -5,9 +5,9 @@ import FertilityDoctor from '@/components/ar/Common/FertilityDoctor';
 import OurExperts from '@/components/ar/Common/OurExperts';
 
 export const metadata: Metadata = {
-  title: 'أطباء أطفال الأنابيب وأمراض النساء وأمراض الذكورة – بنون ',
+  title: "أطباء أطفال الأنابيب وأمراض النساء وأمراض الذكورة  | بنون",
   description:
-    'تعرّفوا على أطباء بنون المتخصصين في أطفال الأنابيب وأمراض النساء والذكورة. فريق طبي خبير في الرياض وجدة والأحساء.',
+    "تعرفوا على فريق خبراء بنون المتميز من أطباء أطفال الأنابيب وأمراض النساء وأمراض الذكورة. نخبة من المتخصصين في الخصوبة بانتظاركم في فروعنا بالرياض وجدة والأحساء اليوم.",
 };
 
 export default function OurExpertsPage() {

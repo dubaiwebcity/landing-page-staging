@@ -5,9 +5,9 @@ import FertilityTabs from '@/components/Common/FertilityTabs';
 import CustomList from '@/components/Common/CustomList';
 
 export const metadata: Metadata = {
-  title: 'Bnoon - All Your Need to Know About Your Fertility ',
+  title: "Fertility Guide - All Your Need to Know About Your Fertility | Bnoon",
   description:
-    'A comprehensive fertility guide from Bnoon. Reliable medical information on causes of infertility, available treatments, and tips to improve conception.',
+    "Access Bnoon’s comprehensive fertility guide for reliable medical info on infertility causes, treatments, and expert tips to improve your conception chances.",
 };
 
 export default function FertilityGuidePage() {

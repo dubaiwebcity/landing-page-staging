@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import TeamsSection from '@/components/ar/Common/TeamsSection';
 
 export const metadata: Metadata = {
-  title: 'انضموا إلى فريق بنون – الابتكار، التعليم الطبي، الأبحاث ',
+  title: "انضم لفريقنا الطبي المتميز | بنون",
   description:
-    'انضموا إلى فريق بنون الطبي. فرص عمل في مجالات الإخصاب والابتكار الطبي والتعليم والأبحاث في الرياض وجدة والأحساء.',
+    "انضم إلى فريق بنون الطبي المتميز وساهم في تعزيز الابتكار والتعليم والأبحاث في مجال طب الخصوبة. اكتشف فرصاً مهنية واعدة في الرياض وجدة والأحساء.",
 };
 
 export default function JoinOurTeamPage() {

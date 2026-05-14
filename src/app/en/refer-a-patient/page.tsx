@@ -4,9 +4,9 @@ import Navbar from '@/components/Layout/Navbar';
 import ReferaPatient from '@/components/Common/ReferaPatient';
 
 export const metadata: Metadata = {
-  title: 'Refer a Patient for Expert Fertility Care | Bnoon ',
+  title: "Refer a Patient for Expert Fertility Care | Bnoon",
   description:
-    "Learn about Bnoon, Saudi Arabia's leading fertility and women's health network. Advanced IVF and reproductive medicine across Riyadh, Jeddah, and Al Ahsa.",
+    "Refer your patients to Bnoon, Saudi Arabia’s premier fertility and women’s health network, for expert care and advanced reproductive medical solutions today.",
 };
 
 export default function ReferaPatientPage() {

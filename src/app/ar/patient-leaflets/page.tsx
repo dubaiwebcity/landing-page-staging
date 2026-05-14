@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import Brochures from '@/components/ar/Common/Brochures';
 import FoundingPageBanner from "@/components/ar/Layout/FoundingPageBanner";
 export const metadata: Metadata = {
-  title: 'نبذة عنّا – بنون',
+  title: "تثقيف المرضى | بنون",
   description:
-    'تعرّفوا على بنون، شبكة مراكز الإخصاب وصحة المرأة الرائدة في السعودية. نقدم رعاية شاملة بأحدث التقنيات الطبية في الرياض وجدة والأحساء.',
+    "تعرّفوا على المزيد من المحتوى التوعوي والتثقيفي حول علاجات الخصوبة وعمليات أطفال الأنابيب، بما في ذلك الإرشادات قبل وبعد الإجراءات.",
 };
 
 export default function AboutUsPage() {

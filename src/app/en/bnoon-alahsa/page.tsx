@@ -4,9 +4,9 @@ import OptimizedPageBanner from '@/components/ui/OptimizedPageBanner';
 import AlahsaArea from '@/components/Common/AlahsaArea';
 
 export const metadata: Metadata = {
-  title: 'Bnoon - Al Ahsa | The Fertility & Women Health Center',
+  title: "Visit our Fertility Center in Al Ahsa | Bnoon",
   description:
-    "Bnoon fertility and women's health center in Al Ahsa. IVF, ICSI, and infertility treatment services with an expert medical team.",
+    "Visit Bnoon’s fertility and women’s health center in Al Ahsa. Our expert medical team provides advanced IVF, ICSI, genetic testing and comprehensive infertility treatments.",
 };
 
 export default function BnoonAlahsaPage() {

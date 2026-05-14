@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import WaadSection from '@/components/ar/Common/WaadSection';
 
 export const metadata: Metadata = {
-  title: 'برنامج وعد بنون – الحمل أو استرداد الرسوم ',
+  title: "برنامج وعد بنون | بنون",
   description:
-    'برنامج وعد بنون يضمن لكم الحمل أو استرداد الرسوم. تعرّفوا على تفاصيل البرنامج وشروط الاستفادة من ضمان نجاح أطفال الأنابيب.',
+    "انضم لبرنامج وعد بنون. تعرف على تفاصيل البرنامج وشروط الاستحقاق لضمان نجاح رحلتكم في عمليات أطفال الأنابيب بأمان.",
 };
 
 export default function WaadBnoonProgramPage() {

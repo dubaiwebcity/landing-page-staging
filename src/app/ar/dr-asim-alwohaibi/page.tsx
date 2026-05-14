@@ -3,9 +3,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import DrAsimAlWohaibi from '@/components/ar/Common/DrAsimAlWohaibi';
 
 export const metadata: Metadata = {
-  title: 'د. عاصم الوهيبي - أفضل طبيب إخصاب في الرياض | بنون ',
+  title: "د. عاصم الوهيبي، استشاري الإخصاب وأطفال الأنابيب | بنون - الرياض",
   description:
-    'الدكتور عاصم الوهيبي، استشاري الإخصاب وأطفال الأنابيب في مركز بنون بالرياض. خبرة واسعة في علاج العقم والحقن المجهري.',
+    "الدكتور عاصم الوهيبي هو استشاري الإخصاب وأطفال الأنابيب في مركز بنون بالرياض، احجز موعد اليوم للحصول على أحدث علاجات العقم المتقدمة والرعاية الطبية المتخصصة للخصوبة.",
 };
 
 export default function DrAsimAlwohaibiPage() {

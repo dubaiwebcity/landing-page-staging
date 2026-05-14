@@ -4,9 +4,9 @@ import Navbar from '@/components/ar/Layout/Navbar';
 import ReferaPatient from '@/components/ar/Common/ReferaPatient';
 
 export const metadata: Metadata = {
-  title: "طلب تحويل مريض لرعاية متقدمة للخصوبة | بنــون ",
+  title: "طلب تحويل مريض لرعاية متقدمة للخصوبة | بنون",
   description:
-    'اكتشفوا نسب نجاح عمليات أطفال الأنابيب والحقن المجهري في بنون. نسب حمل رائدة بفضل أحدث التقنيات وفريق طبي متميز.',
+    "لرعاية منخصصة في علاج نأخر الحمل والعقم، يمكنكم تحويل مريض إلى بنون، الشبكة الرائدة لمراكز الإخصاب وصحة المرأة في المملكة العربية السعودية حيث نقدم أكثر العلاجات تقدماً والرعاية الشاملة لجميع الحالات المعقدة.",
 };
 
 export default function ReferaPatientPage() {

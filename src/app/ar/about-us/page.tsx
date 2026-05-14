@@ -5,9 +5,9 @@ import AboutusSection from '@/components/ar/Common/AboutusSection';
 import WhoAreWe from '@/components/ar/Common/WhoAreWe';
 
 export const metadata: Metadata = {
-  title: 'نبذة عنّا – بنون',
+  title: "تعرف علينا | بنون",
   description:
-    'تعرّفوا على بنون، شبكة مراكز الإخصاب وصحة المرأة الرائدة في السعودية. نقدم رعاية شاملة بأحدث التقنيات الطبية في الرياض وجدة والأحساء.',
+    "تعرف على بنون، الشبكة الرائدة لمراكز الإخصاب وصحة المرأة في السعودية، المتميزة في عمليات الحقن المجهري والتلقيح الاصطناعي وعلم الوراثة الإنجابية في فروعنا بالرياض وجدة والأحساء.",
 };
 
 export default function AboutUsPage() {

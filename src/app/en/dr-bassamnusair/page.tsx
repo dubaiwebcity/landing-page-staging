@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrBassam from '@/components/Common/DrBassam';
 
 export const metadata: Metadata = {
-  title: 'Dr. Bassam Nusair  – Best Fertility Doctor in Al Ahsa | Bnoon ',
+  title: "Dr. Bassam Nusair, IVF & Infertility Consultant | Bnoon - Al Ahsa",
   description:
-    'Dr. Bassam Nusair, fertility consultant at Bnoon Al Ahsa. Specialized in IVF, ICSI, and advanced infertility treatments.',
+    "Meet Dr. Bassam Nusair, a dedicated fertility & IVF consultant at Bnoon Al Ahsa, specializing in advanced IVF, ICSI, and effective infertility treatment solutions.",
 };
 
 export default function ServerDrBassamPage() {

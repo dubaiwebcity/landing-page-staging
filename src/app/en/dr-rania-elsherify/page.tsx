@@ -3,9 +3,9 @@ import Navbar from '@/components/Layout/Navbar';
 import DrRaniaElsherify from '@/components/Common/DrRaniaElsherify';
 
 export const metadata: Metadata = {
-  title: 'Dr. Rania Elsherify - OBGYN Doctor in Bnoon | Al Ahsa',
+  title: "Dr. Rania El-Sherify, OBGYN & IVF Specialist | Bnoon - Al Ahsa",
   description:
-    "Dr. Rania Elsherify, OBGYN consultant at Bnoon Al Ahsa. Specialized in women's health, obstetrics, and gynecological care.",
+    "Meet Dr. Rania El-Sherify, a dedicated OBGYN Specialist at Bnoon Al Ahsa, specializing in women’s health, obstetrics, and comprehensive gynecological services.",
 };
 
 export default function ServerDrRaniaElsherifyPage() {
