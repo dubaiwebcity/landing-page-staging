@@ -1,3 +1,9 @@
+## [1.4.45](https://github.com/bnoon-ksa/landing-page/compare/v1.4.44...v1.4.45) (2026-05-18)
+
+### Bug Fixes
+
+* restore lp from commit ([#516](https://github.com/bnoon-ksa/landing-page/issues/516)) ([6474b0b](https://github.com/bnoon-ksa/landing-page/commit/6474b0b7b427f5d44ff5b750c7c4dc2a7341322b))
+
 ## [1.4.44](https://github.com/bnoon-ksa/landing-page/compare/v1.4.43...v1.4.44) (2026-05-18)
 
 ### Bug Fixes
