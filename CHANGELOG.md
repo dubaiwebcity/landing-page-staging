@@ -1,3 +1,9 @@
+## [1.4.43](https://github.com/bnoon-ksa/landing-page/compare/v1.4.42...v1.4.43) (2026-05-18)
+
+### Bug Fixes
+
+* restore landing page ([#514](https://github.com/bnoon-ksa/landing-page/issues/514)) ([8952210](https://github.com/bnoon-ksa/landing-page/commit/8952210caf36835e80708a3ba6dd72f1284e3f4a))
+
 ## [1.4.42](https://github.com/bnoon-ksa/landing-page/compare/v1.4.41...v1.4.42) (2026-05-18)
 
 ### Bug Fixes
