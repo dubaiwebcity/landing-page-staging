@@ -1,34 +1,3 @@
-## [1.4.45](https://github.com/bnoon-ksa/landing-page/compare/v1.4.44...v1.4.45) (2026-05-18)
-
-### Bug Fixes
-
-* restore lp from commit ([#516](https://github.com/bnoon-ksa/landing-page/issues/516)) ([6474b0b](https://github.com/bnoon-ksa/landing-page/commit/6474b0b7b427f5d44ff5b750c7c4dc2a7341322b))
-
-## [1.4.44](https://github.com/bnoon-ksa/landing-page/compare/v1.4.43...v1.4.44) (2026-05-18)
-
-### Bug Fixes
-
-* indentme integration ([#515](https://github.com/bnoon-ksa/landing-page/issues/515)) ([239ba90](https://github.com/bnoon-ksa/landing-page/commit/239ba9065881f8073fef4c81daf631c769d34679))
-
-## [1.4.43](https://github.com/bnoon-ksa/landing-page/compare/v1.4.42...v1.4.43) (2026-05-18)
-
-### Bug Fixes
-
-* restore landing page ([#514](https://github.com/bnoon-ksa/landing-page/issues/514)) ([8952210](https://github.com/bnoon-ksa/landing-page/commit/8952210caf36835e80708a3ba6dd72f1284e3f4a))
-
-## [1.4.42](https://github.com/bnoon-ksa/landing-page/compare/v1.4.41...v1.4.42) (2026-05-18)
-
-### Bug Fixes
-
-* restore landing page ([#513](https://github.com/bnoon-ksa/landing-page/issues/513)) ([e3a20d5](https://github.com/bnoon-ksa/landing-page/commit/e3a20d5f8d7867ea79a73638173fb09188b67d69))
-
-## [1.4.41](https://github.com/bnoon-ksa/landing-page/compare/v1.4.40...v1.4.41) (2026-05-14)
-
-### Bug Fixes
-
-* added metadata and removed landing page ([#511](https://github.com/bnoon-ksa/landing-page/issues/511)) ([0a09e16](https://github.com/bnoon-ksa/landing-page/commit/0a09e16333589300f020bca49e69b04e697dc22c))
-* permanently remove deprecated lp folder ([#512](https://github.com/bnoon-ksa/landing-page/issues/512)) ([79b1293](https://github.com/bnoon-ksa/landing-page/commit/79b1293c898fd7cd78835ca4a7dd3cf0486ed1a2))
-
 ## [1.4.40](https://github.com/bnoon-ksa/landing-page/compare/v1.4.39...v1.4.40) (2026-05-11)
 
 ### Bug Fixes
