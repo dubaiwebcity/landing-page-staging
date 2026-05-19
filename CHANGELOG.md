@@ -1,3 +1,9 @@
+## [1.4.48](https://github.com/bnoon-ksa/landing-page/compare/v1.4.47...v1.4.48) (2026-05-19)
+
+### Bug Fixes
+
+* Fix Arabic translation for surgery instructions ([3bbcfb2](https://github.com/bnoon-ksa/landing-page/commit/3bbcfb27db6bb235a6c1c259f6cfdf9d8d520525))
+
 ## [1.4.47](https://github.com/bnoon-ksa/landing-page/compare/v1.4.46...v1.4.47) (2026-05-19)
 
 ### Bug Fixes
