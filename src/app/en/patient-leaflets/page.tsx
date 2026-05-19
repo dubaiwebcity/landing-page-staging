@@ -13,7 +13,6 @@ export default function AboutUsPage() {
   return (
     <>
       <Navbar />
-
       {/* PageBanner with static content */}
        <div style={{ position: "relative" }}>
        <FoundingPageBanner bgImage="https://bnoon-website.b-cdn.net/images/banner/en/brochure-banner.jpg" />
