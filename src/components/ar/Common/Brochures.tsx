@@ -48,11 +48,11 @@ const brochures = [
   },
    {
   section_en: "Surgery Instructions",
-  section_ar: "العملية الجراحية",
+  section_ar: "للعمليات الجراحية",
   items: [
    
     {
-      title_ar: "تعليمات المريض العملية الجراحية",
+      title_ar: "تعليمات المريض للعمليات الجراحية",
       image: "https://bnoon-website.b-cdn.net/images/brochure/surgery.jpg",
       downloadpdf: "/pdf/ar/patient-instructions-for-surgery-digital.pdf",
     },
@@ -100,7 +100,7 @@ const Brochures = () => {
   { en: "Egg Retrieval", ar: "سحب البويضات" },
   { en: "Embryo Transfer", ar: "نقل الأجنة" },
   { en: "Semen Collection", ar: "جمع السائل المنوي" },
-        { en: "Surgery Instructions", ar: "العملية الجراحية" },
+        { en: "Surgery Instructions", ar: "العمليات الجراحية" },
         { en: "Gynecological Surgery", ar: "الجراحات النسائية" },
 ].map((tab, i) => (
   <button

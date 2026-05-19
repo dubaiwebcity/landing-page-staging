@@ -39,7 +39,7 @@ export default function AboutUsPage() {
     >
       <h1 style={{ color: "#0c4a5b" }}>
         <span className="rowdies-font text-size">
-          الموارد والكتيبات للمرضى
+          منصة بنـــون للتثقيف الصحي
         </span>
       </h1>
 

@@ -40,7 +40,7 @@ export default function AboutUsPage() {
       <h1 style={{ color: "#0c4a5b" }}>
         <span className="rowdies-font text-size">
          
-Patient Resources & Brochures
+Patient Education Hub
         </span>
       </h1>
 
