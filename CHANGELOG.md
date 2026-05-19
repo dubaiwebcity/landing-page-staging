@@ -1,3 +1,9 @@
+## [1.4.47](https://github.com/bnoon-ksa/landing-page/compare/v1.4.46...v1.4.47) (2026-05-19)
+
+### Bug Fixes
+
+* Fix overlay positioning in AboutUsPage ([70f8555](https://github.com/bnoon-ksa/landing-page/commit/70f85559cea501b58ba1790e0d15cc57f715be90))
+
 ## [1.4.46](https://github.com/bnoon-ksa/landing-page/compare/v1.4.45...v1.4.46) (2026-05-18)
 
 ### Bug Fixes
