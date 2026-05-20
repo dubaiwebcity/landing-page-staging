@@ -48,11 +48,11 @@ const brochures = [
   },
    {
   section_en: "Surgery Instructions",
-  section_ar: "العمليات الجراحية",
+  section_ar: "للعمليات الجراحية",
   items: [
    
     {
-      title_ar: "تعليمات المريض العمليات الجراحية",
+      title_ar: "تعليمات المريض للعمليات الجراحية",
       image: "https://bnoon-website.b-cdn.net/images/brochure/surgery.jpg",
       downloadpdf: "/pdf/ar/patient-instructions-for-surgery-digital.pdf",
     },
