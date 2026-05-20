@@ -1,3 +1,9 @@
+## [1.4.49](https://github.com/bnoon-ksa/landing-page/compare/v1.4.48...v1.4.49) (2026-05-20)
+
+### Bug Fixes
+
+* change text ([99d550c](https://github.com/bnoon-ksa/landing-page/commit/99d550cc7ab205904fe1f891fa701f24fd67888e))
+
 ## [1.4.48](https://github.com/bnoon-ksa/landing-page/compare/v1.4.47...v1.4.48) (2026-05-19)
 
 ### Bug Fixes
