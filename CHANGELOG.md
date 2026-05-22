@@ -1,3 +1,9 @@
+## [1.4.50](https://github.com/bnoon-ksa/landing-page/compare/v1.4.49...v1.4.50) (2026-05-22)
+
+### Bug Fixes
+
+* Remove empty line at the beginning of Brochures.tsx ([a1fb837](https://github.com/bnoon-ksa/landing-page/commit/a1fb837cfc6dce002b329b98401fe0a5136d4a29))
+
 ## [1.4.49](https://github.com/bnoon-ksa/landing-page/compare/v1.4.48...v1.4.49) (2026-05-20)
 
 ### Bug Fixes
