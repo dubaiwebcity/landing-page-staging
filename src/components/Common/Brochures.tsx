@@ -72,6 +72,22 @@ const brochures = [
     ],
   },
   {
+  section_en: "IUI Instructions",
+  section_ar: "تعليمـات المرضى المنظار الرحمي",
+  items: [
+    {
+      title_en: "POST-PROCEDURE INSTRUCTIONS: IUI",
+      title_ar: "تعليمات ما قبل وما بعد العملية - رقمي",
+      size: "2.5 MB",
+      updated: "Oct 2026",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/iui.jpg",
+      pdf: "/en/iui-instructions",
+      downloadpdf: "/pdf/en/post-iui-instructions.pdf",
+    },
+   
+  ],
+},
+  {
   section_en: "Surgery Instructions",
   section_ar: "التعليمات الرقمية",
   items: [
@@ -99,6 +115,38 @@ const brochures = [
       image: "https://bnoon-website.b-cdn.net/images/brochure/gynaecology.jpg",
       pdf: "/en/pre-and-post-operative-instructions-digital",
       downloadpdf: "/pdf/en/pre-and-post-operative-instructions-digital.pdf",
+    },
+   
+  ],
+},
+{
+  section_en: "Hysteroscopy Instructions",
+  section_ar: "تعليمـات المرضى المنظار الرحمي",
+  items: [
+    {
+      title_en: "OPERATIVE INSTRUCTIONS: HYSTEROSCOPY",
+      title_ar: "تعليمات ما قبل وما بعد العملية - رقمي",
+      size: "2.5 MB",
+      updated: "Oct 2026",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/hysteroscopy.jpg",
+      pdf: "/en/operative-hysteroscopy-instructions",
+      downloadpdf: "/pdf/en/operative-hysteroscopy-instructions.pdf",
+    },
+   
+  ],
+},
+{
+  section_en: "Breastfeeding Guide",
+  section_ar: "تعليمـات المرضى المنظار الرحمي",
+  items: [
+    {
+      title_en: "BREASTFEEDING TIPS: A SIMPLE GUIDE FOR MOTHERS",
+      title_ar: "تعليمات ما قبل وما بعد العملية - رقمي",
+      size: "2.5 MB",
+      updated: "Oct 2026",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/breastfeeding.jpg",
+      pdf: "/en/operative-hysteroscopy-instructions",
+      downloadpdf: "/pdf/en/breastfeeding-a-guide-for-mothers.pdf",
     },
    
   ],
@@ -132,7 +180,7 @@ const filteredItems =
 
       {/* ✅ TABS (FIXED POSITION) */}
       <div className="brochures-tabs">
-        {["All", "Egg Retrieval", "Embryo Transfer", "Semen Collection", "Surgery Instructions", "Gynecological Surgery"].map((tab, i) => (
+        {["All", "Egg Retrieval", "Embryo Transfer", "Semen Collection", "IUI Instructions", "Surgery Instructions", "Gynecological Surgery", "Hysteroscopy Instructions", "Breastfeeding Guide"].map((tab, i) => (
           <button
             key={i}
             className={activeTab === tab ? "brochures-tab active" : "brochures-tab"}

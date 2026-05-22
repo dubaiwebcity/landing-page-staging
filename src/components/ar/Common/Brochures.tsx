@@ -46,6 +46,18 @@ const brochures = [
       },
     ],
   },
+    {
+  section_en: "IUI Instructions",
+  section_ar: "تعليمات ما بعد التلقيح داخل الرحم",
+  items: [
+    {
+     
+      title_ar: "تعليمات ما بعد التلقيح داخل الرحم",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/iui.jpg",
+      downloadpdf: "/pdf/ar/post-iui-instructions.pdf",
+    },
+  ],
+},
    {
   section_en: "Surgery Instructions",
   section_ar: "للعمليات الجراحية",
@@ -70,6 +82,30 @@ const brochures = [
    
   ],
 },
+{
+  section_en: "Hysteroscopy Instructions",
+  section_ar: "تعليمات المرضى المنظار الرحمي",
+  items: [
+    {
+      title_ar: "تعليمات المرضى المنظار الرحمي",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/hysteroscopy.jpg",
+      downloadpdf: "/pdf/ar/operative-hysteroscopy-instructions.pdf",
+    },
+   
+  ],
+},
+{
+  section_en: "Breastfeeding Guide",
+  section_ar: "إرشادات الرضاعة الطبيعية: دليل مبسط لألمهات",
+  items: [
+    {
+      title_ar: "إرشادات الرضاعة الطبيعية: دليل مبسط لألمهات",
+      image: "https://bnoon-website.b-cdn.net/images/brochure/breastfeeding.jpg",
+      downloadpdf: "/pdf/ar/breastfeeding-a-guide-for-mothers.pdf",
+    },
+   
+  ],
+}
 ];
 const Brochures = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -100,8 +136,11 @@ const Brochures = () => {
   { en: "Egg Retrieval", ar: "سحب البويضات" },
   { en: "Embryo Transfer", ar: "نقل الأجنة" },
   { en: "Semen Collection", ar: "جمع السائل المنوي" },
+  { en: "IUI Instructions", ar: "التلقيح داخل الرحم" },
         { en: "Surgery Instructions", ar: "العمليات الجراحية" },
         { en: "Gynecological Surgery", ar: "الجراحات النسائية" },
+        { en: "Hysteroscopy Instructions", ar: "المنظار الرحمي" },
+        { en: "Breastfeeding Guide", ar: "دليل مبسط لألمهات" },
 ].map((tab, i) => (
   <button
     key={i}
