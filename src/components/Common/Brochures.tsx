@@ -174,7 +174,7 @@ const filteredItems =
    
   return (
    
-  <div className="brochures-area bg-color" ref={brochuresRef}>
+  <div className="brochures-area bg-color">
     <div className="container mt-5 mb-5 ">
 
       {/* ✅ TABS (FIXED POSITION) */}
