@@ -35,6 +35,7 @@ export default function AboutUsPage() {
         top: "50%",
         transform: "translateY(-50%)",
         zIndex: 20,
+        maxWidth: "50%",
       }}
     >
       <h1 style={{ color: "#0c4a5b" }}>
