@@ -1,3 +1,13 @@
+## [1.4.51](https://github.com/bnoon-ksa/landing-page/compare/v1.4.50...v1.4.51) (2026-05-24)
+
+### Features
+
+* add brochures section ([#520](https://github.com/bnoon-ksa/landing-page/issues/520)) ([9ea1ef6](https://github.com/bnoon-ksa/landing-page/commit/9ea1ef6455f9ee6b4f55877af64e2c00b9dcdf94))
+
+### Bug Fixes
+
+* Add maxWidth style to patient leaflets page ([dcae90c](https://github.com/bnoon-ksa/landing-page/commit/dcae90ca1924a7cd3a6aa4e7db271a9e024ad998))
+
 ## [1.4.50](https://github.com/bnoon-ksa/landing-page/compare/v1.4.49...v1.4.50) (2026-05-22)
 
 ### Bug Fixes
