@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const brochures = [
@@ -71,7 +71,7 @@ const brochures = [
     ],
   },
   {
-  section_en: "IUI Instructions",
+  section_en: "Intrauterine Insemination",
   section_ar: "تعليمـات المرضى المنظار الرحمي",
   items: [
     {
@@ -87,7 +87,7 @@ const brochures = [
   ],
 },
   {
-  section_en: "Surgery Instructions",
+  section_en: "Surgery",
   section_ar: "التعليمات الرقمية",
   items: [
    
@@ -119,7 +119,7 @@ const brochures = [
   ],
 },
 {
-  section_en: "Hysteroscopy Instructions",
+  section_en: "Hysteroscopy",
   section_ar: "تعليمـات المرضى المنظار الرحمي",
   items: [
     {
@@ -135,7 +135,7 @@ const brochures = [
   ],
 },
 {
-  section_en: "Breastfeeding Guide",
+  section_en: "Breastfeeding",
   section_ar: "تعليمـات المرضى المنظار الرحمي",
   items: [
     {
@@ -159,7 +159,7 @@ const Brochures = () => {
     visible: { opacity: 1, y: 0 },
   };
 const [activeTab, setActiveTab] = React.useState("All");
-
+const brochuresRef = useRef<HTMLDivElement | null>(null);
 const allItems = brochures.flatMap(section =>
   section.items.map(item => ({
     ...item,
@@ -174,16 +174,27 @@ const filteredItems =
    
   return (
    
-  <div className="brochures-area bg-color">
+  <div className="brochures-area bg-color" ref={brochuresRef}>
     <div className="container mt-5 mb-5 ">
 
       {/* ✅ TABS (FIXED POSITION) */}
       <div className="brochures-tabs">
-        {["All", "Egg Retrieval", "Embryo Transfer", "Semen Collection", "IUI Instructions", "Surgery Instructions", "Gynecological Surgery", "Hysteroscopy Instructions", "Breastfeeding Guide"].map((tab, i) => (
+        {["All", "Egg Retrieval", "Embryo Transfer", "Semen Collection", "Intrauterine Insemination", "Surgery", "Gynecological Surgery", "Hysteroscopy", "Breastfeeding"].map((tab, i) => (
           <button
             key={i}
             className={activeTab === tab ? "brochures-tab active" : "brochures-tab"}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => {
+  setActiveTab(tab);
+
+  if (window.innerWidth < 768) {
+    setTimeout(() => {
+      brochuresRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 100);
+  }
+}}
           >
             {tab}
           </button>
@@ -191,6 +202,7 @@ const filteredItems =
       </div>
 
       {/* ✅ CARDS */}
+      <div ref={brochuresRef}>
       <div className="row g-5 justify-content-center">
         {filteredItems.map((item, index) => (
           <div className="col-lg-4 col-md-4" key={index}>
@@ -219,7 +231,7 @@ const filteredItems =
           </div>
         ))}
       </div>
-
+</div>
     </div>
 
       {/* CSS inside same file */}

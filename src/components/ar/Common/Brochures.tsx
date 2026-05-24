@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const brochures = [
@@ -114,7 +114,7 @@ const Brochures = () => {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
-
+const brochuresRef = useRef<HTMLDivElement | null>(null);
   // 🔥 Flatten + filter
   const filteredItems = brochures
     .flatMap(section =>
@@ -140,12 +140,23 @@ const Brochures = () => {
         { en: "Surgery Instructions", ar: "العمليات الجراحية" },
         { en: "Gynecological Surgery", ar: "الجراحات النسائية" },
         { en: "Hysteroscopy Instructions", ar: "المنظار الرحمي" },
-        { en: "Breastfeeding Guide", ar: "دليل مبسط لألمهات" },
+        { en: "Breastfeeding Guide", ar: "الرضاعة الطبيعية" },
 ].map((tab, i) => (
   <button
     key={i}
     className={activeTab === tab.en ? "brochures-tab active" : "brochures-tab"}
-    onClick={() => setActiveTab(tab.en)}
+    onClick={() => {
+  setActiveTab(tab.en);
+
+  if (window.innerWidth < 768) {
+    setTimeout(() => {
+      brochuresRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 100);
+  }
+}}
   >
     {tab.ar}
   </button>
@@ -153,6 +164,7 @@ const Brochures = () => {
         </div>
 
         {/* ✅ Cards */}
+        <div ref={brochuresRef}>
         <div className="row g-5 justify-content-center">
           {filteredItems.map((item, index) => (
             <div className="col-lg-4 col-md-4" key={index}>
@@ -185,7 +197,7 @@ const Brochures = () => {
             </div>
           ))}
         </div>
-
+</div>
       </div>
 
       {/* ✅ CSS */}
