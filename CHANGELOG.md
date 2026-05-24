@@ -1,3 +1,9 @@
+## [1.4.52](https://github.com/bnoon-ksa/landing-page/compare/v1.4.51...v1.4.52) (2026-05-24)
+
+### Bug Fixes
+
+* Fix formatting in Brochures.tsx ([#521](https://github.com/bnoon-ksa/landing-page/issues/521)) ([69fbd53](https://github.com/bnoon-ksa/landing-page/commit/69fbd530cff1fd73bd5a4c75c4985497104a9bf9))
+
 ## [1.4.51](https://github.com/bnoon-ksa/landing-page/compare/v1.4.50...v1.4.51) (2026-05-24)
 
 ### Features
