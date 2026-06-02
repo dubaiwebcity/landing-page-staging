@@ -277,7 +277,7 @@ function Footer() {
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-6 col-md-12">
               <p className="footer-text">
-                © <span>{footerData.copyright.text}</span>2025 All Rights Reserved{' '}
+                © <span>{footerData.copyright.text}</span>2026 All Rights Reserved{' '}
                 <a href={footerData.copyright.ownerUrl} target="_blank" rel="noopener noreferrer">
                   {footerData.copyright.owner}
                 </a>

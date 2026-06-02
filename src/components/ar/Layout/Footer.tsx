@@ -253,7 +253,7 @@ function Footer() {
             <div className="row g-4">
               <div className="col-lg-6 col-md-12">
                 <p className="footer-text footer-align">
-                  © <span>{footerData.copyright.text}</span> 2025 جميع الحقوق محفوظة{' '}
+                  © <span>{footerData.copyright.text}</span> 2026 جميع الحقوق محفوظة{' '}
                   <a href={footerData.copyright.ownerUrl} target="_blank" rel="noopener noreferrer">
                     {footerData.copyright.owner}
                   </a>
