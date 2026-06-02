@@ -1,3 +1,10 @@
+## [1.4.53](https://github.com/bnoon-ksa/landing-page/compare/v1.4.52...v1.4.53) (2026-06-02)
+
+### Bug Fixes
+
+* Fix formatting issues in TeamsSection.tsx ([c5343a7](https://github.com/bnoon-ksa/landing-page/commit/c5343a7cb49ed66be182ac3a6f1c7d26a6b2ab7c))
+* Update contact email in TeamsSection component ([885a7e5](https://github.com/bnoon-ksa/landing-page/commit/885a7e594b8cc1fd17aed743f2ddba406754ed52))
+
 ## [1.4.52](https://github.com/bnoon-ksa/landing-page/compare/v1.4.51...v1.4.52) (2026-05-24)
 
 ### Bug Fixes
