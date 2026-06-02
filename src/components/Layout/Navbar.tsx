@@ -222,16 +222,16 @@ function Navbar() {
           <DropArrowIcon width={22} height={22} style={{ margin: '0px 0px 0px 0px' }} />
         </button>
 
-        <ul className="dropdown-menu dropdown-menu-item" aria-labelledby="contactDropdown">
+        <ul className="menu-contact-btn dropdown-menu dropdown-menu-item" aria-labelledby="contactDropdown">
           {menu.children.map((child) => (
             <li key={child.href}>
               {/* external / internal both work */}
               {child.href.startsWith('http') ? (
-                <a className="dropdown-item dropdown-text" href={child.href}>
+                <a className="contact-text dropdown-item dropdown-text" href={child.href}>
                   {child.title}
                 </a>
               ) : (
-                <Link className="dropdown-item dropdown-text" href={child.href}>
+                <Link className="contact-text dropdown-item dropdown-text" href={child.href}>
                   {child.title}
                 </Link>
               )}
@@ -368,6 +368,7 @@ function Navbar() {
 
       {/* 🌐 Custom Styles */}
       <style jsx global>{`
+     
       .dropdown-contact{
       padding: 4px 4px 0px 0px;
     margin: -6px 0px 0px 0px;
@@ -387,7 +388,7 @@ function Navbar() {
     background-color: #00000000;
     }
   .dropdown-menu .dropdown-text{
-    padding: 3px 10px !important;
+    
     font-size: 16px;
     }
     .dropdown-menu .dropdown-item:hover{
@@ -403,7 +404,6 @@ function Navbar() {
           padding: 3px 5px !important;
           backdrop-filter: none !important;
           margin-top:-10px;
-          margin-left:-10px
       }
           .dropdown-text{
           padding:0px;
