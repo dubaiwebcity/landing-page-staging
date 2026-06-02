@@ -65,7 +65,7 @@ const TeamSection = () => {
                     style={{ color: 'rgb(0,78,120)' }}
                   />
                   <p className="mb-0">
-                    Please send your CV to: <strong>careers@bnoon.sa</strong>
+                    Please send your CV to: <strong><a href="mailto:bnoon.hr@bnoon.sa" className="text-decoration-none text-dark"> bnoon.hr@bnoon.sa </a></strong>
                   </p>
                 </div>
 
