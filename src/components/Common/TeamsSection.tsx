@@ -56,7 +56,7 @@ const TeamSection = () => {
 
               <h2>Start Your Journey with Us</h2>
               <div className="mt-3">
-                <div className="d-flex align-items-center mb-2">
+                <div className="d-flex mb-2">
                   <MailIcon
                     width={24}
                     height={24}
@@ -67,10 +67,10 @@ const TeamSection = () => {
                     Please send your CV to: <strong><a href="mailto:bnoon.hr@bnoon.sa" className="text-decoration-none text-dark"> bnoon.hr@bnoon.sa </a></strong>
                   </p>
                 </div>
-                <div className="d-flex align-items-center">
+                <div className="d-flex">
                   <LocationIcon
-                    width={24}
-                    height={24}
+                    width={28}
+                    height={28}
                     className="me-2"
                     style={{ color: 'rgb(0,78,120)' }}
                   />
