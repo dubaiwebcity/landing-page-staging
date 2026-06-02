@@ -1,3 +1,9 @@
+## [1.4.56](https://github.com/bnoon-ksa/landing-page/compare/v1.4.55...v1.4.56) (2026-06-02)
+
+### Bug Fixes
+
+* Adjust layout and icon sizes in TeamsSection ([#527](https://github.com/bnoon-ksa/landing-page/issues/527)) ([e482ed2](https://github.com/bnoon-ksa/landing-page/commit/e482ed21f4f0422b70129acd26004e4d18397468))
+
 ## [1.4.55](https://github.com/bnoon-ksa/landing-page/compare/v1.4.54...v1.4.55) (2026-06-02)
 
 ### Bug Fixes
