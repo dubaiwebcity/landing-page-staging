@@ -3,7 +3,6 @@
 import React from 'react';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import { MailIcon, LocationIcon } from '@/components/icons';
-
 const TeamSection = () => {
   return (
     <div className="fertility-area mt-5">
