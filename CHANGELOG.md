@@ -1,3 +1,9 @@
+## [1.4.59](https://github.com/bnoon-ksa/landing-page/compare/v1.4.58...v1.4.59) (2026-06-02)
+
+### Bug Fixes
+
+* Refactor Navbar dropdown menu and styles ([58b81bd](https://github.com/bnoon-ksa/landing-page/commit/58b81bd2b8a3ce855bb714afdeb3336ab6b88d28))
+
 ## [1.4.58](https://github.com/bnoon-ksa/landing-page/compare/v1.4.57...v1.4.58) (2026-06-02)
 
 ### Bug Fixes
