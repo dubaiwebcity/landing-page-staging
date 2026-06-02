@@ -1,3 +1,9 @@
+## [1.4.57](https://github.com/bnoon-ksa/landing-page/compare/v1.4.56...v1.4.57) (2026-06-02)
+
+### Bug Fixes
+
+* remove-text-on-footer ([#528](https://github.com/bnoon-ksa/landing-page/issues/528)) ([7531250](https://github.com/bnoon-ksa/landing-page/commit/75312505d72d5b01bc935a674fac6b87034e0f88))
+
 ## [1.4.56](https://github.com/bnoon-ksa/landing-page/compare/v1.4.55...v1.4.56) (2026-06-02)
 
 ### Bug Fixes
