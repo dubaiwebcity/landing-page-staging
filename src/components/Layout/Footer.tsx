@@ -149,8 +149,7 @@ const footerData: FooterData = {
     ownerUrl: 'https://www.dubaiwebcity.com/',
   },
   complianceBadges: [
-    `Website Design & Development by <a href="https://www.dubaiwebcity.com/" target="_blank" rel="noopener noreferrer">NetSoft Information Technoloy Network Services
-</a>`,
+    ``,
   ],
 };
 

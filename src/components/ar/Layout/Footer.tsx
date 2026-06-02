@@ -148,10 +148,7 @@ const footerData: FooterData = {
     ownerUrl: 'https://www.dubaiwebcity.com/',
   },
   complianceBadges: [
-    `تصميم وتطوير الموقع بواسطة
-  <a href="https://www.dubaiwebcity.com/" target="_blank" rel="noopener noreferrer">
-    نيتسوفت لخدمات شبكات تقنية المعلومات
-  </a>`,
+    ``,
   ],
 };
 
