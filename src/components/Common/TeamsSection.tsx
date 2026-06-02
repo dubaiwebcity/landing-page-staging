@@ -76,16 +76,7 @@ const TeamSection = () => {
                   />
                   <p className="mb-0">
                     Follow us on LinkedIn to explore current openings and updates:{' '}
-                    <strong>
-                      <a
-                        href="https://www.linkedin.com/company/bnoon/?viewAsMember=true"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-decoration-none text-dark"
-                      >
-                        Bnoon LinkedIn Page
-                      </a>
-                    </strong>
+                    <strong>Bnoon LinkedIn Page</strong>
                   </p>
                 </div>
               </div>
