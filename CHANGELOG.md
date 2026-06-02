@@ -1,3 +1,9 @@
+## [1.4.54](https://github.com/bnoon-ksa/landing-page/compare/v1.4.53...v1.4.54) (2026-06-02)
+
+### Bug Fixes
+
+* Rename service-overview-image class to career-overview-image ([#523](https://github.com/bnoon-ksa/landing-page/issues/523)) ([645d2b8](https://github.com/bnoon-ksa/landing-page/commit/645d2b87ff1eb242dd347063040801c9a9dc367f))
+
 ## [1.4.53](https://github.com/bnoon-ksa/landing-page/compare/v1.4.52...v1.4.53) (2026-06-02)
 
 ### Bug Fixes
