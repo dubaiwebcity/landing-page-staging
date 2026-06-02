@@ -1,3 +1,10 @@
+## [1.4.55](https://github.com/bnoon-ksa/landing-page/compare/v1.4.54...v1.4.55) (2026-06-02)
+
+### Bug Fixes
+
+* add-link ([46f7d16](https://github.com/bnoon-ksa/landing-page/commit/46f7d167262cf3cfe66761dcd7b52529e242aab6)), closes [bnoon-ksa/landing-page#525](https://github.com/bnoon-ksa/landing-page/issues/525)
+* add-link ([#525](https://github.com/bnoon-ksa/landing-page/issues/525)) ([e43cca2](https://github.com/bnoon-ksa/landing-page/commit/e43cca249c756ac3b4090afdc5af9f450e6b6337)), closes [bnoon-ksa/landing-page#524](https://github.com/bnoon-ksa/landing-page/issues/524)
+
 ## [1.4.54](https://github.com/bnoon-ksa/landing-page/compare/v1.4.53...v1.4.54) (2026-06-02)
 
 ### Bug Fixes
