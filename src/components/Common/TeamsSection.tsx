@@ -86,7 +86,7 @@ const TeamSection = () => {
           {/* Image Section */}
           <div className="col-xl-6 col-md-12">
             <div
-              className="service-overview-image"
+              className="career-overview-image"
               style={{
                 boxShadow: '50px 50px 0px #d7f2fb',
                 overflow: 'hidden',
