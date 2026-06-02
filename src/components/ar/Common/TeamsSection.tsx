@@ -63,11 +63,11 @@ const TeamSection = () => {
                   <MailIcon
                     width={24}
                     height={24}
-                    className="me-2"
+                    className="ms-2"
                     style={{ color: 'rgb(0,78,120)' }}
                   />
                   <p className="mb-0">
-                    أرسل سيرتك الذاتية على البريد الإلكتروني :<strong>careers@bnoon.sa</strong>
+                    أرسل سيرتك الذاتية على البريد الإلكتروني :<strong><a href="mailto:bnoon.hr@bnoon.sa" className="text-decoration-none text-dark"> bnoon.hr@bnoon.sa </a></strong>
                   </p>
                 </div>
 
@@ -75,7 +75,7 @@ const TeamSection = () => {
                   <LocationIcon
                     width={24}
                     height={24}
-                    className="me-2"
+                    className="ms-2"
                     style={{ color: 'rgb(0,78,120)' }}
                   />
                   <p className="mb-0">

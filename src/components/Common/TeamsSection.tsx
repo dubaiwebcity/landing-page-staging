@@ -68,7 +68,6 @@ const TeamSection = () => {
                     Please send your CV to: <strong><a href="mailto:bnoon.hr@bnoon.sa" className="text-decoration-none text-dark"> bnoon.hr@bnoon.sa </a></strong>
                   </p>
                 </div>
-
                 <div className="d-flex align-items-center">
                   <LocationIcon
                     width={24}
