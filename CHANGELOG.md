@@ -1,3 +1,9 @@
+## [1.4.60](https://github.com/bnoon-ksa/landing-page/compare/v1.4.59...v1.4.60) (2026-06-16)
+
+### Bug Fixes
+
+* Update link for مركز بنون – الأحساء ([#530](https://github.com/bnoon-ksa/landing-page/issues/530)) ([2221b0f](https://github.com/bnoon-ksa/landing-page/commit/2221b0f54b03363a65c5ad6a2515e756a5b91565))
+
 ## [1.4.59](https://github.com/bnoon-ksa/landing-page/compare/v1.4.58...v1.4.59) (2026-06-02)
 
 ### Bug Fixes
