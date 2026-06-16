@@ -408,7 +408,7 @@ jobs:
         with:
           path: release.zip
           key: release-${{ github.sha }}
-          fail-on-cache-miss: false
+          fail-on-cache-miss: true
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
