@@ -1,3 +1,9 @@
+## [1.4.64](https://github.com/bnoon-ksa/landing-page/compare/v1.4.63...v1.4.64) (2026-06-16)
+
+### Bug Fixes
+
+* Enable cache fail-on-miss for deployment ([b4851d7](https://github.com/bnoon-ksa/landing-page/commit/b4851d7b846e314d7eb018f34f9858e01f7387b1))
+
 ## [1.4.63](https://github.com/bnoon-ksa/landing-page/compare/v1.4.62...v1.4.63) (2026-06-16)
 
 ### Bug Fixes
