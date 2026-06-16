@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Navbar from '@/components/Layout/Navbar';
 import { notFound } from 'next/navigation';
-import { RichText } from '@payloadcms/richtext-lexical/react'
 async function getBlog(slug: string) {
   try {
     const res = await fetch(
@@ -99,7 +98,12 @@ return (
             }}
           >
   <div className="blog-content">
-  <RichText data={blog.content} />
+  <div
+  dangerouslySetInnerHTML={{
+    __html: data?.content || ""
+  }}
+/>
+</div>
 </div>
 
           </div>
