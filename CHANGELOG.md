@@ -1,3 +1,12 @@
+## [1.4.62](https://github.com/bnoon-ksa/landing-page/compare/v1.4.61...v1.4.62) (2026-06-16)
+
+### Bug Fixes
+
+* add-cms-blogs ([#533](https://github.com/bnoon-ksa/landing-page/issues/533)) ([9aac79b](https://github.com/bnoon-ksa/landing-page/commit/9aac79b6a9e726a832400bc46894c938c274a3dd))
+* add-cms-blogs ([#535](https://github.com/bnoon-ksa/landing-page/issues/535)) ([aeef1a2](https://github.com/bnoon-ksa/landing-page/commit/aeef1a27402d527f2cd3c0554efb79355ff4533e))
+* add-cms-link ([#534](https://github.com/bnoon-ksa/landing-page/issues/534)) ([c593305](https://github.com/bnoon-ksa/landing-page/commit/c59330597b8c79bad1fdf2f3419fb4d239ca9437))
+* Fix formatting issues in blog page component ([6b755c4](https://github.com/bnoon-ksa/landing-page/commit/6b755c4721c0d7b1876ce1b97d92c10634d61e0e))
+
 ## [1.4.61](https://github.com/bnoon-ksa/landing-page/compare/v1.4.60...v1.4.61) (2026-06-16)
 
 ### Bug Fixes
