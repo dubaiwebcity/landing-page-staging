@@ -100,7 +100,7 @@ return (
   <div className="blog-content">
   <div
   dangerouslySetInnerHTML={{
-    __html: data?.content || ""
+  __html: blog?.content || ""
   }}
 />
 </div>
