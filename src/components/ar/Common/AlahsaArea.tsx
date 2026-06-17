@@ -76,7 +76,7 @@ const Alahsaharea = () => {
                 يقدّم مركز بنون – الأحساء الواقع داخل{' '}
                 <strong>
                   <a
-                    href="https://maps.app.goo.gl/cVqj4k52ByKk8pS2A"
+                    href="https://almoosahealthgroup.org/ar/hospital-services/%d9%85%d8%b1%d9%83%d8%b2-%d8%a8%d9%86%d9%88%d9%86-%d9%84%d9%84%d8%a5%d8%ae%d8%b5%d8%a7%d8%a8/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hospital-link"
