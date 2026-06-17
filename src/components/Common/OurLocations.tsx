@@ -258,7 +258,7 @@ const OurLocations = () => {
                 Situated within{' '}
                 <strong>
                   <a
-                    href="https://www.google.com/maps/place/Almoosa+Specialist+Hospital/data=!4m2!3m1!1s0x0:0xa8c655087d191645?sa=X&ved=1t:2428&ictx=111"
+                    href="https://almoosahealthgroup.org/en/hospital-services/bnoon-fertility-center/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-decoration-none link-color"
