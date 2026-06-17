@@ -68,13 +68,13 @@ const BlogsCarousel = ({ blogs }: any) => {
                   {/* IMAGE + MAP */}
                   <div className="image">
                     {/* CATEGORY BADGE ADD HERE */}
-                   {blog.categories?.length > 0 && (
-  <span className="blog-category">
-    {typeof blog.categories[0] === 'string'
-      ? blog.categories[0]
-      : blog.categories[0]?.title || blog.categories[0]?.name}
-  </span>
-)}
+                    {blog.categories?.length > 0 && (
+                      <span className="blog-category">
+                        {typeof blog.categories[0] === 'string'
+                          ? blog.categories[0]
+                          : blog.categories[0]?.title || blog.categories[0]?.name}
+                      </span>
+                    )}
                     {/* IMAGE */}
                     <img
                       src={blog.imageUrl || blog.image?.url || '/placeholder.jpg'}
@@ -116,19 +116,45 @@ const BlogsCarousel = ({ blogs }: any) => {
                         )
                         .join(' ')}
                     </p>
-                     {/* tag */}
-                   {blog.tags?.length > 0 && (
-  <div className="blog-tags">
-    {blog.tags.map((tag: any, index: number) => (
-      <span key={index} className="tag">
-        {typeof tag === 'string'
-          ? tag
-          : tag?.title || tag?.name || tag?.label || ''}
-      </span>
-    ))}
-  </div>
-)}
-                    {/* AUTHOR */}
+                    {/* tag */}
+                    {blog.tags?.length > 0 && (
+                      <div className="blog-tags">
+                        {blog.tags.map((tag: any, index: number) => {
+
+                          const rawTag =
+                            typeof tag === 'string'
+                              ? tag
+                              : (tag?.slug || tag?.name || tag?.title || '');
+
+                          const tagSlug = rawTag
+                            .toString()
+                            .toLowerCase()
+                            .trim()
+                            .replace(/&/g, 'and')
+                            .replace(/[^a-z0-9\s-]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-|-$/g, '');
+
+                          const tagLabel =
+                            typeof tag === 'string'
+                              ? tag
+                              : (tag?.name || tag?.title || tag?.label || rawTag);
+
+                          if (!tagSlug || !tagLabel) return null;
+
+                          return (
+                            <a
+                              key={index}
+                              href={`/en/tags/${tagSlug}`}
+                              className="tag"
+                            >
+                              #{tagLabel}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}  {/* AUTHOR */}
 
 
                     {/* BUTTON */}
