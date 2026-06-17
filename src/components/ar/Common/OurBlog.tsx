@@ -51,7 +51,7 @@ const OurBlog = () => {
       embedMap:
         'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3603.0477616735334!2d49.572361099999995!3d25.4366667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDI2JzEyLjAiTiA0OcKwMzQnMjAuNSJF!5e0!3m2!1sen!2s!4v1765645696414!5m2!1sen!2s',
       buttonLink: 'ar/bnoon-alahsa',
-      description: `يقدّم مركز بنون – الأحساء الواقع داخل <strong><a href="https://maps.app.goo.gl/4G2Wz3ieLqPfZdee6" target="_blank" rel="noopener noreferrer" class="hospital-link">مستشفى الموسى التخصصي</a></strong> خدمات رعاية الخصوبة وصحة المرأة بمعايير عالمية، ليكون الوجهة الأولى للعائلات في المنطقة الشرقية في السعودية. وقد صُمّم المركز ليمنح المرضى تجربة علاجية متميّزة تجمع بين أحدث التقنيات في الطب...`,
+      description: `يقدّم مركز بنون – الأحساء الواقع داخل <strong><a href="https://almoosahealthgroup.org/ar/hospital-services/%d9%85%d8%b1%d9%83%d8%b2-%d8%a8%d9%86%d9%88%d9%86-%d9%84%d9%84%d8%a5%d8%ae%d8%b5%d8%a7%d8%a8/" target="_blank" rel="noopener noreferrer" class="hospital-link">مستشفى الموسى التخصصي</a></strong> خدمات رعاية الخصوبة وصحة المرأة بمعايير عالمية، ليكون الوجهة الأولى للعائلات في المنطقة الشرقية في السعودية. وقد صُمّم المركز ليمنح المرضى تجربة علاجية متميّزة تجمع بين أحدث التقنيات في الطب...`,
     },
   ];
 
