@@ -1,3 +1,9 @@
+## [1.4.66](https://github.com/bnoon-ksa/landing-page/compare/v1.4.65...v1.4.66) (2026-06-17)
+
+### Bug Fixes
+
+* Update link for Almoosa Specialist Hospital ([32bb218](https://github.com/bnoon-ksa/landing-page/commit/32bb218ead3e7895204f37167f23271df8ebde4b))
+
 ## [1.4.65](https://github.com/bnoon-ksa/landing-page/compare/v1.4.64...v1.4.65) (2026-06-17)
 
 ### Bug Fixes
