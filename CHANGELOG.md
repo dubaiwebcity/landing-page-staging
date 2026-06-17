@@ -1,3 +1,9 @@
+## [1.4.65](https://github.com/bnoon-ksa/landing-page/compare/v1.4.64...v1.4.65) (2026-06-17)
+
+### Bug Fixes
+
+* add-tags-cms-pages ([#536](https://github.com/bnoon-ksa/landing-page/issues/536)) ([ed35dab](https://github.com/bnoon-ksa/landing-page/commit/ed35daba6d5f68bc88cb1e7bbb93d2a70b3c700e))
+
 ## [1.4.64](https://github.com/bnoon-ksa/landing-page/compare/v1.4.63...v1.4.64) (2026-06-16)
 
 ### Bug Fixes
