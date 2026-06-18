@@ -3,10 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import OptimizedImage from '@/components/ui/OptimizedImage';
-import MobileTopTools from '@/components/Common/MobileTopTools'; // ye aapka custom component hoga
+import MobileTopTools from '@/components/Common/MobileTopTools';
 import { getBookNowUrl } from '@/utils/booking';
 import { GooglePlayBadge, AppStoreBadge } from '@/components/icons';
 import 'remixicon/fonts/remixicon.css';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 // Define interfaces for our data structure
 interface SocialLink {
@@ -154,31 +155,37 @@ const footerData: FooterData = {
 };
 
 function Footer() {
- useEffect(() => {
-  const handleClick = () => {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag !== 'undefined') {
-      (window as any).gtag('event', 'click_whatsapp', {
-        event_category: 'Engagement',
-        event_label: 'WhatsApp Click'
-      });
-    }
-  };
+  const pathname = usePathname();
 
-  const links = document.querySelectorAll(
-    "a[href*='wa.me'], a[href*='api.whatsapp.com']"
-  );
+  const isContactPage =
+    pathname === '/en/contact-us' ||
+    pathname === '/ar/contact-us';
 
-  links.forEach((link) => {
-    link.addEventListener("click", handleClick);
-  });
+  useEffect(() => {
+    const handleClick = () => {
+      if (typeof window !== 'undefined' && typeof (window as any).gtag !== 'undefined') {
+        (window as any).gtag('event', 'click_whatsapp', {
+          event_category: 'Engagement',
+          event_label: 'WhatsApp Click'
+        });
+      }
+    };
 
-  return () => {
+    const links = document.querySelectorAll(
+      "a[href*='wa.me'], a[href*='api.whatsapp.com']"
+    );
+
     links.forEach((link) => {
-      link.removeEventListener("click", handleClick);
+      link.addEventListener("click", handleClick);
     });
-  };
 
-}, []);
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener("click", handleClick);
+      });
+    };
+
+  }, []);
   return (
     <footer className="footer-area">
       <div className="ptb-50">
@@ -248,9 +255,8 @@ function Footer() {
                           <li key={linkIndex} className="d-flex align-items-start">
                             <Link
                               href={link.url}
-                              className={`d-flex align-items-center ${
-                                isPatientsRights ? 'patients-rights-link' : ''
-                              }`}
+                              className={`d-flex align-items-center ${isPatientsRights ? 'patients-rights-link' : ''
+                                }`}
                             >
                               {withIcon && (
                                 <i
@@ -283,12 +289,16 @@ function Footer() {
                 </a>
               </p>
             </div>
-            <div className="col-lg-6 col-md-12">
-              <ul className="lists footer-text">
-                {footerData.complianceBadges.map((badge, index) => (
-                  <li key={index} dangerouslySetInnerHTML={{ __html: badge }}></li>
-                ))}
-              </ul>
+
+            <div className="col-lg-6 col-md-12 mt-3">
+              <p className="footer-text  lists">
+
+                {isContactPage && (
+                  <>
+                    <a href="https://www.dubaiwebcity.com" target="_blank" rel="noopener noreferrer">Website Design by Netsoft</a>
+                  </>
+                )}
+              </p>
             </div>
           </div>
         </div>
@@ -298,6 +308,9 @@ function Footer() {
         <MobileTopTools />
       </div>
       <style jsx global>{`
+        p.footer-text a{
+      color: #ffffffff !important;
+      }
         .copyright-area .lists li a {
           color: #ffffffff !important;
         }
@@ -316,7 +329,7 @@ function Footer() {
           }
         }
       `}</style>
-    
+
     </footer>
   );
 }

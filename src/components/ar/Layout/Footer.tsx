@@ -3,10 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import OptimizedImage from '@/components/ui/OptimizedImage';
-import MobileTopTools from '@/components/ar/Common/MobileTopTools'; // ye aapka custom component hoga
-
+import MobileTopTools from '@/components/ar/Common/MobileTopTools';
 import { getBookNowUrl } from '@/utils/booking';
 import 'remixicon/fonts/remixicon.css';
+import { usePathname } from 'next/navigation';
 // Define interfaces for our data structure
 interface SocialLink {
   platform: string;
@@ -124,7 +124,7 @@ const footerData: FooterData = {
         { text: 'تواصل معنا', url: '/ar/contact-us' },
         { text: 'طلب موعد', url: getBookNowUrl('ar') },
         { text: 'شاركونا تجربتكم', url: '/ar/submit-feedback' },
-         { text: 'طلب تحويل مريض', url: '/ar/refer-a-patient' },
+        { text: 'طلب تحويل مريض', url: '/ar/refer-a-patient' },
       ],
     },
   ],
@@ -153,6 +153,12 @@ const footerData: FooterData = {
 };
 
 function Footer() {
+
+  const pathname = usePathname();
+
+  const isContactPage =
+    pathname === '/en/contact-us' ||
+    pathname === '/ar/contact-us';
   return (
     <>
       <footer className="footer-area">
@@ -251,20 +257,23 @@ function Footer() {
         <div className="container">
           <div className="copyright-area">
             <div className="row g-4">
-              <div className="col-lg-6 col-md-12">
-                <p className="footer-text footer-align">
+              <div className="col-lg-6 col-md-12 ">
+                <p className="footer-text" style={{ margin: 0 }}>
                   © <span>{footerData.copyright.text}</span> 2026 جميع الحقوق محفوظة{' '}
                   <a href={footerData.copyright.ownerUrl} target="_blank" rel="noopener noreferrer">
                     {footerData.copyright.owner}
                   </a>
                 </p>
               </div>
-              <div className="col-lg-6 col-md-12">
-                <ul className="lists footer-text">
-                  {footerData.complianceBadges.map((badge, index) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: badge }}></li>
-                  ))}
-                </ul>
+              <div className="col-lg-6 col-md-12 ">
+                <p className="footer-text footer-align lists">
+
+                  {isContactPage && (
+                    <>
+                      <a href="https://www.dubaiwebcity.com" target="_blank" rel="noopener noreferrer">تم تصميم الموقع بواسطة نت سوفت</a>
+                    </>
+                  )}
+                </p>
               </div>
             </div>
           </div>
@@ -277,9 +286,10 @@ function Footer() {
       </footer>
 
       <style jsx global>{`
-        p.footer-align {
-          direction: ltr;
-        }
+         p.footer-text a{
+      color: #ffffffff !important;
+      }
+      
         .arabic h1,
         .arabic p {
           text-align: right;
@@ -328,6 +338,20 @@ function Footer() {
             margin-right: 40px;
             margin: -18px 0px 0px;
           }
+              .lists {
+    text-align: right !important;
+    width: 100%;
+    display: block !important;
+  }
+
+  .lists a {
+    display: block;
+    text-align: right !important;
+  }
+          .copyright-area .footer-text {
+    text-align: right !important;
+    width: 100% !important;
+  }
         }
       `}</style>
     </>
