@@ -1,3 +1,9 @@
+## [1.4.70](https://github.com/bnoon-ksa/landing-page/compare/v1.4.69...v1.4.70) (2026-06-19)
+
+### Bug Fixes
+
+* cms-blogs-pages ([#540](https://github.com/bnoon-ksa/landing-page/issues/540)) ([d5bb043](https://github.com/bnoon-ksa/landing-page/commit/d5bb043ab3a8aea3b4f6691036b1554ef354924b))
+
 ## [1.4.69](https://github.com/bnoon-ksa/landing-page/compare/v1.4.68...v1.4.69) (2026-06-18)
 
 ### Bug Fixes
