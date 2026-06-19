@@ -1,3 +1,9 @@
+## [1.4.71](https://github.com/bnoon-ksa/landing-page/compare/v1.4.70...v1.4.71) (2026-06-19)
+
+### Bug Fixes
+
+* add-cms-pages ([#541](https://github.com/bnoon-ksa/landing-page/issues/541)) ([15d43cf](https://github.com/bnoon-ksa/landing-page/commit/15d43cf804fdb4a09118fed2f3fb2775611340c7))
+
 ## [1.4.70](https://github.com/bnoon-ksa/landing-page/compare/v1.4.69...v1.4.70) (2026-06-19)
 
 ### Bug Fixes
