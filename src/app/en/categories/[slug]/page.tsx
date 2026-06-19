@@ -14,7 +14,12 @@ async function getBlogsByCategory(slug: string) {
     return [];
   }
 }
-
+export const metadata = {
+  robots: {
+    noindex: true,
+    nofollow: true,
+  },
+};
 export default async function CategoryPage({
   params,
 }: {
