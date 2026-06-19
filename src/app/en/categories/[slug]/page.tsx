@@ -39,7 +39,7 @@ export default async function CategoryPage({
           {blogs.map((blog: any) => (
             <div className="col-md-4 mb-4" key={blog.id}>
               <a
-                href={`/en/our-blogs/${blog.slug}`}
+                href={`/en/article/${blog.slug}`}
                 style={{ textDecoration: 'none' }}
               >
                 <div

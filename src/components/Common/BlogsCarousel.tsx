@@ -96,7 +96,7 @@ const BlogsCarousel = ({ blogs }: any) => {
                     {/* TITLE */}
                     <h3 className="title">
                       <Link
-                        href={`/en/our-blogs/${blog.slug}`}
+                        href={`/en/article/${blog.slug}`}
                         style={{
                           color: '#004E78',
                           textDecoration: 'none',
@@ -159,7 +159,7 @@ const BlogsCarousel = ({ blogs }: any) => {
 
                     {/* BUTTON */}
                     <Link
-                      href={`/en/our-blogs/${blog.slug}`}
+                      href={`/en/article/${blog.slug}`}
                       className="btn btn-success btn-blog post-btn"
                     >
                       Read More

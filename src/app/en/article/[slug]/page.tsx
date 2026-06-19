@@ -29,7 +29,12 @@ async function getLatestBlogs() {
     return [];
   }
 }
-
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 export default async function BlogPage({
   params,
 }: {
@@ -97,7 +102,7 @@ export default async function BlogPage({
             <div className="d-flex gap-3 mt-1">
 
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.bnoon.sa/en/our-blogs/${blog.slug}`)}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.bnoon.sa/en/article/${blog.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="share-icon"
@@ -106,7 +111,7 @@ export default async function BlogPage({
               </a>
 
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.bnoon.sa/en/our-blogs/${blog.slug}`)}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.bnoon.sa/en/article/${blog.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="share-icon"
@@ -115,7 +120,7 @@ export default async function BlogPage({
               </a>
 
               <a
-                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.bnoon.sa/en/our-blogs/${blog.slug}`)}`}
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.bnoon.sa/en/article/${blog.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="share-icon"
@@ -141,7 +146,7 @@ export default async function BlogPage({
               }}
             >
 
-              <div className="blog-content">
+             <article className="prose prose-lg max-w-none">
                 {blog?.content?.root?.children?.map((item: any, index: number) => (
                   <p key={index}>
                     {item?.children
@@ -149,7 +154,7 @@ export default async function BlogPage({
                       .join(' ')}
                   </p>
                 ))}
-              </div>
+             </article>
             </div>
 
             {blog.tags?.length > 0 && (
@@ -205,7 +210,7 @@ export default async function BlogPage({
                         }}
                       >
                         <a
-                          href={`/en/our-blogs/${item.slug}`}
+                          href={`/en/article/${blog.slug}`}
                           style={{ textDecoration: 'none' }}
                         >
                           {item.imageUrl && (
