@@ -45,13 +45,16 @@ export default async function BlogPage({
   const blog = await getBlog(slug);
   const latestBlogs = await getLatestBlogs();
   console.log('CONTENT:', blog?.content);
-
+  console.log('FULL CONTENT:', JSON.stringify(blog?.content?.root?.children, null, 2));
   if (!blog) {
     notFound();
   }
 
   return (
     <>
+      {/* Tailwind Typography CDN - sirf blog content ke liye */}
+      <style dangerouslySetInnerHTML={{ __html: `@import url('https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.10/dist/typography.min.css');` }} />
+
       <Navbar />
 
       <section className="container py-5">
@@ -137,24 +140,49 @@ export default async function BlogPage({
             >
               {new Date(blog.publishedAt).toLocaleDateString()}
             </p>
+            <p className="text-red-500">Test</p>
+          <div
+  className="prose prose-lg max-w-none prose-headings:text-[#004E78] prose-headings:font-bold prose-a:text-[#004E78] prose-strong:text-[#004E78] prose-headings:mt-4 prose-headings:mb-2 prose-p:my-2"
+>
+              <article>
+                {blog?.content?.root?.children?.map((node: any, index: number) => {
+                  // Heading nodes
+                  if (node.type === 'heading') {
+                    const Tag = node.tag as keyof JSX.IntrinsicElements;
+                    return (
+                      <Tag key={index}>
+                        {node.children?.map((child: any) => child?.text || '').join('')}
+                      </Tag>
+                    );
+                  }
 
-            <div
-              style={{
-                fontSize: '18px',
-                lineHeight: '1.9',
-                color: '#333',
-              }}
-            >
+                  // List nodes
+                  if (node.type === 'list') {
+                    const ListTag = node.listType === 'bullet' ? 'ul' : 'ol';
+                    return (
+                      <ListTag key={index}>
+                        {node.children?.map((listItem: any, liIndex: number) => (
+                          <li key={liIndex}>
+                            {listItem.children?.map((child: any) => child?.text || '').join('')}
+                          </li>
+                        ))}
+                      </ListTag>
+                    );
+                  }
 
-             <article className="prose prose-lg max-w-none">
-                {blog?.content?.root?.children?.map((item: any, index: number) => (
-                  <p key={index}>
-                    {item?.children
-                      ?.map((child: any) => child?.text || '')
-                      .join(' ')}
-                  </p>
-                ))}
-             </article>
+                  // Paragraph nodes (default)
+                  return (
+                    <p key={index}>
+                      {node.children?.map((child: any, childIndex: number) => {
+                        if (child.bold) return <strong key={childIndex}>{child.text}</strong>;
+                        if (child.italic) return <em key={childIndex}>{child.text}</em>;
+                        if (child.underline) return <u key={childIndex}>{child.text}</u>;
+                        return child?.text || '';
+                      })}
+                    </p>
+                  );
+                })}
+              </article>
             </div>
 
             {blog.tags?.length > 0 && (
@@ -177,7 +205,7 @@ export default async function BlogPage({
                         borderRadius: '20px',
                       }}
                     >
-                     <a href={`/en/tags/${tag?.slug || tag?.name?.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <a href={`/en/tags/${tag?.slug || tag?.name?.toLowerCase().replace(/\s+/g, '-')}`}>
                         #{tag.name}
                       </a>
                     </span>
@@ -238,6 +266,7 @@ export default async function BlogPage({
           <style
             dangerouslySetInnerHTML={{
               __html: `
+              @import url('https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.10/dist/typography.min.css');
     .share-icon {
   width: 40px;
   height: 40px;

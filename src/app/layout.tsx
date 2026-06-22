@@ -1,5 +1,5 @@
 import { GoogleTagManager } from '@next/third-parties/google';
-
+import '@/styles/globals.css';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
