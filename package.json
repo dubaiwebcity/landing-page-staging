@@ -1,6 +1,6 @@
 {
   "name": "bnoon-landing-page",
-  "version": "1.4.71",
+  "version": "1.4.61",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@next/third-parties": "16.2.3",
+    "@tailwindcss/typography": "^0.5.20",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "compression": "^1.8.1",
@@ -33,7 +34,8 @@
     "react-pdf": "^10.2.0",
     "remixicon": "^4.6.0",
     "sharp": "^0.34.5",
-    "swiper": "^11.2.10"
+    "swiper": "^11.2.10",
+    "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -45,11 +47,12 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^5.1.4",
+    "autoprefixer": "^10.5.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.5",
     "jsdom": "^28.0.0",
+    "postcss": "^8.5.15",
     "prettier": "^3.8.1",
-    "tailwindcss": "4.2.4",
     "typescript": "5.9.2",
     "vitest": "^4.0.18"
   },
