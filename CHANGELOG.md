@@ -1,3 +1,17 @@
+## [1.4.72](https://github.com/bnoon-ksa/landing-page/compare/v1.4.71...v1.4.72) (2026-06-23)
+
+### Bug Fixes
+
+* Comment out style.css import in layout.tsx ([3c14537](https://github.com/bnoon-ksa/landing-page/commit/3c14537807adda5adbbc8e51d2414ee00b942b68))
+* content-tailwind-prose ([#542](https://github.com/bnoon-ksa/landing-page/issues/542)) ([c58d318](https://github.com/bnoon-ksa/landing-page/commit/c58d3182ed9791f962713324e16f9e68e36ca305))
+* Downgrade version to 1.4.61 and update dependencies ([071f8ac](https://github.com/bnoon-ksa/landing-page/commit/071f8ace414530acf65c64c5ca2ec2bfc2548c36))
+* package file ([#546](https://github.com/bnoon-ksa/landing-page/issues/546)) ([f316453](https://github.com/bnoon-ksa/landing-page/commit/f316453fc5ea5281b91f0ed422d664c3db7aa123))
+* Remove duplicate @tailwindcss/typography dependency ([292ab22](https://github.com/bnoon-ksa/landing-page/commit/292ab2283f29c1e236795a3e474572b095509792))
+* tailwind-content ([#547](https://github.com/bnoon-ksa/landing-page/issues/547)) ([e4bdac7](https://github.com/bnoon-ksa/landing-page/commit/e4bdac7c0039f0900c4616a22919ee10bd2bf95a))
+* tailwind-v2 ([#544](https://github.com/bnoon-ksa/landing-page/issues/544)) ([15ef2e9](https://github.com/bnoon-ksa/landing-page/commit/15ef2e908822b0d560e7bc746e2691205cd32834))
+* tailwind-v2 ([#545](https://github.com/bnoon-ksa/landing-page/issues/545)) ([c1a3b1a](https://github.com/bnoon-ksa/landing-page/commit/c1a3b1ab2b3ad99a6443c8dbede5cf14a390194c))
+* Update package version and dependencies ([2d42bcd](https://github.com/bnoon-ksa/landing-page/commit/2d42bcd76508fed470c95d6c94b919da5605c762))
+
 ## [1.4.71](https://github.com/bnoon-ksa/landing-page/compare/v1.4.70...v1.4.71) (2026-06-19)
 
 ### Bug Fixes
