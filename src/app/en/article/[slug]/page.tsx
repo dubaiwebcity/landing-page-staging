@@ -52,7 +52,6 @@ export default async function BlogPage({
 
   return (
     <>
-      {/* Tailwind Typography CDN - sirf blog content ke liye */}
       <style dangerouslySetInnerHTML={{ __html: `@import url('https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.10/dist/typography.min.css');` }} />
 
       <Navbar />
@@ -140,7 +139,7 @@ export default async function BlogPage({
             >
               {new Date(blog.publishedAt).toLocaleDateString()}
             </p>
-            <p className="text-red-500">Test</p>
+        
           <div
   className="prose prose-lg max-w-none prose-headings:text-[#004E78] prose-headings:font-bold prose-a:text-[#004E78] prose-strong:text-[#004E78] prose-headings:mt-4 prose-headings:mb-2 prose-p:my-2"
 >
