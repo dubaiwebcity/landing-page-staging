@@ -189,7 +189,7 @@ function Navbar() {
             </div>
 
             {/* Navigation Menu */}
-            <div className="collapse navbar-collapse justify-content-start">
+            <div className=" justify-content-start">
               <ul className="navbar-nav">
             {menus
   .filter((item) => item.id !== 'english' && !item.mobileOnly)

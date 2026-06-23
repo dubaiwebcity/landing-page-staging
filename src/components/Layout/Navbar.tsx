@@ -193,7 +193,7 @@ function Navbar() {
               </a>
             </div>
 
-            <div className="collapse navbar-collapse justify-content-end">
+            <div className="justify-content-end">
               <ul className="navbar-nav d-none d-xl-flex">
              {menus.map((menu) => {
   const active =
