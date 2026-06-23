@@ -1,3 +1,9 @@
+## [1.4.74](https://github.com/bnoon-ksa/landing-page/compare/v1.4.73...v1.4.74) (2026-06-23)
+
+### Bug Fixes
+
+* Clean up article page by removing comments and test text ([e2d9261](https://github.com/bnoon-ksa/landing-page/commit/e2d9261d0c828a20f26813f696306ea6a9a48ecd))
+
 ## [1.4.73](https://github.com/bnoon-ksa/landing-page/compare/v1.4.72...v1.4.73) (2026-06-23)
 
 ### Bug Fixes
