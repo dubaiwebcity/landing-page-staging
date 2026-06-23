@@ -1,3 +1,9 @@
+## [1.4.73](https://github.com/bnoon-ksa/landing-page/compare/v1.4.72...v1.4.73) (2026-06-23)
+
+### Bug Fixes
+
+* navbar ([#548](https://github.com/bnoon-ksa/landing-page/issues/548)) ([59a72c1](https://github.com/bnoon-ksa/landing-page/commit/59a72c15c0b259bfe1295bd53aacc8238385ebdc))
+
 ## [1.4.72](https://github.com/bnoon-ksa/landing-page/compare/v1.4.71...v1.4.72) (2026-06-23)
 
 ### Bug Fixes
