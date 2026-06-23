@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Navbar from '@/components/Layout/Navbar';
 import { notFound } from 'next/navigation';
 async function getBlog(slug: string) {
@@ -76,19 +77,25 @@ export default async function BlogPage({
             )}
 
             <div className="mb-3">
-              <span
-                style={{
-                  background: '#004E78',
-                  color: '#fff',
-                  padding: '6px 12px',
-                  borderRadius: '20px',
-                  fontSize: '14px',
-                }}
+              <Link
+                href={`/en/categories/${blog.categories?.[0]?.slug}`}
+                style={{ textDecoration: 'none' }}
               >
-                {typeof blog.categories?.[0] === 'object'
-                  ? blog.categories?.[0]?.title
-                  : ''}
-              </span>
+                <span
+                  style={{
+                    background: '#004E78',
+                    color: '#fff',
+                    padding: '6px 12px',
+                    borderRadius: '20px',
+                    fontSize: '14px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {typeof blog.categories?.[0] === 'object'
+                    ? blog.categories?.[0]?.title
+                    : ''}
+                </span>
+              </Link>
             </div>
 
             <h1
@@ -139,10 +146,10 @@ export default async function BlogPage({
             >
               {new Date(blog.publishedAt).toLocaleDateString()}
             </p>
-        
-          <div
-  className="prose prose-lg max-w-none prose-headings:text-[#004E78] prose-headings:font-bold prose-a:text-[#004E78] prose-strong:text-[#004E78] prose-headings:mt-4 prose-headings:mb-2 prose-p:my-2"
->
+
+            <div
+              className="prose prose-lg max-w-none prose-headings:text-[#004E78] prose-headings:font-bold prose-a:text-[#004E78] prose-strong:text-[#004E78] prose-headings:mt-4 prose-headings:mb-2 prose-p:my-2"
+            >
               <article>
                 {blog?.content?.root?.children?.map((node: any, index: number) => {
                   // Heading nodes
@@ -205,7 +212,7 @@ export default async function BlogPage({
                       }}
                     >
                       <a href={`/en/tags/${tag?.slug || tag?.name?.toLowerCase().replace(/\s+/g, '-')}`}>
-                        #{tag.name}
+                        {tag.name}
                       </a>
                     </span>
                   ))}
@@ -237,7 +244,7 @@ export default async function BlogPage({
                         }}
                       >
                         <a
-                          href={`/en/article/${blog.slug}`}
+                          href={`/en/article/${item.slug}`}
                           style={{ textDecoration: 'none' }}
                         >
                           {item.imageUrl && (

@@ -37,7 +37,7 @@ export default async function CategoryPage({
 
       <section className="container py-5">
         <h1 style={{ color: '#004E78', marginBottom: '25px' }}>
-          Category: {params.slug}
+          Category
         </h1>
 
         <div className="row">
