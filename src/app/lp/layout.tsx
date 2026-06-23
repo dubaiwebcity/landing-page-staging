@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import SetLocaleAttrs from '@/components/SetLocaleAttrs';
 //@ts-ignore
-import './style.css';
+// import './style.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
