@@ -1,3 +1,9 @@
+## [1.4.76](https://github.com/bnoon-ksa/landing-page/compare/v1.4.75...v1.4.76) (2026-06-24)
+
+### Bug Fixes
+
+* contact-footer ([#550](https://github.com/bnoon-ksa/landing-page/issues/550)) ([5742201](https://github.com/bnoon-ksa/landing-page/commit/57422012df451a7e6f319e33fc42118110bfd9e9))
+
 ## [1.4.75](https://github.com/bnoon-ksa/landing-page/compare/v1.4.74...v1.4.75) (2026-06-23)
 
 ### Bug Fixes
