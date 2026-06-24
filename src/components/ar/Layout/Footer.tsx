@@ -270,7 +270,7 @@ function Footer() {
 
                   {isContactPage && (
                     <>
-                      <a href="https://www.dubaiwebcity.com" target="_blank" rel="noopener noreferrer">تم تصميم الموقع بواسطة نت سوفت</a>
+                      <a href="https://www.dubaiwebcity.com" target="_blank" rel="noopener noreferrer">تصميم وتطوير: نت سوفت</a>
                     </>
                   )}
                 </p>
