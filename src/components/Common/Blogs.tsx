@@ -4,7 +4,7 @@ import BlogsCarousel from './BlogsCarousel';
 async function getBlogs() {
   try {
     const res = await fetch(
-      'https://bnoon-content-platform.vercel.app/api/posts?locale=en&sort=createdAt&depth=2&draft=false',
+      '${process.env.PAYLOAD_URL}/api/posts?locale=en&sort=createdAt&depth=2&draft=false',
       { next: { revalidate: 60 } }
     );
     const data = await res.json();
@@ -12,8 +12,8 @@ async function getBlogs() {
 
     // Tags aur Categories alag se fetch karo
     const [tagsRes, catsRes] = await Promise.all([
-      fetch('https://bnoon-content-platform.vercel.app/api/tags?limit=100&locale=en'),
-      fetch('https://bnoon-content-platform.vercel.app/api/categories?limit=100&locale=en'),
+      fetch('${process.env.PAYLOAD_URL}/api/tags?limit=100&locale=en'),
+      fetch('${process.env.PAYLOAD_URL}/api/categories?limit=100&locale=en'),
     ]);
 
     const tagsData = await tagsRes.json();

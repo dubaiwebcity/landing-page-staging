@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 async function getBlog(slug: string) {
   try {
     const res = await fetch(
-      `https://bnoon-content-platform.vercel.app/api/posts?where[slug][equals]=${slug}&locale=en&depth=2`,
+      `${process.env.PAYLOAD_URL}/api/posts?where[slug][equals]=${slug}&locale=en&depth=2`,
       { next: { revalidate: 60 } }
     );
 
@@ -20,7 +20,7 @@ async function getBlog(slug: string) {
 async function getLatestBlogs() {
   try {
     const res = await fetch(
-      'https://bnoon-content-platform.vercel.app/api/posts?limit=6&locale=en',
+      `${process.env.PAYLOAD_URL}/api/posts?limit=6&locale=en`,
       { next: { revalidate: 60 } }
     );
 
